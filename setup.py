@@ -28,7 +28,7 @@ setup(
     packages=find_packages(exclude=['tests*', 'docs*']),
     package_data={
         'groot_ansible': [
-            'playbooks/*',
+            'playbooks/*.yaml',
         ] + roles(),
     },
     data_files=[],  # system files?
