@@ -1,0 +1,56 @@
+#
+# License: BSD
+#    https://raw.githubusercontent.com/stonier/groot_ansible/devel/LICENSE
+#
+##############################################################################
+# Documentation
+##############################################################################
+
+"""
+Ansible subcommands for ros management.
+"""
+
+##############################################################################
+# Imports
+##############################################################################
+
+import argparse
+import subprocess
+
+from . import common
+from . import console
+
+##############################################################################
+# Methods
+##############################################################################
+
+
+def parse_args(args):
+    """
+    Launches the playbooks for managing the ros software environment on a pc.
+    """
+    console.banner("'ros'")
+    connection = "-c local"
+    list_tasks = "--list-tasks" if args.list_tasks else ""
+    cmd = "ansible-playbook ros.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
+    cmd = common.append_verbosity_argument(cmd, args.verbose)
+    console.key_value_pairs("Ansible", {"Command": cmd}, 10)
+    print("")
+    subprocess.call(cmd, cwd=args.home, shell=True)
+
+
+def add_subparser(subparsers):
+    """
+    Add our own argparser to the parent.
+
+    :param subparsers: the subparsers factory from the parent argparser.
+    """
+    parser = subparsers.add_parser("ros",
+                                   description="Install, configure or update an existing ros distro.",  # this shows in the help for this command
+                                   help="ros distro on an ubuntu machine",  # this shows in the parent parser
+                                   formatter_class=argparse.ArgumentDefaultsHelpFormatter
+                                   )
+    common.add_ansible_arguments(parser)
+    common.add_ros_arguments(parser)
+    parser.set_defaults(func=parse_args)
+

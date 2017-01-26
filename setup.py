@@ -1,18 +1,37 @@
 
+import os
+
 from setuptools import find_packages
 from setuptools import setup
+from groot_ansible import __version__
 
 # Setup installation dependencies, removing some so they
 # can build on the ppa
 install_requires = [
     'setuptools',
     'PyYAML',
+    'ansible',
 ]
+
+
+def roles():
+    """
+    Relative pathnames of all files in the groot_ansible/playbooks/roles folder
+    """
+    return [os.path.relpath(os.path.join(root, filename), 'groot_ansible')
+            for root, _, filenames in os.walk('groot_ansible/playbooks/roles') for filename in filenames if '.git' not in root.split(os.sep)
+            ]
 
 setup(
     name='groot_ansible',
-    version='0.1.0',
+    version=__version__,
     packages=find_packages(exclude=['tests*', 'docs*']),
+    package_data={
+        'groot_ansible': [
+            'playbooks/*',
+        ] + roles(),
+    },
+    data_files=[],  # system files?
     install_requires=install_requires,
     author='Daniel Stonier',
     author_email='d.stonier@gmail.com',
@@ -34,7 +53,7 @@ setup(
     # test_suite='tests',
     entry_points={
         'console_scripts': [
-            'groot-ansible = groot_ansible.vci:main',
+            'groot-ansible = groot_ansible:main',
         ],
     },
 )

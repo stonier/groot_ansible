@@ -165,6 +165,31 @@ def logfatal(message):
     print(bold_red + "[error] " + message + reset)
 
 
+def _colorise_key_value_pairs(key_value_strings, width=None):
+    colorised = {}
+    if width is None:
+        width = max(len(k) for k in key_value_strings.keys())
+    for key, value in key_value_strings.iteritems():
+        colorised_key = cyan + "{key:{width}}".format(key=key, width=width) + reset
+        colorised_value = yellow + value + reset
+        colorised[colorised_key] = colorised_value
+    return colorised
+
+
+def key_value_pairs(title, key_value_strings, width=None):
+    print(green + title + reset)
+    for k, v in _colorise_key_value_pairs(key_value_strings, width).iteritems():
+        print("  " + k + ": " + v)
+
+
+def banner(title):
+    width = 80
+    print("")
+    print(green + "*" * width + reset)
+    print(bold + "{text:^{width}}".format(text=title, width=width) + reset)
+    print(green + "*" * width + reset)
+    print("")
+
 ##############################################################################
 # Main
 ##############################################################################

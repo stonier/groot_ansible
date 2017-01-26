@@ -1,0 +1,51 @@
+#
+# Simple playbook to ensure the yujin ansible framework is installed up to date.
+# This includes:
+#
+# - updating ansible
+# - installing/updating the backend package (this playbook package)
+# - installing/updating the frontend package (python-yujin-tools)
+#
+# This assumes:
+#
+# - you already have ansible (since you are running this playbook!)
+# - you already have access to the yujin repo
+#
+# This is used by:
+#
+# > yujin_ansible --update
+#
+# TODO : Bootstrap the latest ansible from here instead of assuming it
+#        is already available (worth it if we move to xenial shortly?)
+#
+---
+- name: Groot Ansible Framework
+  hosts:
+    - localhost
+
+  pre_tasks:
+  - name: Add snorriheim ppa
+    apt_repository:
+      repo: "ppa:d-stonier/snorriheim"
+      state: present
+      update_cache: yes  # only triggers if there was a change to the repos
+    become: yes
+
+  - name: Update python-groot-ansible to the latest version
+    apt:
+      pkg: ansible
+      state: latest
+    become: yes
+
+  - name: Add ansible ppa
+    apt_repository:
+      repo: "ppa:ansible/ansible"
+      state: present
+      update_cache: yes  # only triggers if there was a change to the repos
+    become: yes
+
+  - name: Update ansible to the latest version
+    apt:
+      pkg: ansible
+      state: latest
+    become: yes
