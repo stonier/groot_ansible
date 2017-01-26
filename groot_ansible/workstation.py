@@ -19,6 +19,8 @@ import subprocess
 
 from . import common
 from . import console
+from . import ros
+
 
 ##############################################################################
 # Methods
@@ -32,7 +34,9 @@ def parse_args(args):
     console.banner("'workstation'")
     connection = "-c local"
     list_tasks = "--list-tasks" if args.list_tasks else ""
-    cmd = "ansible-playbook workstation.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
+    rosdistro = args.rosdistro if args.rosdistro else ros.guess_rosdistro()
+    variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
+    cmd = "ansible-playbook workstation.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
@@ -51,4 +55,5 @@ def add_subparser(subparsers):
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)
+    ros.add_ros_arguments(parser)
     parser.set_defaults(func=parse_args)

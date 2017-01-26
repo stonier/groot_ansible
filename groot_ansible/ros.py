@@ -26,6 +26,19 @@ from . import console
 ##############################################################################
 
 
+def add_ros_arguments(parser):
+    """
+    Arguments relevant for a ros system.
+
+    :param argparse.ArgumentParser parser:
+    """
+    group = parser.add_argument_group(title="ros arguments")
+    group.add_argument('--rosdistro', action='store', default=None, help='manually specify the ros release to install/update')
+#     group.add_argument('--only-upgrade', action='store_true', help='only upgrade currently installed ros debians')
+#     group.add_argument('--only-rosdeps', action='store_true', help='only do the --install-rosdeps step')
+#     group.add_argument('--skip-rosdeps', action='store_true', help='skip the --install-rosdeps step')
+
+
 def guess_rosdistro():
     distro_map = {'trusty': 'indigo', 'xenial': 'kinetic'}
     unused_os, unused_version, codename = platform.linux_distribution()
@@ -62,5 +75,5 @@ def add_subparser(subparsers):
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)
-    common.add_ros_arguments(parser)
+    add_ros_arguments(parser)
     parser.set_defaults(func=parse_args)

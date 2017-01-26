@@ -74,7 +74,7 @@
     state: latest
   become: yes
 
-- name: "Install/update other ppa packages {{ other_ppa_packages }}"
+- name: "Install/update other ppa packages"
   apt:
     pkg: "{{ other_ppa_packages }}"
     state: latest

@@ -4,7 +4,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- ...
+- [groot-ansible-bootstrap] user groups
+- [groot-ansible-bootstrap] ansible/snorriheim ppas
+- [ros] generic ros install/update
+- [workstation] lots of ppa's and debs
+- [update] updates itself and ansible
 
 ### Changed
 - ...
