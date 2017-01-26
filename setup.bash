@@ -11,8 +11,7 @@ if [ "${VIRTUAL_ENV}" == "" ]; then
     	sudo apt-get install virtualenvwrapper
         mkvirtualenv ${PROJECT}
     fi
-    # probably some python setup.py target which will do this for you
-    # pip install vcstool
+    sudo apt install libffi-dev  # hack used by a badly installing ansible->cffi pip install in the virtual env requirements
   fi
 fi
 # Always pulling for now
