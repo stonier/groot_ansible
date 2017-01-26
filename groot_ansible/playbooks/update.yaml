@@ -24,7 +24,7 @@
       repo: "ppa:d-stonier/snorriheim"
       state: present
       update_cache: yes  # only triggers if there was a change to the repos
-      filename: snorriheim
+      # filename: snorriheim
     become: yes
 
   - name: Add ansible ppa
@@ -32,7 +32,7 @@
       repo: "ppa:ansible/ansible"
       state: present
       update_cache: yes  # only triggers if there was a change to the repos
-      filename: ansible
+      # filename: ansible
     become: yes
 
   # In case we didn't apt-get update in the previous step

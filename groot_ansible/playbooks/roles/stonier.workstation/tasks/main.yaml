@@ -3,11 +3,12 @@
 # Groups
 ##############################################################################
 
-# Add to the users group
-- user:
-    name: "{{ ansible_user_id }}"
-    groups: users
-    append: yes
+# Add to the users group - do it from groot-ansible-bootstrap instead since
+# the changes can't go into effect till a reboot
+#- user:
+#    name: "{{ ansible_user_id }}"
+#    groups: users,dialout,docker
+#    append: yes
 
 ##############################################################################
 # Other PPA's

@@ -9,3 +9,6 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - xenial
+
+#dependencies:
+#  - role: stonier.ansible
