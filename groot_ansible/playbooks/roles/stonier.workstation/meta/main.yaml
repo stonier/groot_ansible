@@ -1,16 +1,11 @@
----
-dependencies: []
-
 galaxy_info:
   author: Daniel Stonier
-  description: Robot Operating System (ROS) installation for Linux.
+  description: Bootstrap a workstation for development
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1
+
   platforms:
   - name: Ubuntu
     versions:
     - xenial
-  categories:
-    - development
-    - system

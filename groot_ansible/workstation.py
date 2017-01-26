@@ -15,7 +15,6 @@ Ansible subcommands for ros management.
 ##############################################################################
 
 import argparse
-import platform
 import subprocess
 
 from . import common
@@ -26,25 +25,15 @@ from . import console
 ##############################################################################
 
 
-def guess_rosdistro():
-    distro_map = {'trusty': 'indigo', 'xenial': 'kinetic'}
-    unused_os, unused_version, codename = platform.linux_distribution()
-    return distro_map[codename] if codename in distro_map.keys() else None  # let the role decide the default if we don't guess it
-
-
 def parse_args(args):
     """
-    Launches the playbooks for managing the ros software environment on a pc.
+    Launches the playbooks for bootstrapping my workstations (pc/laptop).
     """
-    console.banner("'ros'")
+    console.banner("'workstation'")
     connection = "-c local"
     list_tasks = "--list-tasks" if args.list_tasks else ""
-    # TODO check for a valid rosdistro on this platform
-    rosdistro = args.rosdistro if args.rosdistro else guess_rosdistro()
-    variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
-    cmd = "ansible-playbook ros.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    cmd = "ansible-playbook workstation.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
-    console.key_value_pairs("Parameters", {"Rosdistro": rosdistro}, 10)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
     subprocess.call(cmd, cwd=args.home, shell=True)
@@ -56,11 +45,10 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("ros",
-                                   description="Install, configure or update an existing ros distro.",  # this shows in the help for this command
-                                   help="ros distro on an ubuntu machine",  # this shows in the parent parser
+    parser = subparsers.add_parser("workstation",
+                                   description="Bootstrap a pc/laptop to a development workstation.",  # this shows in the help for this command
+                                   help="bootstrap a pc/laptop for development",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)
-    common.add_ros_arguments(parser)
     parser.set_defaults(func=parse_args)

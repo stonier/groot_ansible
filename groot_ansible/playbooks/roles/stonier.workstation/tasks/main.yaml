@@ -1,0 +1,83 @@
+---
+##############################################################################
+# Groups
+##############################################################################
+
+# Add to the users group
+- user:
+    name: "{{ ansible_user_id }}"
+    groups: users
+    append: yes
+
+##############################################################################
+# Other PPA's
+##############################################################################
+
+- name: Add noobslab ppa
+  apt_repository:
+    repo: "ppa:noobslab/themes"
+    state: present
+    update_cache: yes  # only triggers if there was a change to the repos
+    filename: noobslab
+  become: yes
+
+- name: Add chrome apt-key
+  apt_key:
+    url: "{{ chrome_apt_key }}"
+    state: present
+  become: yes
+
+- name: Add chrome repository
+  apt_repository:
+    repo: "deb [arch=amd64] {{ chrome_apt_uri }} stable main"
+    state: present
+    filename: chrome
+  become: yes
+
+##############################################################################
+# Update
+##############################################################################
+
+# In case we didn't apt-get update in the previous step
+- name: Apt update
+  apt:
+    update_cache: yes
+    cache_valid_time: 3600
+  become: yes
+
+##############################################################################
+# Debs
+##############################################################################
+
+- name: "Install/update core packages"
+  apt:
+    pkg: "{{ core_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update programming packages"
+  apt:
+    pkg: "{{ programming_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update font packages"
+  apt:
+    pkg: "{{ font_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update snorriheim packages"
+  apt:
+    pkg: "{{ snorriheim_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update other ppa packages {{ other_ppa_packages }}"
+  apt:
+    pkg: "{{ other_ppa_packages }}"
+    state: latest
+  become: yes
+
+
+#################################################################################################

@@ -7,14 +7,15 @@
 # - any other ros packages the user may have installed
 #
 ---
-- name: ROS Installation and Update
+- name: Workstation Bootstrap
   hosts:
     - localhost
 
-  vars:
   # Public Variables
+  vars:
   - ros_release: kinetic
 
   roles:
-  - role: stonier.ros
-    ros_release: "{{ ros_release }}"
+  - role: stonier.workstation
+  # - role: stonier.ros
+  #   ros_release: "{{ ros_release }}"

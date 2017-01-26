@@ -61,6 +61,7 @@ def add_ros_arguments(parser):
     :param argparse.ArgumentParser parser:
     """
     group = parser.add_argument_group(title="ros arguments")
-    group.add_argument('--only-upgrade', action='store_true', help='only upgrade currently installed ros debians')
-    group.add_argument('--only-rosdeps', action='store_true', help='only do the --install-rosdeps step')
-    group.add_argument('--skip-rosdeps', action='store_true', help='skip the --install-rosdeps step')
+    group.add_argument('--rosdistro', action='store', default=None, help='manually specify the ros release to install/update')
+#     group.add_argument('--only-upgrade', action='store_true', help='only upgrade currently installed ros debians')
+#     group.add_argument('--only-rosdeps', action='store_true', help='only do the --install-rosdeps step')
+#     group.add_argument('--skip-rosdeps', action='store_true', help='skip the --install-rosdeps step')

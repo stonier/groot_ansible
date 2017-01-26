@@ -1,0 +1,16 @@
+
+# chrome
+chrome_apt_uri: "http://dl.google.com/linux/chrome/deb"
+chrome_apt_key: "https://dl-ssl.google.com/linux/linux_signing_key.pub"
+
+# system debs
+core_packages:        [eog, gimp, kile, kubuntu-full, language-selector-gnome, mplayer, synaptic,
+                       texlive-fonts-extra, texlive-xetex, vim
+                      ]
+font_packages:        [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk, fonts-lexi-gulim,
+                       fonts-lexi-saebom, fonts-nanum, fonts-nanum-coding, fonts-nanum-eco,
+                       fonts-woowa-hanna, ttf-dejavu, ttf-liberation
+                      ]
+programming_packages: [build-essential, cmake-curses-gui, python-pip]
+snorriheim_packages:  [groot-icons, groot-mediterranean-themes, python-ckx-tools, python-vcs-extras]
+other_ppa_packages:   [google-chrome-stable]

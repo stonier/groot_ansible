@@ -1,8 +1,5 @@
 ---
 # Currently supported ROS releases:
-# - "groovy" on Ubuntu "precise"
-# - "hydro"  on Ubuntu "precise"
-# - "indigo" on Ubuntu "trusty"
 ros_release: "kinetic"
 ros_package: "ros-base"
 

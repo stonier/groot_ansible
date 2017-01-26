@@ -1,0 +1,6 @@
+---
+# WARNING : these need to match groot_binaries script content
+#groot_remote_hostname: "{{ 'files.yujin.com' if groot_repository is 'internal' else 'files.yujinrobot.com'}}"
+#groot_remote_user: "{{ 'groot' if groot_repository is 'partners' else 'files' }}"
+#gopher_maps_executable: "/opt/yujin/amd64/indigo-{{ gopher_software_stream }}/bin/gopher_maps"
+#gopher_sofware_setup_bash: "/opt/yujin/amd64/indigo-{{ gopher_software_stream }}/setup.bash"

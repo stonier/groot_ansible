@@ -29,8 +29,6 @@ These colour definitions can be used in the following way:
    import rocon_console.console as console
    print(console.cyan + "    Name" + console.reset + ": " + console.yellow + "Dude" + console.reset)
 
-----
-
 """
 
 ##############################################################################
@@ -64,7 +62,7 @@ def console_has_colours(stream):
 
 has_colours = console_has_colours(sys.stdout)
 if has_colours:
-    #reset = "\x1b[0;0m"
+    # reset = "\x1b[0;0m"
     reset = "\x1b[0m"
     bold = "\x1b[%sm" % '1'
     black, red, green, yellow, blue, magenta, cyan, white = ["\x1b[%sm" % str(i) for i in range(30, 38)]
@@ -75,11 +73,10 @@ else:
     black, red, green, yellow, blue, magenta, cyan, white = ["" for i in range(30, 38)]
     bold_black, bold_red, bold_green, bold_yellow, bold_blue, bold_magenta, bold_cyan, bold_white = ["" for i in range(30, 38)]
 
-colours = [
-           bold,
+colours = [bold,
            black, red, green, yellow, blue, magenta, cyan, white,
            bold_black, bold_red, bold_green, bold_yellow, bold_blue, bold_magenta, bold_cyan, bold_white
-          ]
+           ]
 
 
 def pretty_print(msg, colour=white):

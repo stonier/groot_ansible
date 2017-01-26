@@ -50,6 +50,8 @@
     - python-rosdep
     - python-bloom
     - python-wstool
+    - python-vcstool
+    - python-rospkg
     - python-catkin-pkg
   become: yes
 
