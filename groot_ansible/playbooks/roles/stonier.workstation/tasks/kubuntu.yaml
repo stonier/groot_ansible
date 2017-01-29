@@ -9,7 +9,7 @@
     purge: yes
   become: yes
 
-- name: "Install/update core packages"
+- name: "Install/update kubuntu packages"
   apt:
     pkg: "{{ kubuntu_packages }}"
     state: latest
