@@ -50,6 +50,13 @@
 # Debs
 ##############################################################################
 
+- name: "Purge unity/kde conflicting packages"
+  apt:
+    pkg: "{{ conflicting_packages }}"
+    state: absent
+    purge: yes
+  become: yes
+
 - name: "Install/update core packages"
   apt:
     pkg: "{{ core_packages }}"
