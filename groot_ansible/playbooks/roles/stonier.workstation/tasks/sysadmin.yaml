@@ -29,8 +29,19 @@
     group: users
   become: yes
 
-- name: Setup netrc
+- name: "Netrc configuration to {{ ansible_env.HOME }}/.netrc."
   template:
-    dest: ~/.netrc
+    dest: "{{ ansible_env.HOME }}/.netrc"
     src: netrc.j2
     force: no
+
+- name: Remove useless home directories
+  file:
+    path: "{{ item }}"
+    state: absent
+  with_items:
+    - "{{ ansible_env.HOME }}/Music"
+    - "{{ ansible_env.HOME }}/Pictures"
+    - "{{ ansible_env.HOME }}/Public"
+    - "{{ ansible_env.HOME }}/Templates"
+    - "{{ ansible_env.HOME }}/Videos"

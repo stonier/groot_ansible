@@ -2,14 +2,14 @@
 # Git
 ##############################################################################
 
-- name: Setup gitconfig
+- name: "Git configuration to {{ ansible_env.HOME }/.gitconfig"
   template:
-    dest: ~/.gitconfig
+    dest: "{{ ansible_env.HOME }/.gitconfig"
     src: gitconfig.j2
     force: no
   tags: preparation
 
-- name: "Install/update git packages"
+- name: "Git related packages"
   apt:
     pkg: "{{ git_packages }}"
     state: latest
