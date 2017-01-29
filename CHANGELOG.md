@@ -6,8 +6,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [workstation] create ~/.gnupg directory
 - [workstation] purge unity conflict packages before installing kubuntu-full
+- [workstation] gitconfig setup
+- [workstation] netrc setup
 
 ### Changed
+- [workstation] role tasks modularised
 - [workstation] git added to `core_packages`
 
 ## [0.2.1] - 2017-01-26

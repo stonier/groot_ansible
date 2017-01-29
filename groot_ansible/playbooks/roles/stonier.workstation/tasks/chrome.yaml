@@ -17,7 +17,7 @@
   become: yes
   tags: preparation
 
-- name: "Install/update other ppa packages"
+- name: "Install/update chrome packages"
   apt:
     pkg: "{{ chrome_packages }}"
     state: latest

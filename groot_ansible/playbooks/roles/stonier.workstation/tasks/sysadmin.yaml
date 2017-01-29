@@ -28,3 +28,9 @@
     owner: "{{ ansible_user_id }}"
     group: users
   become: yes
+
+- name: Setup netrc
+  template:
+    dest: ~/.netrc
+    src: netrc.j2
+    force: no

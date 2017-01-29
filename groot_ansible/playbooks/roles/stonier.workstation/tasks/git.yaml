@@ -1,0 +1,17 @@
+##############################################################################
+# Git
+##############################################################################
+
+- name: Setup gitconfig
+  template:
+    dest: ~/.gitconfig
+    src: gitconfig.j2
+    force: no
+  tags: preparation
+
+- name: "Install/update git packages"
+  apt:
+    pkg: "{{ git_packages }}"
+    state: latest
+  become: yes
+  tags: apt_install
