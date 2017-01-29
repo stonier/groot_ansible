@@ -1,6 +1,6 @@
 ---
 ##############################################################################
-# Groups
+# Basic Sysadmin
 ##############################################################################
 
 # Add to the users group - do it from groot-ansible-bootstrap instead since
@@ -9,6 +9,27 @@
 #    name: "{{ ansible_user_id }}"
 #    groups: users,dialout,docker
 #    append: yes
+
+- name: "Ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
+  file:
+    path: "/usr/local/bin"
+    state: directory
+    recurse: yes
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
+- name: "Ensure /usr/local/lib is accessible by {{ ansible_user_id }}."
+  file:
+    path: "/usr/local/lib"
+    state: directory
+    recurse: yes
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
 
 ##############################################################################
 # Other PPA's
@@ -87,5 +108,14 @@
     state: latest
   become: yes
 
+#################################################################################################
+# GPG
+#################################################################################################
+
+- name: Create ~/.gnupg directory
+  file:
+    state: directory
+    mode: 0700
+    path: ~/.gnupg
 
 #################################################################################################
