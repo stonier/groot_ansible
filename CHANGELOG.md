@@ -8,7 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - [workstation] purge unity conflict packages before installing kubuntu-full
 
 ### Changed
-- ...
+- [workstation] git added to `core_packages`
 
 ## [0.2.1] - 2017-01-26
 ### Changed

@@ -1,66 +1,17 @@
 ---
-##############################################################################
-# Basic Sysadmin
-##############################################################################
 
-# Add to the users group - do it from groot-ansible-bootstrap instead since
-# the changes can't go into effect till a reboot
-#- user:
-#    name: "{{ ansible_user_id }}"
-#    groups: users,dialout,docker
-#    append: yes
-
-- name: "Ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
-  file:
-    path: "/usr/local/bin"
-    state: directory
-    recurse: yes
-    mode: 0755
-    owner: "{{ ansible_user_id }}"
-    group: users
-  become: yes
-
-- name: "Ensure /usr/local/lib is accessible by {{ ansible_user_id }}."
-  file:
-    path: "/usr/local/lib"
-    state: directory
-    recurse: yes
-    mode: 0755
-    owner: "{{ ansible_user_id }}"
-    group: users
-  become: yes
-
-
-##############################################################################
-# Other PPA's
-##############################################################################
-
-- name: Add noobslab ppa
-  apt_repository:
-    repo: "ppa:noobslab/themes"
-    state: present
-    update_cache: yes  # only triggers if there was a change to the repos
-    filename: noobslab
-  become: yes
-
-- name: Add chrome apt-key
-  apt_key:
-    url: "{{ chrome_apt_key }}"
-    state: present
-  become: yes
-
-- name: Add chrome repository
-  apt_repository:
-    repo: "deb [arch=amd64] {{ chrome_apt_uri }} stable main"
-    state: present
-    filename: chrome
-  become: yes
+- include: sysadmin.yaml
+- include: gtk_themes.yaml
+- include: chrome.yaml
+  tags   : [preparation]
+- include: gpg.yaml
 
 ##############################################################################
 # Update
 ##############################################################################
 
-# In case we didn't apt-get update in the previous step
+# All previous steps should defer the update to this call so we don't call
+# it multiply, nor skip it after a ppa has been added with a cache check
 - name: Apt update
   apt:
     update_cache: yes
@@ -71,51 +22,10 @@
 # Debs
 ##############################################################################
 
-- name: "Purge unity/kde conflicting packages"
-  apt:
-    pkg: "{{ conflicting_packages }}"
-    state: absent
-    purge: yes
-  become: yes
+- include: kubuntu.yaml
+- include: system_debs.yaml
+- include: snorriheim.yaml
+- include: chrome.yaml
+  tags   : [apt_install]
 
-- name: "Install/update core packages"
-  apt:
-    pkg: "{{ core_packages }}"
-    state: latest
-  become: yes
-
-- name: "Install/update programming packages"
-  apt:
-    pkg: "{{ programming_packages }}"
-    state: latest
-  become: yes
-
-- name: "Install/update font packages"
-  apt:
-    pkg: "{{ font_packages }}"
-    state: latest
-  become: yes
-
-- name: "Install/update snorriheim packages"
-  apt:
-    pkg: "{{ snorriheim_packages }}"
-    state: latest
-  become: yes
-
-- name: "Install/update other ppa packages"
-  apt:
-    pkg: "{{ other_ppa_packages }}"
-    state: latest
-  become: yes
-
-#################################################################################################
-# GPG
-#################################################################################################
-
-- name: Create ~/.gnupg directory
-  file:
-    state: directory
-    mode: 0700
-    path: ~/.gnupg
-
-#################################################################################################
+##############################################################################

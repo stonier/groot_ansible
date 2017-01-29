@@ -1,0 +1,11 @@
+##############################################################################
+# Some GTK Themes
+##############################################################################
+
+- name: Add noobslab ppa
+  apt_repository:
+    repo: "ppa:noobslab/themes"
+    state: present
+    update_cache: yes  # only triggers if there was a change to the repos
+    filename: noobslab
+  become: yes

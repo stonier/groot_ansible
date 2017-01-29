@@ -1,0 +1,21 @@
+##############################################################################
+# Core System Debs
+##############################################################################
+
+- name: "Install/update core packages"
+  apt:
+    pkg: "{{ core_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update programming packages"
+  apt:
+    pkg: "{{ programming_packages }}"
+    state: latest
+  become: yes
+
+- name: "Install/update font packages"
+  apt:
+    pkg: "{{ font_packages }}"
+    state: latest
+  become: yes

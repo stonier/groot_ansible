@@ -1,0 +1,11 @@
+##############################################################################
+# Snorriheim
+##############################################################################
+
+# Assume that groot-ansible has already bootstrapped the snorriheim ppa
+
+- name: "Install/update snorriheim packages"
+  apt:
+    pkg: "{{ snorriheim_packages }}"
+    state: latest
+  become: yes
