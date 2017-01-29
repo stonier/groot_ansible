@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- ...
+
+### Changed
+- ...
+
+## [0.2.2] - 2017-01-29
+### Added
 - [workstation] enable canonical partner repositories
 - [workstation] create ~/.gnupg directory
 - [workstation] purge unity conflict packages before installing kubuntu-full
@@ -12,7 +19,6 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - [workstation] role tasks modularised
-- [workstation] git added to `core_packages`
 
 ## [0.2.1] - 2017-01-26
 ### Changed
