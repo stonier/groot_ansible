@@ -4,6 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- [workstation] enable canonical partner repositories
 - [workstation] create ~/.gnupg directory
 - [workstation] purge unity conflict packages before installing kubuntu-full
 - [workstation] gitconfig setup

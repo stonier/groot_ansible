@@ -45,3 +45,10 @@
     - "{{ ansible_env.HOME }}/Public"
     - "{{ ansible_env.HOME }}/Templates"
     - "{{ ansible_env.HOME }}/Videos"
+
+- name: Enable Canonical partner repositories
+  replace:
+    dest: /etc/apt/sources.list
+    regexp: '^# (deb .*partner)'
+    replace: '\1'
+  become: true

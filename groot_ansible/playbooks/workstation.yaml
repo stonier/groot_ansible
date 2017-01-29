@@ -17,5 +17,5 @@
 
   roles:
   - role: stonier.workstation
-  - role: stonier.ros
-    ros_release: "{{ ros_release }}"
+#  - role: stonier.ros
+#    ros_release: "{{ ros_release }}"
