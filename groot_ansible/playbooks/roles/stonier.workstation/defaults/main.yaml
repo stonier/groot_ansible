@@ -44,5 +44,7 @@ chrome_packages      : [google-chrome-stable]
 #################################################################################################
 # Snorriheim
 #################################################################################################
-snorriheim_packages  : [groot-icons, groot-mediterranean-themes, python-ckx-tools, python-vcs-extras]
+snorriheim_packages  : [groot-eclipse-preferences, groot-icons, groot-mediterranean-themes,
+                        python-ckx-tools, python-vcs-extras
+                        ]
 
