@@ -50,3 +50,9 @@
     dest: "{{ ansible_env.HOME }}/.config/powerline/themes/shell/mine.json"
     src: powerline-theme.json.j2
     force: no
+
+- name: "Call powerline in {{ ansible_env.HOME }}/.bashrc"
+  lineinfile:
+    dest: "{{ ansible_env.HOME }}/.bashrc"
+    line: "if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then source /usr/share/powerline/bindings/bash/powerline.sh; fi"
+
