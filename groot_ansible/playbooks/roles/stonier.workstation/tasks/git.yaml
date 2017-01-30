@@ -18,6 +18,21 @@
   become: yes
   tags: apt_install
 
+- name: Download git lfs support installer script from package cloud
+  get_url:
+    url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
+    dest: /opt/snorriheim/git-lfs.sh
+    # force: no  # don't download again if it is already there
+    mode: 0755
+  register: git_lfs_installer_script
+
+- name: Install git lfs support
+  shell: /tmp/git-lfs.sh
+  args:
+    executable: /bin/bash
+  when: git_lfs_installer_script.changed
+  become: yes
+
 - name: "Clone groot-eclipse-preferences"
   git:
     repo: https://github.com/stonier/groot-eclipse-preferences.git

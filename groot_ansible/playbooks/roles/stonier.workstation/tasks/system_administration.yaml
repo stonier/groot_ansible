@@ -14,7 +14,6 @@
     path: "/usr/local/bin"
     state: directory
     recurse: yes
-    mode: 0755
     owner: "{{ ansible_user_id }}"
     group: users
   become: yes
@@ -24,7 +23,6 @@
     path: "/usr/local/lib"
     state: directory
     recurse: yes
-    mode: 0755
     owner: "{{ ansible_user_id }}"
     group: users
   become: yes
@@ -33,7 +31,7 @@
   file:
     path: "/opt/snorriheim"
     state: directory
-    recurse: yes
+    recurse: no
     mode: 0755
     owner: "{{ ansible_user_id }}"
     group: users
@@ -44,6 +42,7 @@
     dest: "{{ ansible_env.HOME }}/.netrc"
     src: netrc.j2
     force: no
+    mode: 0600
 
 - name: Remove unused home directories
   file:
