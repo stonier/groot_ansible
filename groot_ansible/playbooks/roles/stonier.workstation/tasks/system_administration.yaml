@@ -34,6 +34,13 @@
     force: no
     mode: 0600
 
+- name: "Bash aliases to {{ ansible_env.HOME }}/.bash_aliases."
+  template:
+    dest: "{{ ansible_env.HOME }}/.bash_aliases"
+    src: bash_aliases.j2
+    force: no
+    mode: 0664
+
 - name: Remove unused home directories
   file:
     path: "{{ item }}"
