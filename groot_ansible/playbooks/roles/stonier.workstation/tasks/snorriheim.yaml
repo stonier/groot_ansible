@@ -1,12 +1,12 @@
 ##############################################################################
 # Snorriheim
 ##############################################################################
-
+#
 # Requirements:
 #
 #  - script: groot-ansible-bootstrap has added the snorriheim ppa
 #  - task  : git.yaml
-
+#
 ##############################################################################
 # Preparation
 ##############################################################################
@@ -20,14 +20,13 @@
     owner: "{{ ansible_user_id }}"
     group: users
   become: yes
-  tags: preparation
 
 - name: "Clone groot-eclipse-preferences"
   git:
     repo: https://github.com/stonier/groot-eclipse-preferences.git
     dest: /opt/snorriheim/groot-eclipse-preferences
     version: devel
-  tags: preparation
+    update: no
 
 ##############################################################################
 # Debs
@@ -38,4 +37,3 @@
     pkg: "{{ snorriheim_packages }}"
     state: latest
   become: yes
-  tags: apt_install

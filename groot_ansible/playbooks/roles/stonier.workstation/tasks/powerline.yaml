@@ -1,0 +1,52 @@
+##############################################################################
+# Powerline
+##############################################################################
+#
+# Requirements:
+#
+#  - tasks  : git.yaml
+#  - tasks  : snorriheim.yaml
+#
+##############################################################################
+
+- name: "Powerline related packages"
+  apt:
+    pkg: "{{ powerline_packages }}"
+    state: latest
+  become: yes
+
+- name: "Clone extra powerline-fonts"
+  git:
+    repo: https://github.com/powerline/fonts.git
+    dest: /opt/snorriheim/powerline-fonts
+    version: master
+    update: no
+  register: powerline_fonts
+
+- name: "Install powerline fonts to ~/.local/share/fonts"
+  shell: ./install.sh
+  args:
+    chdir: /opt/snorriheim/powerline-fonts
+    executable: /bin/bash
+  when: powerline_fonts.changed
+
+- name: "Ensure {{ ansible_env.HOME }}/.config/powerline/themes/shell exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ ansible_env.HOME }}/.config/powerline/themes/shell"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+
+- name: "Powerline configuration to {{ ansible_env.HOME }}/.config/powerline/config.json"
+  template:
+    dest: "{{ ansible_env.HOME }}/.config/powerline/config.json"
+    src: powerline-config.json.j2
+    force: no
+
+- name: "Powerline shell theme to {{ ansible_env.HOME }}/.config/powerline/themes/shell/mine.json"
+  template:
+    dest: "{{ ansible_env.HOME }}/.config/powerline/themes/shell/mine.json"
+    src: powerline-theme.json.j2
+    force: no

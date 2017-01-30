@@ -6,10 +6,7 @@
 
 - include: system_administration.yaml
 - include: gtk_themes.yaml
-- include: chrome.yaml
-  tags   : [preparation]
-- include: snorriheim.yaml
-  tags   : [preparation]
+- include: chrome-setup.yaml
 
 ##############################################################################
 # Update
@@ -30,10 +27,9 @@
 - include: kubuntu.yaml
 - include: system_debs.yaml
 - include: gpg.yaml
-- include: snorriheim.yaml
-  tags   : [apt_install]
-- include: chrome.yaml
-  tags   : [apt_install]
 - include: git.yaml
+- include: chrome-debs.yaml
+- include: snorriheim.yaml
+- include: powerline.yaml
 
 ##############################################################################

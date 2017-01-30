@@ -1,0 +1,11 @@
+##############################################################################
+# Chrome
+##############################################################################
+
+- name: "Install/update chrome packages"
+  apt:
+    pkg: "{{ chrome_packages }}"
+    state: latest
+  become: yes
+  tags: apt_install
+

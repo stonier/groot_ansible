@@ -28,7 +28,7 @@
   get_url:
     url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
     dest: "{{ ansible_env.HOME }}/.git_extras/git-lfs.sh"
-    # force: no  # don't download again if it is already there
+    force: no  # don't download again if it is already there, even if changed
     mode: 0755
   register: git_lfs_installer_script
 
