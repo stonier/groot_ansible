@@ -1,8 +1,12 @@
 ##############################################################################
 # Git
-#
-# Dependencies : system_administration.yaml
 ##############################################################################
+
+- name: "Git related packages"
+  apt:
+    pkg: "{{ git_packages }}"
+    state: latest
+  become: yes
 
 - name: "Ensure {{ ansible_env.HOME }}/.git exists and is accessible by {{ ansible_user_id }}."
   file:
@@ -19,14 +23,6 @@
     dest: "{{ ansible_env.HOME }}/.gitconfig"
     src: gitconfig.j2
     force: no
-  tags: preparation
-
-- name: "Git related packages"
-  apt:
-    pkg: "{{ git_packages }}"
-    state: latest
-  become: yes
-  tags: apt_install
 
 - name: Download git lfs support installer script from package cloud
   get_url:
@@ -42,3 +38,4 @@
     executable: /bin/bash
   when: git_lfs_installer_script.changed
   become: yes
+
