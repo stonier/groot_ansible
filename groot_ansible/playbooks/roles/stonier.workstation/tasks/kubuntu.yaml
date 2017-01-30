@@ -14,3 +14,40 @@
     pkg: "{{ kubuntu_packages }}"
     state: latest
   become: yes
+
+- name: "Ensure {{ ansible_env.HOME }}/.config exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ ansible_env.HOME }}/.config"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+
+- name: "Ensure {{ ansible_env.HOME }}/.local/share/konsole exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ ansible_env.HOME }}/.local/share/konsole"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+
+- name: "Konsole RC to {{ ansible_env.HOME }}/.config/konsolerc"
+  template:
+    dest: "{{ ansible_env.HOME }}/.config/konsolerc"
+    src: konsole-konsolerc.j2
+    force: no
+
+- name: "Konsole Linux Colorscheme to {{ ansible_env.HOME }}/.local/share/konsole/Linux.colorscheme"
+  template:
+    dest: "{{ ansible_env.HOME }}/.local/share/konsole/Linux.colorscheme"
+    src: konsole-Linux.colorscheme.j2
+    force: no
+
+- name: "Konsole Powerline Profile to {{ ansible_env.HOME }}/.local/share/konsole/Powerline.profile"
+  template:
+    dest: "{{ ansible_env.HOME }}/.local/share/konsole/Powerline.profile"
+    src: konsole-Powerline.profile.j2
+    force: no
+
