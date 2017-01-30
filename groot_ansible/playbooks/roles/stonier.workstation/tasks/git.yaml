@@ -10,7 +10,7 @@
 
 - name: "Ensure {{ ansible_env.HOME }}/.git exists and is accessible by {{ ansible_user_id }}."
   file:
-    path: "{{ ansible_env.HOME }}/.git"
+    path: "{{ ansible_env.HOME }}/.git_extras"
     state: directory
     recurse: no
     mode: 0755
@@ -27,13 +27,13 @@
 - name: Download git lfs support installer script from package cloud
   get_url:
     url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-    dest: "{{ ansible_env.HOME }}/.git/git-lfs.sh"
+    dest: "{{ ansible_env.HOME }}/.git_extras/git-lfs.sh"
     # force: no  # don't download again if it is already there
     mode: 0755
   register: git_lfs_installer_script
 
 - name: Install git lfs support
-  shell: "{{ ansible_env.HOME }}/.git/git-lfs.sh"
+  shell: "{{ ansible_env.HOME }}/.git_extras/git-lfs.sh"
   args:
     executable: /bin/bash
   when: git_lfs_installer_script.changed
