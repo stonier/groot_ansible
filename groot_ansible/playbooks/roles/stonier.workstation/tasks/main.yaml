@@ -8,6 +8,8 @@
 - include: gtk_themes.yaml
 - include: chrome.yaml
   tags   : [preparation]
+- include: git.yaml
+  tags   : [preparation]
 
 ##############################################################################
 # Update
@@ -30,6 +32,8 @@
 - include: gpg.yaml
 - include: snorriheim.yaml
 - include: chrome.yaml
+  tags   : [apt_install]
+- include: git.yaml
   tags   : [apt_install]
 
 ##############################################################################

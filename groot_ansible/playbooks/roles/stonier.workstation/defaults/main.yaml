@@ -15,7 +15,7 @@ font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fon
                         fonts-lexi-saebom, fonts-nanum, fonts-nanum-coding, fonts-nanum-eco,
                         fonts-woowa-hanna, ttf-dejavu, ttf-liberation
                        ]
-programming_packages : [build-essential, cmake-curses-gui, python-pip]
+programming_packages : [build-essential, cmake-curses-gui, libssl-dev, libyaml-dev, python-pip, python-virtualenv, virtualenvwrapper]
 
 #################################################################################################
 # GPG

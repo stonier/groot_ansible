@@ -2,9 +2,9 @@
 # Git
 ##############################################################################
 
-- name: "Git configuration to {{ ansible_env.HOME }/.gitconfig"
+- name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
   template:
-    dest: "{{ ansible_env.HOME }/.gitconfig"
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
     src: gitconfig.j2
     force: no
   tags: preparation
