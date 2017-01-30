@@ -2,13 +2,21 @@
 # Git
 ##############################################################################
 
-- name: "Git related packages"
-  apt:
-    pkg: "{{ git_packages }}"
-    state: latest
-  become: yes
+##############################################################################
+# Configuration
+##############################################################################
 
-- name: "Ensure {{ ansible_env.HOME }}/.git exists and is accessible by {{ ansible_user_id }}."
+- name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
+  template:
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
+    src: gitconfig.j2
+    force: no
+
+##############################################################################
+# Setup Git LFS Deb Repository
+##############################################################################
+
+- name: "Ensure {{ ansible_env.HOME }}/.git_extras exists and is accessible by {{ ansible_user_id }}."
   file:
     path: "{{ ansible_env.HOME }}/.git_extras"
     state: directory
@@ -17,12 +25,6 @@
     owner: "{{ ansible_user_id }}"
     group: users
   become: yes
-
-- name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
-  template:
-    dest: "{{ ansible_env.HOME }}/.gitconfig"
-    src: gitconfig.j2
-    force: no
 
 - name: Download git lfs support installer script from package cloud
   get_url:
