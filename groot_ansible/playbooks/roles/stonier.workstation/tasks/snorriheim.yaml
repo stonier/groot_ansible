@@ -2,10 +2,40 @@
 # Snorriheim
 ##############################################################################
 
-# Assume that groot-ansible has already bootstrapped the snorriheim ppa
+# Requirements:
+#
+#  - script: groot-ansible-bootstrap has added the snorriheim ppa
+#  - task  : git.yaml
+
+##############################################################################
+# Preparation
+##############################################################################
+
+- name: "Ensure /opt/snorriheim exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "/opt/snorriheim"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+  tags: preparation
+
+- name: "Clone groot-eclipse-preferences"
+  git:
+    repo: https://github.com/stonier/groot-eclipse-preferences.git
+    dest: /opt/snorriheim/groot-eclipse-preferences
+    version: devel
+  tags: preparation
+
+##############################################################################
+# Debs
+##############################################################################
 
 - name: "Install/update snorriheim packages"
   apt:
     pkg: "{{ snorriheim_packages }}"
     state: latest
   become: yes
+  tags: apt_install

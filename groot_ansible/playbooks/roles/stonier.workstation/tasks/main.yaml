@@ -10,6 +10,8 @@
   tags   : [preparation]
 - include: git.yaml
   tags   : [preparation]
+- include: snorriheim.yaml
+  tags   : [preparation]
 
 ##############################################################################
 # Update
@@ -31,6 +33,7 @@
 - include: system_debs.yaml
 - include: gpg.yaml
 - include: snorriheim.yaml
+  tags   : [apt_install]
 - include: chrome.yaml
   tags   : [apt_install]
 - include: git.yaml

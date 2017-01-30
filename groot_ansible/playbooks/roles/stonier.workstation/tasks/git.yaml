@@ -4,6 +4,16 @@
 # Dependencies : system_administration.yaml
 ##############################################################################
 
+- name: "Ensure {{ ansible_env.HOME }}/.git exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ ansible_env.HOME }}/.git"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
 - name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
   template:
     dest: "{{ ansible_env.HOME }}/.gitconfig"
@@ -21,20 +31,14 @@
 - name: Download git lfs support installer script from package cloud
   get_url:
     url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
-    dest: /opt/snorriheim/git-lfs.sh
+    dest: "{{ ansible_env.HOME }}/.git/git-lfs.sh"
     # force: no  # don't download again if it is already there
     mode: 0755
   register: git_lfs_installer_script
 
 - name: Install git lfs support
-  shell: /tmp/git-lfs.sh
+  shell: "{{ ansible_env.HOME }}/.git/git-lfs.sh"
   args:
     executable: /bin/bash
   when: git_lfs_installer_script.changed
   become: yes
-
-- name: "Clone groot-eclipse-preferences"
-  git:
-    repo: https://github.com/stonier/groot-eclipse-preferences.git
-    dest: /opt/snorriheim/groot-eclipse-preferences
-    version: devel
