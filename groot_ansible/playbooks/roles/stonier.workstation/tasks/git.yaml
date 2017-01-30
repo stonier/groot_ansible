@@ -1,5 +1,7 @@
 ##############################################################################
 # Git
+#
+# Dependencies : system_administration.yaml
 ##############################################################################
 
 - name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
@@ -15,3 +17,9 @@
     state: latest
   become: yes
   tags: apt_install
+
+- name: "Clone groot-eclipse-preferences"
+  git:
+    repo: https://github.com/stonier/groot-eclipse-preferences.git
+    dest: /opt/snorriheim/groot-eclipse-preferences
+    version: devel

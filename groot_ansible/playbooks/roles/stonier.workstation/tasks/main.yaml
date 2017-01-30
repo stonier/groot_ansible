@@ -4,7 +4,7 @@
 # Preparatory Tasks (but no deb installs)
 ##############################################################################
 
-- include: sysadmin.yaml
+- include: system_administration.yaml
 - include: gtk_themes.yaml
 - include: chrome.yaml
   tags   : [preparation]

@@ -29,6 +29,16 @@
     group: users
   become: yes
 
+- name: "Ensure /opt/snorriheim exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "/opt/snorriheim"
+    state: directory
+    recurse: yes
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
 - name: "Netrc configuration to {{ ansible_env.HOME }}/.netrc."
   template:
     dest: "{{ ansible_env.HOME }}/.netrc"

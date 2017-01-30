@@ -8,6 +8,12 @@
     state: latest
   become: yes
 
+- name: "Install/update packaging packages"
+  apt:
+    pkg: "{{ packaging_packages }}"
+    state: latest
+  become: yes
+
 - name: "Install/update programming packages"
   apt:
     pkg: "{{ programming_packages }}"
