@@ -30,6 +30,7 @@
 - include: gpg.yaml
 - include: git-debs.yaml
 - include: chrome-debs.yaml
+- include: language-debs.yaml
 - include: snorriheim.yaml
 - include: powerline.yaml
 
