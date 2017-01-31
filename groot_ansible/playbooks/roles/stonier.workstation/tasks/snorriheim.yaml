@@ -24,7 +24,7 @@
 - name: "Clone groot_eclipse_preferences"
   git:
     repo: https://github.com/stonier/groot_eclipse_preferences.git
-    dest: /opt/snorriheim/eclipse-preferences
+    dest: /opt/snorriheim/groot-eclipse-preferences
     version: devel
     update: no
 

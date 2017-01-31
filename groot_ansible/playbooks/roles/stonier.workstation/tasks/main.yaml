@@ -26,12 +26,13 @@
 ##############################################################################
 
 - include: kubuntu.yaml
-- include: system_debs.yaml
-- include: gpg.yaml
-- include: git-debs.yaml
+- include: system-debs.yaml
 - include: chrome-debs.yaml
 - include: language-debs.yaml
+- include: gpg.yaml
+- include: git-debs.yaml
 - include: snorriheim.yaml
 - include: powerline.yaml
+- include: xelatex.yaml
 
 ##############################################################################

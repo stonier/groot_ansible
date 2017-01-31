@@ -4,7 +4,7 @@
 #
 # Requirements:
 #
-#  - task  : system_debs.yaml
+#  - task  : system-debs.yaml
 #
 ##############################################################################
 # Debs
