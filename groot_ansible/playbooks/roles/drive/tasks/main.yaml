@@ -2,7 +2,7 @@
 # Chrome
 ##############################################################################
 
-- name: add google-drive ppa
+- name: add ppa
   apt_repository:
     repo: "{{ ppa }}"
     state: present

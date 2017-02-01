@@ -14,7 +14,12 @@ Common methods.
 # Imports
 ##############################################################################
 
+import argparse
+import functools
 import os
+import subprocess
+
+from . import console
 
 ##############################################################################
 # Methods
@@ -35,6 +40,47 @@ def append_verbosity_argument(cmd, verbosity):
     Just in case we want to modify how many v's we use, centralise this here.
     """
     return cmd + " -vvvv" if verbosity else cmd
+
+##############################################################################
+# Generic Playbook to Subcommand
+##############################################################################
+
+
+def execute_generic_subcommand(name, become_sudo, args):
+    """
+    :param str name: name of the subcommand and playbook yaml
+    :param bool become_sudo: whether to run as sudo or not
+
+    """
+    console.banner("'{0}'".format(name))
+    connection = "-c local"
+    list_tasks = "--list-tasks" if args.list_tasks else ""
+    sudo_command = "-K" if become_sudo else ""
+    cmd = "ansible-playbook {name}.yaml {sudo_command} -i localhost, {connection} {list_tasks}".format(**locals())
+    cmd = append_verbosity_argument(cmd, args.verbose)
+    console.key_value_pairs("Ansible", {"Command": cmd}, 10)
+    print("")
+    subprocess.call(cmd, cwd=args.home, shell=True)
+
+
+def add_generic_subparser(subparsers, name, short_description, description, become_sudo):
+    """
+    Create a generic subparser which runs a playbook directly.
+
+    :param subparsers: the subparsers factory from the parent argparser
+    :param str name: name of the subcommand and playbook yaml
+    :param str short_description: subcommand help string (shows in the parent parser)
+    :param str description: full subcommand description (shows in --help for this subcommand)
+    :param bool become_sudo: whether to run as sudo or not
+    """
+    parser = subparsers.add_parser(name,
+                                   help=short_description,
+                                   description=description,
+                                   formatter_class=argparse.ArgumentDefaultsHelpFormatter
+                                   )
+    add_ansible_arguments(parser)
+    parser.set_defaults(func=functools.partial(execute_generic_subcommand, name, become_sudo))
+
 
 ##############################################################################
 # Argument Parsing

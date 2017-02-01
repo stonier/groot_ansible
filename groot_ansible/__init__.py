@@ -17,10 +17,8 @@ various use cases.
 
 import argparse
 
-from . import chrome
-from . import drive
+from . import common
 from . import console
-from . import git
 from . import ros
 from . import update
 from . import testies
@@ -56,9 +54,18 @@ def main(args=None):
         update.add_subparser(subparsers)
         ros.add_subparser(subparsers)
         workstation.add_subparser(subparsers)
-        chrome.add_subparser(subparsers)
-        drive.add_subparser(subparsers)
-        git.add_subparser(subparsers)
+        common.add_generic_subparser(subparsers, "chrome",
+                                     short_description="google chrome for ubuntu",
+                                     description="Google chrome setup/install/update",
+                                     become_sudo=True)
+        common.add_generic_subparser(subparsers, "drive",
+                                     short_description="google drive for ubuntu",
+                                     description="Google drive setup/install/update",
+                                     become_sudo=True)
+        common.add_generic_subparser(subparsers, "git",
+                                     short_description="git binaries, modules and configuration",
+                                     description="Git binaries, modules (lfs) and user configuration",
+                                     become_sudo=True)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
