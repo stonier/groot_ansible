@@ -5,7 +5,6 @@
 # Requirements:
 #
 #  - tasks  : git.yaml
-#  - tasks  : snorriheim.yaml
 #
 ##############################################################################
 
@@ -18,15 +17,16 @@
 - name: "Clone extra powerline-fonts"
   git:
     repo: https://github.com/powerline/fonts.git
-    dest: /opt/snorriheim/powerline-fonts
+    dest: /opt/powerline-fonts
     version: master
     update: no
   register: powerline_fonts
+  become: yes
 
 - name: "Install powerline fonts to ~/.local/share/fonts"
   shell: ./install.sh
   args:
-    chdir: /opt/snorriheim/powerline-fonts
+    chdir: /opt/powerline-fonts
     executable: /bin/bash
   when: powerline_fonts.changed
 

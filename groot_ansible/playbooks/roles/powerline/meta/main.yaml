@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Daniel Stonier
+  description: Powerline in the shell for the user (not global)
+  company: Snorriheim
+  license: BSD
+  min_ansible_version: 2.1
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+
+dependencies:
+  - role: git

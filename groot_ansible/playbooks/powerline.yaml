@@ -1,0 +1,10 @@
+##############################################################################
+# Playbook for installing Chrome from Ubuntu repositories
+##############################################################################
+
+- name: Powerline
+  hosts:
+    - localhost
+
+  roles:
+  - role: powerline

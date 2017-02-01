@@ -66,6 +66,10 @@ def main(args=None):
                                      short_description="git binaries, modules and configuration",
                                      description="Git binaries, modules (lfs) and user configuration",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, "powerline",
+                                     short_description="powerline in the shell for the user",
+                                     description="Setup powerline in the shell for the user",
+                                     become_sudo=True)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)

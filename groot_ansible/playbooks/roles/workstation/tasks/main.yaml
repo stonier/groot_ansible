@@ -27,7 +27,6 @@
 - include: language-debs.yaml
 - include: gpg.yaml
 - include: snorriheim.yaml
-- include: powerline.yaml
 - include: xelatex.yaml
 
 ##############################################################################
