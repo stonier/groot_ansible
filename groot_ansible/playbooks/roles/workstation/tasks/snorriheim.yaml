@@ -5,7 +5,7 @@
 # Requirements:
 #
 #  - script: groot-ansible-bootstrap has added the snorriheim ppa
-#  - task  : git.yaml
+#  - role  : git
 #
 ##############################################################################
 # Preparation

@@ -4,8 +4,8 @@
 # Preparatory Tasks (but no deb installs)
 ##############################################################################
 
-- include: system_administration.yaml
-- include: language-debs.yaml
+- include: sysadmin.yaml
+- include: language.yaml
 - include: konsole.yaml
 - include: snorriheim.yaml
 - include: xelatex.yaml

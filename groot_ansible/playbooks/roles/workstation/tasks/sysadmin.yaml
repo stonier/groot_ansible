@@ -9,11 +9,11 @@
 #    groups: users,dialout,docker
 #    append: yes
 
-- name: create ~/.gnupg directory
+- name: "create {{ ansible_env.HOME }}/.gnupg directory"
   file:
     state: directory
     mode: 0700
-    path: ~/.gnupg
+    path: "{{ ansible_env.HOME }}/.gnupg"
 
 - name: "ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
   file:
@@ -45,7 +45,7 @@
     dest: "{{ ansible_env.HOME }}/.bash_aliases"
     src: bash_aliases.j2
     force: no
-    mode: 0664
+    mode: 0644
 
 - name: remove unused home directories
   file:
