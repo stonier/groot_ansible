@@ -20,6 +20,7 @@ import argparse
 from . import chrome
 from . import drive
 from . import console
+from . import git
 from . import ros
 from . import update
 from . import testies
@@ -57,6 +58,7 @@ def main(args=None):
         workstation.add_subparser(subparsers)
         chrome.add_subparser(subparsers)
         drive.add_subparser(subparsers)
+        git.add_subparser(subparsers)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)

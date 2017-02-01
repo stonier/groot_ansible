@@ -5,7 +5,6 @@
 ##############################################################################
 
 - include: system_administration.yaml
-- include: git-setup.yaml
 
 ##############################################################################
 # Update
@@ -27,7 +26,6 @@
 - include: system-debs.yaml
 - include: language-debs.yaml
 - include: gpg.yaml
-- include: git-debs.yaml
 - include: snorriheim.yaml
 - include: powerline.yaml
 - include: xelatex.yaml

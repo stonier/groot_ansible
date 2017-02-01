@@ -1,9 +1,10 @@
 ##############################################################################
-# Git
+# Playbook for installing Chrome from Ubuntu repositories
 ##############################################################################
 
-- name: "Install/update git packages"
-  apt:
-    pkg: "{{ git_packages }}"
-    state: latest
-  become: yes
+- name: Git
+  hosts:
+    - localhost
+
+  roles:
+  - role: git

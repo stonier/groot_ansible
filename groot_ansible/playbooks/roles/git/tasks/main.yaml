@@ -1,22 +1,18 @@
 ##############################################################################
-# Git
+# Git Core Debs
 ##############################################################################
 
-##############################################################################
-# Configuration
-##############################################################################
-
-- name: "Git configuration to {{ ansible_env.HOME }}/.gitconfig"
-  template:
-    dest: "{{ ansible_env.HOME }}/.gitconfig"
-    src: gitconfig.j2
-    force: no
+- name: "install/update git packages"
+  apt:
+    pkg: "{{ git_packages }}"
+    state: latest
+  become: yes
 
 ##############################################################################
-# Setup Git LFS Deb Repository
+# Git LFS
 ##############################################################################
 
-- name: "Ensure {{ ansible_env.HOME }}/.git_extras exists and is accessible by {{ ansible_user_id }}."
+- name: "ensure {{ ansible_env.HOME }}/.git_extras exists and is accessible by {{ ansible_user_id }}"
   file:
     path: "{{ ansible_env.HOME }}/.git_extras"
     state: directory
@@ -26,7 +22,7 @@
     group: users
   become: yes
 
-- name: Download git lfs support installer script from package cloud
+- name: download git lfs support installer script from package cloud
   get_url:
     url: https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh
     dest: "{{ ansible_env.HOME }}/.git_extras/git-lfs.sh"
@@ -34,10 +30,26 @@
     mode: 0755
   register: git_lfs_installer_script
 
-- name: Install git lfs support
+- name: add git lfs repository
   shell: "{{ ansible_env.HOME }}/.git_extras/git-lfs.sh"
   args:
     executable: /bin/bash
-  when: git_lfs_installer_script.changed
   become: yes
+  when: git_lfs_installer_script.changed
 
+- name: apt update
+  apt:
+    update_cache: yes
+    cache_valid_time: 0
+  become: yes
+  when: git_lfs_installer_script.changed
+
+##############################################################################
+# Configuration
+##############################################################################
+
+- name: "configuration to {{ ansible_env.HOME }}/.gitconfig"
+  template:
+    dest: "{{ ansible_env.HOME }}/.gitconfig"
+    src: gitconfig.j2
+    force: no

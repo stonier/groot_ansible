@@ -18,4 +18,5 @@
   roles:
   - role: chrome
   - role: drive
+  - role: git
   - role: workstation
