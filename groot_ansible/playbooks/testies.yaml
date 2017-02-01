@@ -7,7 +7,7 @@
 # - any other ros packages the user may have installed
 #
 ---
-- name: Workstation Bootstrap
+- name: Testies
   hosts:
     - localhost
 
@@ -16,6 +16,5 @@
   - ros_release: kinetic
 
   roles:
-  - role: workstation
-#  - role: stonier.ros
+  - role: testies
 #    ros_release: "{{ ros_release }}"

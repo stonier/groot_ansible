@@ -1,0 +1,14 @@
+galaxy_info:
+  author: Daniel Stonier
+  description: Experiments
+  company: Snorriheim
+  license: BSD
+  min_ansible_version: 2.1
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+
+#dependencies:
+#  - role: stonier.ansible

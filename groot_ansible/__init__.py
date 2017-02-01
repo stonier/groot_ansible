@@ -20,6 +20,7 @@ import argparse
 from . import console
 from . import ros
 from . import update
+from . import testies
 from . import workstation
 
 ##############################################################################
@@ -52,6 +53,7 @@ def main(args=None):
         update.add_subparser(subparsers)
         ros.add_subparser(subparsers)
         workstation.add_subparser(subparsers)
+        testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
         options.func(options)  # relay arg parsing to the subparser configured `set_defaults` function callback

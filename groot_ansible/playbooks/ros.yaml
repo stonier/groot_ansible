@@ -16,5 +16,5 @@
   - ros_release: kinetic
 
   roles:
-  - role: stonier.ros
+  - role: ros
     ros_release: "{{ ros_release }}"
