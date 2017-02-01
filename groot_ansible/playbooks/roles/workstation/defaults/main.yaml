@@ -18,15 +18,6 @@ language_packages    : [language-selector-gnome]
 gpg_packages         : [gnupg, gnupg2]
 
 #################################################################################################
-# Chrome
-#################################################################################################
-
-chrome_apt_uri       : "http://dl.google.com/linux/chrome/deb"
-chrome_apt_key       : "https://dl-ssl.google.com/linux/linux_signing_key.pub"
-chrome_packages      : [google-chrome-stable]
-
-
-#################################################################################################
 # Snorriheim
 #################################################################################################
 

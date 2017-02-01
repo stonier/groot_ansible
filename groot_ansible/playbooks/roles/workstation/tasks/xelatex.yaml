@@ -2,7 +2,7 @@
 # XELatex
 #
 # Requirements:
-#  - task  : system-debs.yaml
+#  - role  : ubuntu
 #
 ##############################################################################
 
