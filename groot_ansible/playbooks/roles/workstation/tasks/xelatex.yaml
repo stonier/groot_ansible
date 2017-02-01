@@ -2,7 +2,7 @@
 # XELatex
 #
 # Requirements:
-#  - role  : ubuntu
+#  - role  : ubuntu (installs the xelatex debs)
 #
 ##############################################################################
 

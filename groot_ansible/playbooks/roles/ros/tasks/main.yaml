@@ -3,35 +3,25 @@
 # Setting Up
 #############################################################################
 
-- name: Add ros repository apt-key
+- name: add ros repository apt-key
   apt_key:
     url: "{{ ros_apt_key }}"
     state: present
   become: yes
 
-- name: Add ros repository
+- name: add ros repository
   apt_repository:
     repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present
     filename: ros-latest
-  become: yes
-
-#############################################################################
-# Apt Update
-#############################################################################
-
-# In case we didn't add the ros repository in the previous step
-- name: Apt update
-  apt:
     update_cache: yes
-    cache_valid_time: 3600
   become: yes
 
 #############################################################################
 # Ros Core
 #############################################################################
 
-- name: "Update package 'ros-{{ ros_release }}-{{ ros_package }}'"
+- name: "update package 'ros-{{ ros_release }}-{{ ros_package }}'"
   apt:
     pkg: "ros-{{ ros_release }}-{{ ros_package }}"
     state: latest
@@ -41,7 +31,7 @@
 # Ros Update
 #############################################################################
 
-- name: Update ros python packages
+- name: update ros python packages
   apt:
     pkg: "{{ item }}"
     only_upgrade: yes
@@ -57,7 +47,7 @@
 
 # Bastard doesn't properly return changed when nothing is installed/upgraded
 # Do our own changed_when on the result
-- name: Update all ros-{{ ros_release }} packages
+- name: update all ros-{{ ros_release }} packages
   apt:
     pkg: ros-{{ ros_release }}-*
     only_upgrade: yes
@@ -71,7 +61,7 @@
 # Rosdep Update
 #############################################################################
 
-- name: RosDep init
+- name: rosdep init
   shell: "rosdep init"
   args:
     creates: /etc/ros/rosdep/sources.list.d/20-default.list
@@ -79,7 +69,7 @@
 
 # No way of having a reliable changed or not here unless we go to extremes
 # in checking file sizes and such
-- name: "Rosdep update (warning: changes undetectable)"
+- name: "rosdep update (warning: changes undetectable)"
   shell: "rosdep update"
   register: rosdep_result
   changed_when: False
