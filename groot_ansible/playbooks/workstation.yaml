@@ -16,8 +16,9 @@
   - ros_release: kinetic
 
   roles:
+  - role: ubuntu
+  - role: git
   - role: chrome
   - role: drive
-  - role: git
   - role: powerline
   - role: workstation

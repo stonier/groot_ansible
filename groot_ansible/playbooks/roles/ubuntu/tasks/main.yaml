@@ -1,0 +1,42 @@
+##############################################################################
+# Tasks
+##############################################################################
+
+- name: enable canonical partner repositories
+  replace:
+    dest: /etc/apt/sources.list
+    regexp: '^# (deb .*partner)'
+    replace: '\1'
+  register: partner_repositories
+  become: yes
+
+- name: apt update
+  apt:
+    update_cache: yes
+    cache_valid_time: 0
+  become: yes
+  when: partner_repositories.changed
+
+- name: "install/update core packages"
+  apt:
+    pkg: "{{ core_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update packaging packages"
+  apt:
+    pkg: "{{ packaging_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update programming packages"
+  apt:
+    pkg: "{{ programming_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update font packages"
+  apt:
+    pkg: "{{ font_packages }}"
+    state: latest
+  become: yes

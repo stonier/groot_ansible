@@ -54,6 +54,14 @@ def main(args=None):
         update.add_subparser(subparsers)
         ros.add_subparser(subparsers)
         workstation.add_subparser(subparsers)
+        common.add_generic_subparser(subparsers, "ubuntu",
+                                     short_description="extras for a development environment",
+                                     description="Extra packages and configuration for the core of a basic development environment",
+                                     become_sudo=True)
+        common.add_generic_subparser(subparsers, "git",
+                                     short_description="git binaries, modules and configuration",
+                                     description="Git binaries, modules (lfs) and user configuration",
+                                     become_sudo=True)
         common.add_generic_subparser(subparsers, "chrome",
                                      short_description="google chrome for ubuntu",
                                      description="Google chrome setup/install/update",
@@ -61,10 +69,6 @@ def main(args=None):
         common.add_generic_subparser(subparsers, "drive",
                                      short_description="google drive for ubuntu",
                                      description="Google drive setup/install/update",
-                                     become_sudo=True)
-        common.add_generic_subparser(subparsers, "git",
-                                     short_description="git binaries, modules and configuration",
-                                     description="Git binaries, modules (lfs) and user configuration",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, "powerline",
                                      short_description="powerline in the shell for the user",

@@ -8,19 +8,7 @@ anti_kubuntu_packages: [unity-scope-gdrive, account-plugin-google account-plugin
 #################################################################################################
 # System Debs
 #################################################################################################
-core_packages        : [eog, gimp, kile, language-selector-gnome, mplayer, openssh-server,
-                        skype, synaptic, texlive-fonts-extra, texlive-xetex,
-                        unison-all-gtk, vim
-                       ]
-font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk,
-                        fonts-lexi-gulim, fonts-lexi-saebom, fonts-linuxlibertine,
-                        fonts-nanum, fonts-nanum-coding, fonts-nanum-eco, fonts-woowa-hanna,
-                        ttf-dejavu, ttf-liberation
-                       ]
-packaging_packages   : [debhelper, libssl-dev, libyaml-dev, packaging-dev,
-                        python-stdeb, python-virtualenv, virtualenvwrapper
-                        ]
-programming_packages : [build-essential, cmake-curses-gui, python-pip]
+
 language_packages    : [language-selector-gnome]
 
 #################################################################################################

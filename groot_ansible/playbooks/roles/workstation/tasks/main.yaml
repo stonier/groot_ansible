@@ -23,7 +23,6 @@
 ##############################################################################
 
 - include: kubuntu.yaml
-- include: system-debs.yaml
 - include: language-debs.yaml
 - include: gpg.yaml
 - include: snorriheim.yaml
