@@ -6,7 +6,6 @@
 
 - include: system_administration.yaml
 - include: language-debs.yaml
-- include: gpg.yaml
 - include: konsole.yaml
 - include: snorriheim.yaml
 - include: xelatex.yaml

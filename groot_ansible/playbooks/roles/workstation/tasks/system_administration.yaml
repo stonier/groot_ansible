@@ -9,7 +9,13 @@
 #    groups: users,dialout,docker
 #    append: yes
 
-- name: "Ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
+- name: create ~/.gnupg directory
+  file:
+    state: directory
+    mode: 0700
+    path: ~/.gnupg
+
+- name: "ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
   file:
     path: "/usr/local/bin"
     state: directory
@@ -18,7 +24,7 @@
     group: users
   become: yes
 
-- name: "Ensure /usr/local/lib is accessible by {{ ansible_user_id }}."
+- name: "ensure /usr/local/lib is accessible by {{ ansible_user_id }}."
   file:
     path: "/usr/local/lib"
     state: directory
@@ -27,21 +33,21 @@
     group: users
   become: yes
 
-- name: "Netrc configuration to {{ ansible_env.HOME }}/.netrc."
+- name: "netrc configuration to {{ ansible_env.HOME }}/.netrc."
   template:
     dest: "{{ ansible_env.HOME }}/.netrc"
     src: netrc.j2
     force: no
     mode: 0600
 
-- name: "Bash aliases to {{ ansible_env.HOME }}/.bash_aliases."
+- name: "bash aliases to {{ ansible_env.HOME }}/.bash_aliases."
   template:
     dest: "{{ ansible_env.HOME }}/.bash_aliases"
     src: bash_aliases.j2
     force: no
     mode: 0664
 
-- name: Remove unused home directories
+- name: remove unused home directories
   file:
     path: "{{ item }}"
     state: absent
