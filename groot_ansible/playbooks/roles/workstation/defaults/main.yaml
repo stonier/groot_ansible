@@ -9,7 +9,8 @@ anti_kubuntu_packages: [unity-scope-gdrive, account-plugin-google account-plugin
 # System Debs
 #################################################################################################
 core_packages        : [eog, gimp, kile, language-selector-gnome, mplayer, openssh-server,
-                        synaptic, texlive-fonts-extra, texlive-xetex, unison-all-gtk, vim
+                        skype, synaptic, texlive-fonts-extra, texlive-xetex,
+                        unison-all-gtk, vim
                        ]
 font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk,
                         fonts-lexi-gulim, fonts-lexi-saebom, fonts-linuxlibertine,
