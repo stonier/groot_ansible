@@ -3,3 +3,4 @@
 ##############################################################################
 
 apt_update: true
+skip_apt_update : "{{ 'false' if apt_update=='true' else 'true' }}"

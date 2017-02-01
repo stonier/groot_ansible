@@ -2,7 +2,7 @@
 # Update
 ##############################################################################
 
-- name: "Apt update [force: {{ apt_update }}]"
+- name: "Apt update [skip: {{ skip_apt_update }}]"
   apt:
     update_cache: yes
   become: yes
