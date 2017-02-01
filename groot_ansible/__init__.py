@@ -17,6 +17,7 @@ various use cases.
 
 import argparse
 
+from . import chrome
 from . import console
 from . import ros
 from . import update
@@ -53,6 +54,7 @@ def main(args=None):
         update.add_subparser(subparsers)
         ros.add_subparser(subparsers)
         workstation.add_subparser(subparsers)
+        chrome.add_subparser(subparsers)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)

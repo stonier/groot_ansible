@@ -1,0 +1,18 @@
+##############################################################################
+# PPA
+##############################################################################
+
+- name: Add chrome apt-key
+  apt_key:
+    url: "{{ chrome_apt_key }}"
+    state: present
+  become: yes
+  tags: preparation
+
+- name: Add chrome repository
+  apt_repository:
+    repo: "deb [arch=amd64] {{ chrome_apt_uri }} stable main"
+    state: present
+    filename: chrome
+  become: yes
+  tags: preparation

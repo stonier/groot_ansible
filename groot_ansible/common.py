@@ -52,3 +52,13 @@ def add_ansible_arguments(parser):
     group.add_argument('-v', '--verbose', action='store_true', help='execute the playbook with extra verbosity')
     group.add_argument('--home', action='store', default=get_playbook_home(), help='path to the groot-ansible playbooks home')
     group.add_argument('--list-tasks', action='store_true', default=False, help='ansible will list the task that would be executed by this playbook')
+
+
+def add_apt_arguments(parser):
+    """
+    Any arguments for the parser related to apt management.
+
+    :param argparse.ArgumentParser parser:
+    """
+    group = parser.add_argument_group(title="apt arguments")
+    group.add_argument('-s', '--skip-apt-update', action='store_true', help='skip an update of the apt cache')
