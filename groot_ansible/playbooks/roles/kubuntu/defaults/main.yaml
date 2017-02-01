@@ -1,0 +1,6 @@
+#################################################################################################
+# Defaults
+#################################################################################################
+
+kubuntu_packages     : [kubuntu-full]
+anti_kubuntu_packages: [unity-scope-gdrive, account-plugin-google account-plugin-facebook]

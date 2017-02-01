@@ -5,26 +5,9 @@
 ##############################################################################
 
 - include: system_administration.yaml
-
-##############################################################################
-# Update
-##############################################################################
-
-# All previous steps should defer the update to this call so we don't call
-# it multiply, nor skip it after a ppa has been added with a cache check
-- name: apt update
-  apt:
-    update_cache: yes
-    cache_valid_time: 0
-  become: yes
-
-##############################################################################
-# Tasks that (also) install debs
-##############################################################################
-
-- include: kubuntu.yaml
 - include: language-debs.yaml
 - include: gpg.yaml
+- include: konsole.yaml
 - include: snorriheim.yaml
 - include: xelatex.yaml
 

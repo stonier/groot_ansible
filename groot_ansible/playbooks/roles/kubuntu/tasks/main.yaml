@@ -1,0 +1,16 @@
+##############################################################################
+# Tasks
+##############################################################################
+
+- name: "Purge unity/kde conflicting packages"
+  apt:
+    pkg: "{{ anti_kubuntu_packages }}"
+    state: absent
+    purge: yes
+  become: yes
+
+- name: "Install/update kubuntu packages"
+  apt:
+    pkg: "{{ kubuntu_packages }}"
+    state: latest
+  become: yes

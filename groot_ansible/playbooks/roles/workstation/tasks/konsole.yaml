@@ -1,19 +1,6 @@
 ##############################################################################
-# Kubuntu
+# Konsole
 ##############################################################################
-
-- name: "Purge unity/kde conflicting packages"
-  apt:
-    pkg: "{{ anti_kubuntu_packages }}"
-    state: absent
-    purge: yes
-  become: yes
-
-- name: "Install/update kubuntu packages"
-  apt:
-    pkg: "{{ kubuntu_packages }}"
-    state: latest
-  become: yes
 
 - name: "Ensure {{ ansible_env.HOME }}/.config exists and is accessible by {{ ansible_user_id }}."
   file:

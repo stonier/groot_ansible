@@ -1,0 +1,11 @@
+galaxy_info:
+  author: Daniel Stonier
+  description: Switch an ubuntu system to kubuntu (full).
+  company: Snorriheim
+  license: BSD
+  min_ansible_version: 2.1
+
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial

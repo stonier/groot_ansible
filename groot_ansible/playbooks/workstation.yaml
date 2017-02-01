@@ -7,16 +7,17 @@
 # - any other ros packages the user may have installed
 #
 ---
-- name: Workstation Bootstrap
+- name: Workstation
   hosts:
     - localhost
 
   # Public Variables
-  vars:
-  - ros_release: kinetic
+  # vars:
+  # - ros_release: kinetic
 
   roles:
   - role: ubuntu
+  - role: kubuntu
   - role: git
   - role: chrome
   - role: drive

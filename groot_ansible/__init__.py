@@ -58,6 +58,10 @@ def main(args=None):
                                      short_description="extras for a development environment",
                                      description="Extra packages and configuration for the core of a basic development environment",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, "kubuntu",
+                                     short_description="switch to a kubuntu (full) environment",
+                                     description="Add the kubuntu (full) desktop environment to an ubuntu installation",
+                                     become_sudo=True)
         common.add_generic_subparser(subparsers, "git",
                                      short_description="git binaries, modules and configuration",
                                      description="Git binaries, modules (lfs) and user configuration",
