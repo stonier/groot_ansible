@@ -14,41 +14,41 @@
 # > groot-ansible --update
 #
 ---
-- name: Groot Ansible Framework
+- name: Update Groot Ansible Environment
   hosts:
     - localhost
 
   pre_tasks:
-  - name: Add snorriheim ppa
+  - name: add snorriheim ppa
     apt_repository:
       repo: "ppa:d-stonier/snorriheim"
       state: present
       update_cache: yes  # only triggers if there was a change to the repos
-      # filename: snorriheim
+      filename: snorriheim
     become: yes
 
-  - name: Add ansible ppa
+  - name: add ansible ppa
     apt_repository:
       repo: "ppa:ansible/ansible"
       state: present
       update_cache: yes  # only triggers if there was a change to the repos
-      # filename: ansible
+      filename: ansible
     become: yes
 
   # In case we didn't apt-get update in the previous step
-  - name: Apt update
+  - name: ppt update
     apt:
       update_cache: yes
-      cache_valid_time: 3600
+      cache_valid_time: 0
     become: yes
 
-  - name: Update python-groot-ansible to the latest version
+  - name: update python-groot-ansible to the latest version
     apt:
       pkg: python-groot-ansible
       state: latest
     become: yes
 
-  - name: Update ansible to the latest version
+  - name: update ansible to the latest version
     apt:
       pkg: ansible
       state: latest
