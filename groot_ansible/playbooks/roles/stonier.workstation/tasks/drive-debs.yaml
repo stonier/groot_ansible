@@ -2,8 +2,8 @@
 # Chrome
 ##############################################################################
 
-- name: "Install/update chrome packages"
+- name: "Install/update google-drive packages"
   apt:
-    pkg: "{{ chrome_packages }}"
+    pkg: "{{ drive_packages }}"
     state: latest
   become: yes

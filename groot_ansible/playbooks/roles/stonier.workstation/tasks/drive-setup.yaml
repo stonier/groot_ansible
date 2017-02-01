@@ -1,0 +1,11 @@
+##############################################################################
+# Chrome
+##############################################################################
+
+- name: Add google-drive ppa
+  apt_repository:
+    repo: "ppa:twodopeshaggy/drive"
+    state: present
+    update_cache: yes  # only triggers if there was a change to the repos
+    filename: google-drive
+  become: yes

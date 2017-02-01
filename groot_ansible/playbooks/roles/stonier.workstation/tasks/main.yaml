@@ -8,6 +8,7 @@
 - include: gtk_themes.yaml
 - include: git-setup.yaml
 - include: chrome-setup.yaml
+- include: drive-setup.yaml
 
 ##############################################################################
 # Update
@@ -29,6 +30,7 @@
 - include: system-debs.yaml
 - include: chrome-debs.yaml
 - include: language-debs.yaml
+- include: drive-debs.yaml
 - include: gpg.yaml
 - include: git-debs.yaml
 - include: snorriheim.yaml
