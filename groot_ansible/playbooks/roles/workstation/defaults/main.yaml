@@ -26,7 +26,6 @@ language_packages    : [language-selector-gnome]
 # Various
 #################################################################################################
 
-drive_packages       : [drive]
 gpg_packages         : [gnupg, gnupg2]
 git_packages         : [git, git-lfs]
 powerline_packages   : [fonts-powerline, powerline]

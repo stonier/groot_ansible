@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Stonier
-  description: Install/update chrome debs
+  description: Google chrome for ubuntu
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1

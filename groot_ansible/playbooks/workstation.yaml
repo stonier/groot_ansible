@@ -16,6 +16,6 @@
   - ros_release: kinetic
 
   roles:
+  - role: chrome
+  - role: drive
   - role: workstation
-#  - role: stonier.ros
-#    ros_release: "{{ ros_release }}"

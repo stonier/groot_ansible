@@ -2,10 +2,17 @@
 # Chrome
 ##############################################################################
 
-- name: Add google-drive ppa
+- name: add google-drive ppa
   apt_repository:
-    repo: "ppa:twodopeshaggy/drive"
+    repo: "{{ ppa }}"
     state: present
     update_cache: yes  # only triggers if there was a change to the repos
     filename: google-drive
   become: yes
+
+- name: "install/update debs"
+  apt:
+    pkg: "{{ drive_packages }}"
+    state: latest
+  become: yes
+

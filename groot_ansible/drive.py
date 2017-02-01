@@ -7,7 +7,7 @@
 ##############################################################################
 
 """
-Subcommand for chrome installation
+Subcommand for google drive utility.
 """
 
 ##############################################################################
@@ -31,10 +31,10 @@ def parse_args(args):
 
     :param args: args resulting from the argparse module instantiation
     """
-    console.banner("'chrome'")
+    console.banner("'drive'")
     connection = "-c local"
     list_tasks = "--list-tasks" if args.list_tasks else ""
-    cmd = "ansible-playbook chrome.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
+    cmd = "ansible-playbook drive.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
@@ -47,9 +47,9 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("chrome",
-                                   description="Google chrome setup/install/update",  # this shows in the help for this command
-                                   help="google chrome for ubuntu",  # this shows in the parent parser
+    parser = subparsers.add_parser("drive",
+                                   description="Google drive setup/install/update",  # this shows in the help for this command
+                                   help="google drive for ubuntu",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)

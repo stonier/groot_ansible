@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Stonier
-  description: Google chrome setup (ppa)
+  description: Google drive for ubuntu
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1

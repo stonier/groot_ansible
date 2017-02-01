@@ -1,9 +1,10 @@
 ##############################################################################
-# Chrome
+# Playbook for installing Chrome from Ubuntu repositories
 ##############################################################################
 
-- name: "Install/update chrome packages"
-  apt:
-    pkg: "{{ chrome_packages }}"
-    state: latest
-  become: yes
+- name: Google Drive
+  hosts:
+    - localhost
+
+  roles:
+  - role: drive
