@@ -3,6 +3,7 @@
 #
 # Requirements:
 #  - role  : ubuntu (installs the xelatex debs)
+#  - role  : git
 #
 ##############################################################################
 

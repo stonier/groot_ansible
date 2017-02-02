@@ -1,0 +1,29 @@
+##############################################################################
+# Workspaces
+#
+# Requirements:
+#  - role  : git
+#  - task  : snorriheim (needs vcs_extras)
+#
+##############################################################################
+
+
+- name: "ensure /mnt/mervin/workspaces/latex exists and is accessible by {{ ansible_user_id }}"
+  file:
+    path: "{{ ansible_env.HOME }}/.git_extras"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+  register: workspace_latex
+
+- name: "Update user's texmf instance"
+  shell: "texhash {{ ansible_env.HOME }}/texmf"
+  args:
+    executable: /bin/bash
+  when: texmf_clone.changed
+
+
+

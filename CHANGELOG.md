@@ -4,10 +4,17 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- ...
+- [vci] module added
+- [testies] role, playbook, subcommand added
+- [chrome] role, playbook, subcommand added
+- [drive] role, playbook, subcommand added
+- [git] role, playbook, subcommand added
+- [ubuntu] role, playbook, subcommand added
+- [kubuntu] role, playbook, subcommand added
+- [powerline] role, playbook, subcommand added
 
 ### Changed
-- ...
+- [workstation] complete functionality of first iteration
 
 ## [0.2.2] - 2017-01-29
 ### Added

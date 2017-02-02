@@ -11,10 +11,12 @@
   hosts:
     - localhost
 
-  # Public Variables
-  vars:
-  - ros_release: kinetic
-
   roles:
   - role: testies
-#    ros_release: "{{ ros_release }}"
+
+  pre_tasks:
+  - name: Test the vci module
+    vci:
+      key: catkin
+    register: result
+  - debug: var=result

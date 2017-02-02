@@ -22,6 +22,15 @@ def roles():
             for root, _, filenames in os.walk('groot_ansible/playbooks/roles') for filename in filenames if '.git' not in root.split(os.sep)
             ]
 
+
+def modules():
+    """
+    Relative pathnames of all modules in the groot_ansible/playbooks/library folder
+    """
+    return [os.path.relpath(os.path.join(root, filename), 'groot_ansible')
+            for root, _, filenames in os.walk('groot_ansible/playbooks/library') for filename in filenames if '.git' not in root.split(os.sep)
+            ]
+
 setup(
     name='groot_ansible',
     version=__version__,
@@ -29,7 +38,7 @@ setup(
     package_data={
         'groot_ansible': [
             'playbooks/*.yaml',
-        ] + roles(),
+        ] + roles() + modules(),
     },
     data_files=[],  # system files?
     install_requires=install_requires,
