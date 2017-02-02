@@ -16,4 +16,4 @@ snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
 
 vci_path             : /mnt/mervin/workspaces
 vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/kinetic.yaml"
-vci_workspaces       : [latex, reveal]
+vci_workspaces       : [bob, latex, reveal]
