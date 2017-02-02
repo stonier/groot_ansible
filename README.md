@@ -1,8 +1,53 @@
 # Groot Ansible
 
-Ansible scripts for my own use cases.
+## Usage
 
-# Dev Notes
+First time usage:
+
+```
+# Download the bootstrap script
+wget https://raw.githubusercontent.com/stonier/groot_ansible/devel/scripts/groot-ansible-bootstrap
+chmod 755 groot-ansible-bootstrap
+./groot-ansible-bootstrap
+```
+
+Regular usage:
+
+```bash
+# Update the groot ansible environment
+$ groot-ansible update
+# Check the list of subcommands (ansible playbooks) you can run
+$ groot-ansible --help
+usage: groot-ansible [-h] [-v]
+                     {update,ros,workstation,ubuntu,kubuntu,git,chrome,drive,powerline,testies}
+                     ...
+
+A frontend to groot playbooks
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show the version number and exit
+
+commands:
+  {update,ros,workstation,ubuntu,kubuntu,git,chrome,drive,powerline,testies}
+                        valid commands for groot-ansible interactions
+    update              update your ansible/apt environment
+    ros                 ros distro on an ubuntu machine
+    workstation         bootstrap a pc/laptop for development
+    ubuntu              extras for a development environment
+    kubuntu             switch to a kubuntu (full) environment
+    git                 git binaries, modules and configuration
+    chrome              google chrome for ubuntu
+    drive               google drive for ubuntu
+    powerline           powerline in the shell for the user
+    testies             trigger experiments
+
+And his noodly appendage reached forth to tickle the blessed...
+# Example : setup the google drive utility from ppa
+$ groot-ansible drive
+```
+
+## Dev Notes
 
 Some rough guidelines (in much need of explanation).
 

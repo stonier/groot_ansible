@@ -45,7 +45,7 @@ def main(args=None):
     """
     try:
         parser = argparse.ArgumentParser(
-            description="version control index handling",
+            description="A frontend to groot playbooks.",
             epilog="And his noodly appendage reached forth to tickle the blessed...\n",
             formatter_class=argparse.RawDescriptionHelpFormatter)
         parser.add_argument('-v', '--version', action='version', version=version_string())
