@@ -4,6 +4,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+### Changed
+
+## [0.2.3] - 2017-02-02
+### Added
 - [vci] module added
 - [testies] role, playbook, subcommand added
 - [chrome] role, playbook, subcommand added
