@@ -7,7 +7,7 @@
 #
 ##############################################################################
 
-- name: "Clone texmf -> {{ ansible_env.HOME }}/texmf"
+- name: "clone texmf -> {{ ansible_env.HOME }}/texmf"
   git:
     repo: https://github.com/stonier/texmf.git
     dest: "{{ ansible_env.HOME }}/texmf"
@@ -15,7 +15,7 @@
     update: yes
   register: texmf_clone
 
-- name: "Update user's texmf instance"
+- name: "update user's texmf instance"
   shell: "texhash {{ ansible_env.HOME }}/texmf"
   args:
     executable: /bin/bash

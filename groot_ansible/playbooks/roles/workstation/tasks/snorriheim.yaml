@@ -11,7 +11,7 @@
 # Preparation
 ##############################################################################
 
-- name: "Ensure /opt/snorriheim exists and is accessible by {{ ansible_user_id }}."
+- name: "ensure /opt/snorriheim exists and is accessible by {{ ansible_user_id }}."
   file:
     path: "/opt/snorriheim"
     state: directory
@@ -21,10 +21,10 @@
     group: users
   become: yes
 
-- name: "Clone groot_eclipse_preferences"
+- name: "clone groot_eclipse_preferences"
   git:
     repo: https://github.com/stonier/groot_eclipse_preferences.git
-    dest: /opt/snorriheim/groot-eclipse-preferences
+    dest: /opt/groot-eclipse-preferences
     version: devel
     update: no
 
@@ -32,7 +32,7 @@
 # Debs
 ##############################################################################
 
-- name: "Install/update snorriheim packages"
+- name: "install/update snorriheim packages"
   apt:
     pkg: "{{ snorriheim_packages }}"
     state: latest

@@ -35,7 +35,7 @@ EXAMPLES = '''
 - name: Find, import from a specified index
   vci:
     key: catkin
-    index: https://github.com/stonier/vcs_extras/blob/repos/kinetic.yaml
+    index: https://raw.githubusercontent.com/stonier/vcs_extras/repos/kinetic.yaml
     path: /tmp/foo
 '''
 

@@ -9,5 +9,6 @@
 - include: konsole.yaml
 - include: snorriheim.yaml
 - include: xelatex.yaml
+- include: workspaces.yaml
 
 ##############################################################################

@@ -1,15 +1,19 @@
 #################################################################################################
-# System Debs
+# Packages
 #################################################################################################
 
 language_packages    : [language-selector-gnome]
 
-#################################################################################################
-# Snorriheim
-#################################################################################################
-
-snorriheim_packages  : [groot-eclipse-neon-amd64, groot-eclipse-preferences, groot-icons,
+# all except groot-eclipse-neon-amd64 - it's super slow
+snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
                         groot-mediterranean-themes, groot-wallpapers, python-ckx-tools,
                         python-groot-tools, python-vcs-extras
                         ]
 
+#################################################################################################
+# Worksapces
+#################################################################################################
+
+vci_path             : /mnt/mervin/workspaces
+vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/kinetic.yaml"
+vci_workspaces       : [latex, reveal]
