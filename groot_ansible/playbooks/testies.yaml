@@ -15,8 +15,16 @@
   - role: testies
 
   pre_tasks:
-  - name: Test the vci module
+  - name: List the index
     vci:
       key: catkin
+      path: /tmp/foo
+      force: true
     register: result
-  - debug: var=result
+
+  - name: Result
+    debug:
+      var: result
+  - name: Yaml
+    debug:
+      msg: "{{ result.yaml.split('\n') }}"
