@@ -1,0 +1,31 @@
+##############################################################################
+# Drive (stonier)
+##############################################################################
+#
+# Requirements:
+#
+#  - role  : drive
+#
+##############################################################################
+# Setup
+##############################################################################
+
+- name: "ensure {{ google_drive_path }} exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ google_drive_path }}"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
+
+# This hopefully will save having to go in and manually click things in the
+# last lanuage setup step
+- name: "create/update Makefile in {{ google_drive_path }}"
+  template:
+    dest: "{{ google_drive_path }}/Makefile"
+    src: Makefile-drive.j2
+    force: yes  # replaces only if the contents are different
+    mode: 0644

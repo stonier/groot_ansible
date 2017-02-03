@@ -1,0 +1,19 @@
+
+cooking: _pull
+family: _pull
+humour: _pull
+jobs: _pull
+management: _pull
+media: _pull
+projects: _pull
+technical_notes: _pull
+work: _pull
+
+_pull:
+	drive pull "${MAKECMDGOALS}"
+
+fix:
+	rm -f .gd/drivedb
+
+all: cooking family humour jobs management media projects technical_notes work
+.PHONY: cooking family humour jobs management media projects technical_notes work

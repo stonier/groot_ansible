@@ -4,7 +4,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- [workstation] google drive preparation
+
 ### Changed
+- ...
 
 ## [0.2.3] - 2017-02-02
 ### Added

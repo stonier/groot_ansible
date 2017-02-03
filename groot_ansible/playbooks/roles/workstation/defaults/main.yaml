@@ -10,10 +10,14 @@ snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
                         python-groot-tools, python-vcs-extras
                         ]
 
+local_drive          : /mnt/mervin
+
+google_drive_path    : "{{ local_drive }}/drive"
+
 #################################################################################################
 # Worksapces
 #################################################################################################
 
-vci_path             : /mnt/mervin/workspaces
+vci_path             : "{{ local_drive }}/workspaces"
 vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/kinetic.yaml"
 vci_workspaces       : [bob, latex, reveal]
