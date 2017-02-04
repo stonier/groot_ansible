@@ -11,16 +11,6 @@
 # Preparation
 ##############################################################################
 
-- name: "ensure /opt/snorriheim exists and is accessible by {{ ansible_user_id }}."
-  file:
-    path: "/opt/snorriheim"
-    state: directory
-    recurse: no
-    mode: 0755
-    owner: "{{ ansible_user_id }}"
-    group: users
-  become: yes
-
 - name: "clone groot_eclipse_preferences"
   git:
     repo: https://github.com/stonier/groot_eclipse_preferences.git
