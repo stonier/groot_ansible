@@ -1,0 +1,29 @@
+##############################################################################
+# Snorriheim
+##############################################################################
+#
+# Requirements:
+#
+#  - debs: groot-eclipse installed manually from snorriheim ppa
+#  - role  : git
+#
+##############################################################################
+# Eclipse
+##############################################################################
+
+- name: "clone groot_eclipse_preferences"
+  git:
+    repo: https://github.com/stonier/groot_eclipse_preferences.git
+    dest: /opt/groot-eclipse-preferences
+    version: devel
+    update: no
+
+- name: "eclipse script to /usr/local/bin/eclipse"
+  template:
+    dest: "/usr/local/bin/eclipse"
+    src: eclipse.j2
+    force: no
+    owner: "{{ ansible_user_id }}"
+    group: users
+    mode: 0755
+  become: yes  # just in case

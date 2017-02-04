@@ -11,5 +11,6 @@
 - include: xelatex.yaml
 - include: workspaces.yaml
 - include: drive.yaml
+- include: eclipse.yaml
 
 ##############################################################################

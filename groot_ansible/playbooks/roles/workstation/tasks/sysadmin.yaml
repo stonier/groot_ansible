@@ -33,14 +33,14 @@
     group: users
   become: yes
 
-- name: "netrc configuration to {{ ansible_env.HOME }}/.netrc."
+- name: "netrc configuration to {{ ansible_env.HOME }}/.netrc"
   template:
     dest: "{{ ansible_env.HOME }}/.netrc"
     src: netrc.j2
     force: no
     mode: 0600
 
-- name: "bash aliases to {{ ansible_env.HOME }}/.bash_aliases."
+- name: "bash aliases to {{ ansible_env.HOME }}/.bash_aliases"
   template:
     dest: "{{ ansible_env.HOME }}/.bash_aliases"
     src: bash_aliases.j2

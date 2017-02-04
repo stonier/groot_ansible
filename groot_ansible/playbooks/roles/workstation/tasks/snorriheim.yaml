@@ -5,19 +5,7 @@
 # Requirements:
 #
 #  - script: groot-ansible-bootstrap has added the snorriheim ppa
-#  - role  : git
 #
-##############################################################################
-# Preparation
-##############################################################################
-
-- name: "clone groot_eclipse_preferences"
-  git:
-    repo: https://github.com/stonier/groot_eclipse_preferences.git
-    dest: /opt/groot-eclipse-preferences
-    version: devel
-    update: no
-
 ##############################################################################
 # Debs
 ##############################################################################
