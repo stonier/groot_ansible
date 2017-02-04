@@ -1,0 +1,10 @@
+##############################################################################
+# Python
+##############################################################################
+
+- name: "pypi configuration to {{ ansible_env.HOME }}/.pypirc"
+  template:
+    dest: "{{ ansible_env.HOME }}/.pypirc"
+    src: pypirc.j2
+    force: no
+    mode: 0600
