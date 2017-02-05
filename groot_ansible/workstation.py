@@ -31,13 +31,13 @@ def parse_args(args):
     """
     Launches the playbooks for bootstrapping my workstations (pc/laptop).
     """
-    console.banner("'workstation'")
+    console.banner("'groot-workstation'")
     connection = "-c local"
     list_tasks = "--list-tasks" if args.list_tasks else ""
     # rosdistro = args.rosdistro if args.rosdistro else ros.guess_rosdistro()
     # variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
     variable_ros_release = ""
-    cmd = "ansible-playbook workstation.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    cmd = "ansible-playbook groot-workstation.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
@@ -51,8 +51,8 @@ def add_subparser(subparsers):
     :param subparsers: the subparsers factory from the parent argparser.
     """
     parser = subparsers.add_parser("workstation",
-                                   description="Bootstrap a pc/laptop to a development workstation.",  # this shows in the help for this command
-                                   help="bootstrap a pc/laptop for development",  # this shows in the parent parser
+                                   description="Daniel's playbook for bootstrapping a workstation environment.",  # this shows in the help for this command
+                                   help="bootstrap a pc/laptop for development (Daniel)",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)

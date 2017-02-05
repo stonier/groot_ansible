@@ -51,6 +51,10 @@ $ groot-ansible drive
 
 Some rough guidelines (in much need of explanation).
 
+* Avoid tags in roles, it adds complexity (see also [here](https://www.theodo.fr/blog/2015/10/best-practices-to-build-great-ansible-playbooks/))
+* Roles as minimal, fundamental jobs that can be composed by playbooks
+* ...
+
 ## Tags, Playbooks, Roles
 
 The following three entities can be used in a variety of ways - e.g. roles and playbooks

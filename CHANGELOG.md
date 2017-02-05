@@ -7,7 +7,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - ...
 
 ### Changed
+- [workstation] role renamed to groot/workstation
 - [workstation] help for the drive Makefile
+- ...
 
 ## [0.2.5] - 2017-02-04
 ### Added

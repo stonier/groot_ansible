@@ -22,4 +22,4 @@
   - role: chrome
   - role: drive
   - role: powerline
-  - role: workstation
+  - role: groot/workstation
