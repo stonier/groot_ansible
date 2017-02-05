@@ -1,0 +1,38 @@
+
+help:
+	@echo ""
+	@echo "Management:"
+	@echo ""
+	@echo "   init     : initialise the folder for drive"
+	@echo "   fix      : delete the boltdb drive if invalid page bugs pop up"
+	@echo ""
+	@echo "Download:"
+	@echo ""
+	@echo "   <folder> : cooking, family, humour, jobs, management"
+	@echo "              media, projects, technical_notes, work"
+	@echo "   all      : all of the folders at once"
+	@echo ""
+	@echo "See also https://github.com/odeke-em/drive"
+	@echo ""
+cooking: _pull
+family: _pull
+humour: _pull
+jobs: _pull
+management: _pull
+media: _pull
+projects: _pull
+technical_notes: _pull
+work: _pull
+
+init:
+	drive init
+
+# other useful options include -desktop-links=false -explicitly-export -same-exports-dir -exports-dir=/home/snorri/exports
+_pull:
+	drive pull -export pdf,rtf,odt,docx,svg,png,ods,xlsx,pptx "${MAKECMDGOALS}"
+
+fix:
+	rm -f .gd/drivedb
+
+all: cooking family humour jobs management media projects technical_notes work
+.PHONY: cooking family humour jobs management media projects technical_notes work

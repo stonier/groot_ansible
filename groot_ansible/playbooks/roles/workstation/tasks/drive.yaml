@@ -26,6 +26,6 @@
 - name: "create/update Makefile in {{ google_drive_path }}"
   template:
     dest: "{{ google_drive_path }}/Makefile"
-    src: Makefile-drive.j2
+    src: drive-Makefile.j2
     force: yes  # replaces only if the contents are different
     mode: 0644

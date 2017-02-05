@@ -4,7 +4,7 @@
 
 core_packages        : [eog, gimp, kile, mplayer, openssh-server,
                         skype, synaptic, texlive-fonts-extra, texlive-xetex,
-                        unison-all-gtk, vim
+                        unison-all-gtk, usbmount, vim
                        ]
 font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk,
                         fonts-lexi-gulim, fonts-lexi-saebom, fonts-linuxlibertine,
