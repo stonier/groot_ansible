@@ -16,3 +16,32 @@
     filename: ros
     update_cache: yes
   become: yes
+
+#############################################################################
+# Apt Packages
+#############################################################################
+
+- name: "install/update core packages"
+  apt:
+    pkg: "{{ core_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update build packages"
+  apt:
+    pkg: "{{ build_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update testing packages"
+  apt:
+    pkg: "{{ testing_packages }}"
+    state: latest
+  become: yes
+
+- name: "install/update fastrps packages"
+  apt:
+    pkg: "{{ fastrtps_packages }}"
+    state: latest
+  become: yes
+

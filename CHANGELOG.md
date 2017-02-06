@@ -4,9 +4,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- [ros2] role, subcommand added
+- [gazebo] role, subcommand added
 - ...
 
 ### Changed
+- [workstation] split between workstation and groot-workstation
 - ...
 
 ## [0.2.7] - 2017-02-06

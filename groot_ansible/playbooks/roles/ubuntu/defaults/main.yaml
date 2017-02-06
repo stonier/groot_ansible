@@ -4,7 +4,7 @@
 
 core_packages        : [eog, gimp, kile, mplayer, openssh-server,
                         skype, synaptic, texlive-fonts-extra, texlive-xetex,
-                        unison-all-gtk, usbmount, vim
+                        unison-all-gtk, usbmount, vim, wget
                        ]
 font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk,
                         fonts-lexi-gulim, fonts-lexi-saebom, fonts-linuxlibertine,
@@ -14,4 +14,4 @@ font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fon
 packaging_packages   : [debhelper, gnupg, gnupg2, libssl-dev, libyaml-dev, packaging-dev,
                         python-stdeb, python-virtualenv, virtualenvwrapper
                         ]
-programming_packages : [build-essential, cmake-curses-gui, python-pip]
+programming_packages : [build-essential, cmake, cmake-curses-gui, cppcheck, python-pip]
