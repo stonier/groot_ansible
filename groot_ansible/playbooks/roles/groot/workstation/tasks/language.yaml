@@ -20,6 +20,15 @@
 # Configuration - move out to a separate yaml later
 ##############################################################################
 
+- name: "ensure {{ ansible_env.HOME }}/.config/fcitx exists and is accessible by {{ ansible_user_id }}"
+  file:
+    path: "{{ ansible_env.HOME }}/.config/fcitx"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+
 # This hopefully will save having to go in and manually click things in the
 # last lanuage setup step
 - name: "english/korean input configuration to {{ ansible_env.HOME }}/.config/fcitx/config"

@@ -20,7 +20,6 @@
     mode: 0755
     owner: "{{ ansible_user_id }}"
     group: users
-  become: yes
 
 - name: download git lfs support installer script from package cloud
   get_url:
