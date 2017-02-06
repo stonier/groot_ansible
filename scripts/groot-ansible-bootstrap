@@ -42,7 +42,7 @@ pretty_error ()
   echo -e "${RED}${1}${RESET}"
 }
 
-pretty_headr ()
+pretty_header ()
 {
   echo -e "${BOLD}${1}${RESET}"
 }
@@ -117,12 +117,12 @@ fi
 . /etc/lsb-release
 
 echo ""
-pretty_headr "Ubuntu Release Details"
+pretty_header "Ubuntu Release Details"
 pretty_print "  Release: ${DISTRIB_RELEASE}"
 pretty_print "  Codename: ${DISTRIB_CODENAME}"
 echo ""
 
-pretty_headr "Repositories"
+pretty_header "Repositories"
 if `list_include_item "trusty xenial" "${DISTRIB_CODENAME}"`; then
   # stuck with having to use a future ansible, drop this need asap if we can
   # as it is likely to cause us integration headaches with modules needing non
@@ -139,7 +139,7 @@ pretty_print "  python-groot-ansible.............d-stonier/snorriheim"
 sudo apt-add-repository --yes ppa:d-stonier/snorriheim
 echo ""
 
-pretty_headr "Apt-Get Update"
+pretty_header "Apt-Get Update"
 sudo apt-get update > /dev/null 2>&1
 if [ $? -ne 0 ]; then
   pretty_error "  update.........................failed"
@@ -148,12 +148,12 @@ fi
 pretty_print "  update.........................ok"
 echo ""
 
-pretty_headr "Installing"
+pretty_header "Installing"
 install_package ansible
 install_package python-groot-ansible
 echo ""
 
-pretty_headr "Groups"
+pretty_header "Groups"
 sudo groupadd dialout 2>/dev/null
 sudo groupadd docker 2>/dev/null
 sudo groupadd users 2>/dev/null
@@ -166,7 +166,9 @@ users_added=$( added_user "`sudo adduser ${USER} users`")
 pretty_print "  users..........................$users_added"
 echo ""
 
-pretty_headr "Summary"
+pretty_header "Summary"
 
+echo -e "${GREEN}  If user groups changed, log out and log in again to utilise the changes.${RESET}"
+echo ""
 echo -e "${CYAN}  To continue setting up your environment, run ${RESET}${YELLOW}'groot-ansible --help'${RESET}${CYAN}.${RESET}"
 echo ""
