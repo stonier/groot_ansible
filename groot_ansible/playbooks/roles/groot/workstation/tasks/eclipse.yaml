@@ -5,18 +5,10 @@
 # Requirements:
 #
 #  - debs: groot-eclipse installed manually from snorriheim ppa
-#  - role  : git
 #
 ##############################################################################
 # Eclipse
 ##############################################################################
-
-- name: "clone groot_eclipse_preferences"
-  git:
-    repo: https://github.com/stonier/groot_eclipse_preferences.git
-    dest: /opt/groot-eclipse-preferences
-    version: devel
-    update: no
 
 - name: "eclipse script to /usr/local/bin/eclipse"
   template:

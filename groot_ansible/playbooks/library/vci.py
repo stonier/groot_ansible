@@ -72,6 +72,7 @@ def main():
             index = subprocess.check_output(cmd, shell=True)
         except subprocess.CalledProcessError as e:
             module.fail_json(msg="Failed to retrieve current index [{0}]".format(str(e)),
+                             cmd=cmd,
                              index=module.params['index'],
                              yaml="",
                              output=e.output,
@@ -82,17 +83,18 @@ def main():
         index = module.params['index']
 
     try:
-        cmd = "vci find {0}".format(module.params["key"])
+        cmd = "vci find --index={index} {key}".format(index=index, key=module.params["key"])
         yaml = subprocess.check_output(cmd, cwd=abs_path, shell=True)
     except subprocess.CalledProcessError as e:
         module.fail_json(msg="Failed to find key '{0}'".format(module.params['key']),
+                         cmd=cmd,
                          index=index,
                          yaml="",
                          output=e.output,
                          parameters=module.params)
         return
 
-    cmd = "vci find {0} | vcs import".format(module.params["key"])
+    cmd = "vci find --index={index} {key} | vcs import".format(index=index, key=module.params["key"])
 
     changed = False
     try:
@@ -101,6 +103,7 @@ def main():
             changed = True
     except subprocess.CalledProcessError as e:
         module.fail_json(msg="Failed to import key '{0}'".format(module.params['key']),
+                         cmd=cmd,
                          index=index,
                          yaml=yaml,
                          output=e.output,

@@ -10,7 +10,7 @@
 # Debs
 ##############################################################################
 
-- name: "Install/update language packages"
+- name: "install/update language packages"
   apt:
     pkg: "{{ language_packages }}"
     state: latest
