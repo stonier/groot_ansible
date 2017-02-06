@@ -4,13 +4,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- [ros2] role, subcommand added
-- [gazebo] role, subcommand added
 - ...
 
 ### Changed
 - [workstation] split between workstation and groot-workstation
 - ...
+
+## [0.2.8] - 2017-02-06
+### Added
+- [ros2] role, subcommand added
+- [gazebo] role, subcommand added
+
+### Changed
+- [groot/workstation] vcs_extras -> vci
+- [workstation] split between workstation and groot-workstation
 
 ## [0.2.7] - 2017-02-06
 ### Changed
@@ -73,7 +80,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [infra] skeleton structure
 
-[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.2.5...HEAD
+[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.2.8...HEAD
+[0.2.8]: https://github.com/stonier/groot_ansible/compare/0.2.7...0.2.8
+[0.2.7]: https://github.com/stonier/groot_ansible/compare/0.2.6...0.2.7
+[0.2.6]: https://github.com/stonier/groot_ansible/compare/0.2.5...0.2.6
 [0.2.5]: https://github.com/stonier/groot_ansible/compare/0.2.4...0.2.5
 [0.2.4]: https://github.com/stonier/groot_ansible/compare/0.2.3...0.2.4
 [0.2.3]: https://github.com/stonier/groot_ansible/compare/0.2.2...0.2.3
