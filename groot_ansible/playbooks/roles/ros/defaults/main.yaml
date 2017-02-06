@@ -4,5 +4,6 @@ ros_release: "kinetic"
 ros_package: "ros-base"
 
 # Optionally use a mirror for the ROS packages
-ros_apt_uri: "http://packages.ros.org/ros/ubuntu"
-ros_apt_key: "https://raw.githubusercontent.com/ros/rosdistro/master/ros.key"
+ros_key_server: "ha.pool.sks-keyservers.net"
+ros_key_id    : "421C365BD9FF1F717815A3895523BAEEB01FA116"
+ros_apt_uri   : "http://packages.ros.org/ros/ubuntu"

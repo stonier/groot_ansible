@@ -1,0 +1,12 @@
+#
+# Playbook to ensure ros 2 is installed and up to date. This includes:
+#
+# - the ros repository
+#
+---
+- name: ROS2 Installation and Update
+  hosts:
+    - localhost
+
+  roles:
+  - role: ros2

@@ -1,0 +1,7 @@
+##############################################################################
+# Apt Repositories
+##############################################################################
+
+ros_key_server: "ha.pool.sks-keyservers.net"
+ros_key_id    : "421C365BD9FF1F717815A3895523BAEEB01FA116"
+ros_apt_uri   : "http://packages.ros.org/ros/ubuntu"

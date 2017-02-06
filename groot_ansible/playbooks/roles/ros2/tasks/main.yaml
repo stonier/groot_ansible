@@ -1,0 +1,18 @@
+#############################################################################
+# Apt Repositories
+#############################################################################
+
+- name: add ros/ros2 repository apt-key
+  apt_key:
+    keyserver: "{{ ros_key_server }}"
+    id: "{{ ros_key_id }}"
+    state: present
+  become: yes
+
+- name: add ros/ros2 repository
+  apt_repository:
+    repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
+    state: present
+    filename: ros
+    update_cache: yes
+  become: yes

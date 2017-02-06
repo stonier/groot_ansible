@@ -1,0 +1,17 @@
+#
+# Playbook for a useful development workstation
+#
+# TODO : flag to enable/disable kubuntu
+#
+---
+- name: Workstation
+  hosts:
+    - localhost
+
+  roles:
+  - role: ubuntu
+  - role: kubuntu
+  - role: git
+  - role: chrome
+  - role: drive
+  - role: powerline

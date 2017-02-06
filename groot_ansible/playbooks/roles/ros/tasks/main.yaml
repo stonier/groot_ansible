@@ -3,13 +3,14 @@
 # Setting Up
 #############################################################################
 
-- name: add ros repository apt-key
+- name: add ros/ros2 repository apt-key
   apt_key:
-    url: "{{ ros_apt_key }}"
+    keyserver: "{{ ros_key_server }}"
+    id: "{{ ros_key_id }}"
     state: present
   become: yes
 
-- name: add ros repository
+- name: add ros/ros2 repository
   apt_repository:
     repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present

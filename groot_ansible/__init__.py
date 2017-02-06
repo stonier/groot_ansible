@@ -82,6 +82,14 @@ def main(args=None):
                                      short_description="gazebo and related packages for ubuntu",
                                      description="Gazebo repository setup/install/update",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, "ros2",
+                                     short_description="ros2 environment for ubuntu",
+                                     description="ROS 2 environment setup/install/update",
+                                     become_sudo=True)
+        common.add_generic_subparser(subparsers, "workstation",
+                                     short_description="standard development environment for ubuntu",
+                                     description="Standard setup/install/update for a development workstation",
+                                     become_sudo=True)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
