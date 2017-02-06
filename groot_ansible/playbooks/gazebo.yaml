@@ -1,0 +1,11 @@
+#
+# Playbook to ensure gazebo is installed and up to date. This includes:
+#
+# - the ros repository
+#
+- name: Gazebo Installation and Update
+  hosts:
+    - localhost
+
+  roles:
+  - role: gazebo

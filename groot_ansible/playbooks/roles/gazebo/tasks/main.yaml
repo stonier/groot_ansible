@@ -1,0 +1,18 @@
+#############################################################################
+# Apt Repositories
+#############################################################################
+
+- name: add gazebo repository apt-key
+  apt_key:
+    keyserver: "{{ gazebo_key_server }}"
+    id: "{{ gazebo_key_id }}"
+    state: present
+  become: yes
+
+- name: add gazebo repository
+  apt_repository:
+    repo: "deb {{ gazebo_apt_uri }} {{ ansible_lsb.codename }} main"
+    state: present
+    filename: gazebo
+    update_cache: yes
+  become: yes

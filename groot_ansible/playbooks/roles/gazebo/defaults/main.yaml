@@ -1,0 +1,7 @@
+##############################################################################
+# Apt Repositories
+##############################################################################
+
+gazebo_key_server: "ha.pool.sks-keyservers.net"
+gazebo_key_id    : "D2486D2DD83DB69272AFE98867170598AF249743"
+gazebo_apt_uri   : "http://packages.osrfoundation.org/gazebo/ubuntu"

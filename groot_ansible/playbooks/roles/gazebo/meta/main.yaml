@@ -1,0 +1,16 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: Daniel Stonier
+  description: Gazebo installation for Ubuntu
+  company: Snorriheim
+  license: BSD
+  min_ansible_version: 2.1
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  categories:
+    - development
+    - system

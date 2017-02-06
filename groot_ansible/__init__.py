@@ -78,6 +78,10 @@ def main(args=None):
                                      short_description="powerline in the shell for the user",
                                      description="Setup powerline in the shell for the user",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, "gazebo",
+                                     short_description="gazebo and related packages for ubuntu",
+                                     description="Gazebo repository setup/install/update",
+                                     become_sudo=True)
         testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
