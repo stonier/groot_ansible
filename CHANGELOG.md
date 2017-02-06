@@ -9,6 +9,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.2.7] - 2017-02-06
+### Changed
+- [vci] bugfix non-use of the index variable
+- [bootstrap] comment reminding to login in case of group changes
+- [workstation] bugfix non-creation of ~/.config/fcitx
+
 ## [0.2.6] - 2017-02-05
 ### Changed
 - [workstation] role renamed to groot/workstation
