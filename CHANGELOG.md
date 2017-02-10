@@ -4,6 +4,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- ...
+
+### Changed
+- ...
+
+## [0.2.9] - 2017-02-10
+### Added
 - [groot/workstation] ttygif
 - [ubuntu] ttyrec
 - [kubuntu] usb-creator-kde
