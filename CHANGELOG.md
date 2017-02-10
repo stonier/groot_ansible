@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [groot/workstation] ttygif
 - [ubuntu] ttyrec
+- [kubuntu] usb-creator-kde
 
 ### Changed
 - [workstation] split between workstation and groot-workstation
