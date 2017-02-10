@@ -14,7 +14,7 @@ if [ "${VIRTUAL_ENV}" == "" ]; then
     # hack used by a badly installing ansible->cffi pip install in the virtual env requirements
     sudo apt install libffi-dev
     # probably some python setup.py target which will do this for you
-    pip install vcs_extras
+    pip install vci
   fi
 fi
 # Always pulling for now

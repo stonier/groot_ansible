@@ -3,7 +3,7 @@
 #
 # Requirements:
 #  - role  : git
-#  - task  : snorriheim (needs vcs_extras)
+#  - task  : snorriheim
 #  - module: vci
 #
 ##############################################################################
