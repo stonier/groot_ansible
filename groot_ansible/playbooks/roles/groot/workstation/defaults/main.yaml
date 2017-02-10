@@ -7,7 +7,7 @@ language_packages    : [language-selector-gnome]
 # all except groot-eclipse-neon-amd64 - it's super slow
 snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
                         groot-mediterranean-themes, groot-wallpapers, python-ckx-tools,
-                        python-groot-tools, python-vci
+                        python-groot-tools, python-vci, ttygif
                         ]
 
 local_drive          : /mnt/mervin

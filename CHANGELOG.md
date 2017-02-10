@@ -4,11 +4,11 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- ...
+- [groot/workstation] ttygif
+- [ubuntu] ttyrec
 
 ### Changed
 - [workstation] split between workstation and groot-workstation
-- ...
 
 ## [0.2.8] - 2017-02-06
 ### Added
