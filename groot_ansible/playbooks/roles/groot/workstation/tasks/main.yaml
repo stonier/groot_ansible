@@ -5,6 +5,7 @@
 - include_vars: secrets.yaml
 
 - include: sysadmin.yaml
+- include: gpg.yaml
 - include: language.yaml
 - include: konsole.yaml
 - include: snorriheim.yaml

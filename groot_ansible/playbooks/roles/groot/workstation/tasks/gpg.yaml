@@ -1,0 +1,24 @@
+##############################################################################
+# My public and private gpg keys
+##############################################################################
+
+- name: Create public gpg key
+  copy:
+    dest: "{{ ansible_env.HOME }}/.gnupg/snorri-public.gpg"
+    content: "{{ gpg_public_key }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0600
+
+- name: Create private gpg key
+  copy:
+    dest: "{{ ansible_env.HOME }}/.gnupg/snorri-private.gpg"
+    content: "{{ gpg_private_key }}"
+    owner: "{{ ansible_user_id }}"
+    group: "{{ ansible_user_id }}"
+    mode: 0600
+
+# TODO
+# check for existing key and if not present:
+# gpg --import snorri-public.gpg
+# gpg --allow-secret-key-import --import snorri-private.gpg
