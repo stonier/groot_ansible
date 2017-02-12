@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.2.10] - 2017-02-12
+### Added
+- [groot/workstation] creating and importing my public/private keys
+
+### Changed
+- [groot/workstation] .netrc configured via a vault variable now
+
 ## [0.2.9] - 2017-02-10
 ### Added
 - [groot/workstation] ttygif
