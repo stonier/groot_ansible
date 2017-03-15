@@ -12,7 +12,7 @@
   apt_repository:
     repo: "deb [arch=amd64] {{ chrome_apt_uri }} stable main"
     state: present
-    filename: chrome
+    filename: google-chrome
     update_cache: yes  # only triggers if there was a change to the repos
   become: yes
 
