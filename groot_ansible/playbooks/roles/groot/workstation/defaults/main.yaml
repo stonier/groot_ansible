@@ -2,7 +2,7 @@
 # Packages
 #################################################################################################
 
-language_packages    : [fcitx, fcitx-hangul, language-selector-gnome]
+language_packages    : [fcitx, fcitx-hangul, kde-config-fcitx, language-selector-gnome]
 
 # all except groot-eclipse-neon-amd64 - it's super slow
 snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
