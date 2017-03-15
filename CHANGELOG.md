@@ -9,6 +9,13 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.2.12] - 2017-03-15
+### Added
+- [groot/workstation] kde-config-fcitx for kde configuration of the input method
+
+### Changed
+- [groot/workstation] .pypirc password in the vault
+
 ## [0.2.11] - 2017-03-15
 ### Added
 - [groot/workstation] fcitx, fcitx-hangul dependencies added for input methods
