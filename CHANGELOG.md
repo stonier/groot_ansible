@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - ...
 
 ### Changed
+- [groot/workstation] ensure workspaces path exists
 - ...
 
 ## [0.2.12] - 2017-03-15

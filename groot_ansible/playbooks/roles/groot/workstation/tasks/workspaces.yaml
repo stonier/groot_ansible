@@ -8,6 +8,16 @@
 #
 ##############################################################################
 
+- name: "ensure {{ vci_path }} exists and is accessible by {{ ansible_user_id }}."
+  file:
+    path: "{{ vci_path }}"
+    state: directory
+    recurse: no
+    mode: 0755
+    owner: "{{ ansible_user_id }}"
+    group: users
+  become: yes
+
 - name: vci various workspaces
   vci:
     key: "{{ item }}"
