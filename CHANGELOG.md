@@ -9,6 +9,14 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.2.11] - 2017-03-15
+### Added
+- [groot/workstation] fcitx, fcitx-hangul dependencies added for input methods
+
+### Changed
+- [kubuntu] bugfix missing comma in anti-kubuntu package list
+- [groot/workstation] alias for cdw
+
 ## [0.2.10] - 2017-02-12
 ### Added
 - [groot/workstation] creating and importing my public/private keys
