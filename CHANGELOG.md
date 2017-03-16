@@ -7,8 +7,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - ...
 
 ### Changed
-- [groot/workstation] ensure workspaces path exists
 - ...
+
+## [0.2.13] - 2017-03-16
+### Changed
+- [groot/workstation] ensure workspaces path exists
+- [chrome] match apt url exactly as a workaround for the mystery google-chrome.list
 
 ## [0.2.12] - 2017-03-15
 ### Added
@@ -111,7 +115,12 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [infra] skeleton structure
 
-[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.2.8...HEAD
+[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.2.13...HEAD
+[0.2.13]: https://github.com/stonier/groot_ansible/compare/0.2.12...0.2.13
+[0.2.12]: https://github.com/stonier/groot_ansible/compare/0.2.11...0.2.12
+[0.2.11]: https://github.com/stonier/groot_ansible/compare/0.2.10...0.2.11
+[0.2.10]: https://github.com/stonier/groot_ansible/compare/0.2.9...0.2.10
+[0.2.9]: https://github.com/stonier/groot_ansible/compare/0.2.8...0.2.9
 [0.2.8]: https://github.com/stonier/groot_ansible/compare/0.2.7...0.2.8
 [0.2.7]: https://github.com/stonier/groot_ansible/compare/0.2.6...0.2.7
 [0.2.6]: https://github.com/stonier/groot_ansible/compare/0.2.5...0.2.6
