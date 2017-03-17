@@ -2,4 +2,4 @@
 # Defaults
 #################################################################################################
 
-powerline_packages : [fonts-powerline, powerline]
+powerline_packages : [fonts-powerline, powerline, python-powerline-gitstatus]

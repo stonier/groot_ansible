@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - [groot/workstation] bash aliases for vci
+- [powerline] switch to gitstatus
 
 ## [0.2.13] - 2017-03-16
 ### Changed
