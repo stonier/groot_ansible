@@ -155,7 +155,7 @@ echo ""
 
 pretty_header "Groups"
 sudo groupadd dialout 2>/dev/null
-sudo groupadd docker 2>/dev/null
+sudo groupadd --system docker 2>/dev/null
 sudo groupadd users 2>/dev/null
 
 dialout_added=$( added_user "`sudo adduser ${USER} dialout`")

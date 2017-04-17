@@ -4,6 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- docker now bootstrapped as a system group (docker.io fails otherwise)
 - ...
 
 ### Changed
