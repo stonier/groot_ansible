@@ -6,7 +6,7 @@
 
 - include: sysadmin.yaml
 - include: gpg.yaml
-#- include: language.yaml
+- include: language.yaml
 #- include: konsole.yaml
 - include: snorriheim.yaml
 # - include: xelatex.yaml
