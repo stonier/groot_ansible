@@ -1,6 +1,6 @@
 ---
 # Currently supported ROS releases:
-ros_release: "kinetic"
+ros_release: "melodic"
 ros_package: "ros-base"
 
 # Optionally use a mirror for the ROS packages

@@ -40,7 +40,7 @@ def add_ros_arguments(parser):
 
 
 def guess_rosdistro():
-    distro_map = {'trusty': 'indigo', 'xenial': 'kinetic'}
+    distro_map = {'trusty': 'indigo', 'xenial': 'kinetic', 'bionic': 'melodic'}
     unused_os, unused_version, codename = platform.linux_distribution()
     return distro_map[codename] if codename in distro_map.keys() else None  # let the role decide the default if we don't guess it
 

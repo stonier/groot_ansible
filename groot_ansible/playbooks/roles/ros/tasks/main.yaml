@@ -34,16 +34,16 @@
 
 - name: update ros python packages
   apt:
-    pkg: "{{ item }}"
-    only_upgrade: yes
-    state: latest
-  with_items:
+    pkg:
     - python-rosdep
     - python-bloom
     - python-wstool
     - python-vcstool
     - python-rospkg
     - python-catkin-pkg
+    only_upgrade: yes
+    state: latest
+  register: update_ros_python_packages_result
   become: yes
 
 # Bastard doesn't properly return changed when nothing is installed/upgraded
@@ -54,9 +54,6 @@
     only_upgrade: yes
     state: latest
   become: yes
-  register: update_ros_packages_result
-  changed_when: "'0 upgraded, 0 newly installed' not in update_ros_packages_result.stdout"
-
 
 #############################################################################
 # Rosdep Update
