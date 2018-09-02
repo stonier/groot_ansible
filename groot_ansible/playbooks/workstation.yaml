@@ -13,5 +13,5 @@
   - role: kubuntu
   - role: git
   - role: chrome
-  - role: drive
-  - role: powerline
+#  - role: drive
+#  - role: powerline

@@ -5,10 +5,16 @@
 language_packages    : [fcitx, fcitx-hangul, kde-config-fcitx, language-selector-gnome]
 
 # all except groot-eclipse-neon-amd64 - it's super slow
-snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
-                        groot-mediterranean-themes, groot-wallpapers, python-ckx-tools,
-                        python-groot-tools, python-vci, ttygif
-                        ]
+snorriheim_packages  : [groot-icons, groot-wallpapers]
+#snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
+#                        groot-mediterranean-themes, groot-wallpapers, python-ckx-tools,
+#                        python-groot-tools, python-vci, ttygif
+#                        ]
+
+#snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
+#                        groot-mediterranean-themes, groot-wallpapers, python-ckx-tools,
+#                        python-groot-tools, python-vci, ttygif
+#                        ]
 
 local_drive          : /mnt/mervin
 
@@ -19,5 +25,5 @@ google_drive_path    : "{{ local_drive }}/drive"
 #################################################################################################
 
 vci_path             : "{{ local_drive }}/workspaces"
-vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/kinetic.yaml"
+vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/melodic.yaml"
 vci_workspaces       : [bob, latex, reveal]

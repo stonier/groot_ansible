@@ -6,6 +6,8 @@
 #
 #  - script: groot-ansible-bootstrap has added the snorriheim ppa
 #
+# TODO: check if adding the ppa here doesn't hurt
+#
 ##############################################################################
 # Debs
 ##############################################################################

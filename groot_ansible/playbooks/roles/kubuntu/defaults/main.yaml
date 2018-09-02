@@ -3,4 +3,7 @@
 #################################################################################################
 
 kubuntu_packages     : [kubuntu-full, usb-creator-kde]
-anti_kubuntu_packages: [unity-scope-gdrive, account-plugin-google, account-plugin-facebook]
+anti_kubuntu_packages: []
+# unity-scope-gdrive, account-plugin-google, account-plugin-facebook]
+
+

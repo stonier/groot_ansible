@@ -109,6 +109,12 @@ if [ ! -z "$SHOW_HELP" ]; then
 fi
 
 ###########################
+# Inside a VirtualEnv?
+###########################
+
+[[ "$VIRTUAL_ENV" == "" ]]; INVENV=$?
+
+###########################
 # Execute!
 ###########################
 
@@ -135,8 +141,12 @@ else
   pretty_print "  ansible........................system"
 fi
 
-pretty_print "  python-groot-ansible.............d-stonier/snorriheim"
-sudo apt-add-repository --yes ppa:d-stonier/snorriheim
+if [ "$INVENV" -eq "0" ]; then
+  pretty_print "  python-groot-ansible...........d-stonier/snorriheim"
+  sudo apt-add-repository --yes ppa:d-stonier/snorriheim
+else
+  pretty_print "  python-groot-ansible...........virtualenv"
+fi
 echo ""
 
 pretty_header "Apt-Get Update"
@@ -150,7 +160,9 @@ echo ""
 
 pretty_header "Installing"
 install_package ansible
-install_package python-groot-ansible
+if [ "$INVENV" -eq "0" ]; then
+  install_package python-groot-ansible;
+fi
 echo ""
 
 pretty_header "Groups"

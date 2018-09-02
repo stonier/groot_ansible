@@ -34,29 +34,29 @@
 
 - name: update ros python packages
   apt:
-    pkg: "{{ item }}"
-    only_upgrade: yes
-    state: latest
-  with_items:
+    pkg:
     - python-rosdep
     - python-bloom
     - python-wstool
     - python-vcstool
     - python-rospkg
     - python-catkin-pkg
+    only_upgrade: yes
+    state: latest
+  register: update_ros_python_packages_result
   become: yes
 
-# Bastard doesn't properly return changed when nothing is installed/upgraded
-# Do our own changed_when on the result
+# Check in that it now informs properly when something is upgraded.
+# Previously (trusty, xenial) we used a register hook with a
+# changed_when conditional to check for the resulting phrase on the
+# stdout of the result. The apt module no longer seems pass on stdout
+# to do our own checking in ansible 2.5 though.
 - name: update all ros-{{ ros_release }} packages
   apt:
     pkg: ros-{{ ros_release }}-*
     only_upgrade: yes
     state: latest
   become: yes
-  register: update_ros_packages_result
-  changed_when: "'0 upgraded, 0 newly installed' not in update_ros_packages_result.stdout"
-
 
 #############################################################################
 # Rosdep Update

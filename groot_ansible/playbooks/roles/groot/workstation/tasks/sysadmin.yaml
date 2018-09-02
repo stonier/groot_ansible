@@ -47,14 +47,14 @@
     force: no
     mode: 0644
 
-- name: remove unused home directories
-  file:
-    path: "{{ item }}"
-    state: absent
-  with_items:
-    - "{{ ansible_env.HOME }}/Music"
-    - "{{ ansible_env.HOME }}/Pictures"
-    - "{{ ansible_env.HOME }}/Public"
-    - "{{ ansible_env.HOME }}/Templates"
-    - "{{ ansible_env.HOME }}/Videos"
+#- name: remove unused home directories
+#  file:
+#    path: "{{ item }}"
+#    state: absent
+#  with_items:
+#    - "{{ ansible_env.HOME }}/Music"
+#    - "{{ ansible_env.HOME }}/Pictures"
+#    - "{{ ansible_env.HOME }}/Public"
+#    - "{{ ansible_env.HOME }}/Templates"
+#    - "{{ ansible_env.HOME }}/Videos"
 
