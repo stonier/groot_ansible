@@ -5,12 +5,11 @@ from setuptools import find_packages
 from setuptools import setup
 from groot_ansible import __version__
 
-# Setup installation dependencies, removing some so they
-# can build on the ppa
+# Dependencies, versioned against what would be found on the ubuntu distro
 install_requires = [
-    'setuptools',
-    'PyYAML',
-    'ansible',
+    'setuptools>=39.0,<39.1',
+    'PyYAML>=3.12,<3.13',
+    'ansible>=2.5,<2.6',
 ]
 
 
