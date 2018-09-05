@@ -1,0 +1,34 @@
+---
+#############################################################################
+# Setting Up
+#############################################################################
+
+- name: add system76 ppa
+  apt_repository:
+    repo: "{{ system76_apt_uri }}"
+    state: present
+    filename: system76
+    update_cache: yes
+  become: yes
+
+#############################################################################
+# Deb Update
+#############################################################################
+
+# TODO: Check if this actually logs 'changed' when a deb upgrades now
+# It never used to on xenial, so I used to check stdout of the result
+# variable there. However stdout is no longer always provided when running
+# on bionic (according to the docs, only becomes available 'when needed')
+- name: install/update system76 packages
+  apt:
+    pkg:
+    - system76-driver
+    - system76-driver-nvidia
+    state: latest
+  register: system76_result
+  become: yes
+#  changed_when: "'0 upgraded, 0 newly installed' in system76_result.stdout"
+
+- debug:
+    var: system76_result
+    verbosity: 2

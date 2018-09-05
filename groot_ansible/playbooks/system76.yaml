@@ -1,0 +1,16 @@
+#
+# Playbook to ensure system76 drivers are installed and up to date. This includes:
+#
+# - system76 driver
+# - system76 nvidia driver
+#
+---
+- name: System76 Installation and Update
+  hosts:
+    - localhost
+
+  vars:
+  # Public Variables
+
+  roles:
+  - role: system76

@@ -86,6 +86,10 @@ def main(args=None):
                                      short_description="ros2 environment for ubuntu",
                                      description="ROS 2 environment setup/install/update",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, "system76",
+                                     short_description="system76 drivers",
+                                     description="System76 environment setup/install/update",
+                                     become_sudo=True)
         common.add_generic_subparser(subparsers, "workstation",
                                      short_description="standard development environment for ubuntu",
                                      description="Standard setup/install/update for a development workstation",
