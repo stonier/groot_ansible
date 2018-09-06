@@ -2,4 +2,6 @@
 # Defaults
 #################################################################################################
 
+# python-powerline-gitstatus is not in ubuntu until Cosmic
+#   get from the snorriehim ppa
 powerline_packages : [fonts-powerline, powerline, python-powerline-gitstatus]

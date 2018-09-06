@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Stonier
-  description: Powerline in the shell for the user (not global)
+  description: Bootstrap a workstation for development
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1
@@ -10,6 +10,5 @@ galaxy_info:
     versions:
     - bionic
 
-dependencies:
-  - role: git
-  - role: snorriheim
+#dependencies:
+#  - role: stonier.ansible

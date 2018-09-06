@@ -19,6 +19,7 @@
     - localhost
 
   pre_tasks:
+  # TODO: drop this duplicate item and use the snorriheim role as a dependency?
   - name: add snorriheim ppa
     apt_repository:
       repo: "ppa:d-stonier/snorriheim"
