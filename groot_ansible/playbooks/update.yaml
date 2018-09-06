@@ -27,14 +27,6 @@
       filename: snorriheim
     become: yes
 
-  - name: add ansible ppa
-    apt_repository:
-      repo: "ppa:ansible/ansible"
-      state: present
-      update_cache: yes  # only triggers if there was a change to the repos
-      filename: ansible
-    become: yes
-
   # In case we didn't apt-get update in the previous step
   - name: apt update
     apt:

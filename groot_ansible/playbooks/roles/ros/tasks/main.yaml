@@ -3,14 +3,14 @@
 # Setting Up
 #############################################################################
 
-- name: add ros/ros2 repository apt-key
+- name: add osrc repository apt-key
   apt_key:
     keyserver: "{{ ros_key_server }}"
     id: "{{ ros_key_id }}"
     state: present
   become: yes
 
-- name: add ros/ros2 repository
+- name: add osrc repository
   apt_repository:
     repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present
@@ -69,7 +69,7 @@
   become: yes
 
 # No way of having a reliable changed or not here unless we go to extremes
-# in checking file sizes and such
+# in checking file sizes and such. Run with -v to get registered result output
 - name: "rosdep update (warning: changes undetectable)"
   shell: "rosdep update"
   register: rosdep_result

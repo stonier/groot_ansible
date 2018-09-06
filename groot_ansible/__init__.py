@@ -45,8 +45,8 @@ def main(args=None):
     """
     try:
         parser = argparse.ArgumentParser(
-            description="A frontend to groot playbooks.",
-            epilog="And his noodly appendage reached forth to tickle the blessed...\n",
+            description=console.green + "A python frontend to groot playbooks." + console.reset,
+            epilog=console.bold + console.white + "And his noodly appendage reached forth to tickle the blessed...\n" + console.reset,
             formatter_class=argparse.RawDescriptionHelpFormatter)
         parser.add_argument('-v', '--version', action='version', version=version_string())
         subparsers = parser.add_subparsers(title='commands',

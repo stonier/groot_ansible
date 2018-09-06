@@ -4,6 +4,8 @@
 
 language_packages    : [fcitx, fcitx-hangul, kde-config-fcitx, language-selector-gnome]
 
+snorriheim_ppa_uri: "ppa:d-stonier/snorriheim"
+
 # all except groot-eclipse-neon-amd64 - it's super slow
 snorriheim_packages  : [groot-icons, groot-wallpapers]
 #snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
@@ -21,7 +23,7 @@ local_drive          : /mnt/mervin
 google_drive_path    : "{{ local_drive }}/drive"
 
 #################################################################################################
-# Worksapces
+# Workspaces
 #################################################################################################
 
 vci_path             : "{{ local_drive }}/workspaces"
