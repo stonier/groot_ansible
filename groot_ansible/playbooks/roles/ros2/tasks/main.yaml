@@ -2,18 +2,17 @@
 # Apt Repositories
 #############################################################################
 
-- name: add ros/ros2 repository apt-key
+- name: add ros2 apt-key
   apt_key:
-    keyserver: "{{ ros_key_server }}"
-    id: "{{ ros_key_id }}"
+    url: "{{ ros2_key_server }}"
     state: present
   become: yes
 
-- name: add ros/ros2 repository
+- name: add ros2 repository
   apt_repository:
-    repo: "deb {{ ros_apt_uri }} {{ ansible_lsb.codename }} main"
+    repo: "deb [arch=amd64,arm64] {{ ros2_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present
-    filename: ros
+    filename: ros2
     update_cache: yes
   become: yes
 
@@ -21,27 +20,30 @@
 # Apt Packages
 #############################################################################
 
-- name: "install/update core packages"
+- name: "update package 'ros-{{ ros2_distro }}-ros-base'"
   apt:
-    pkg: "{{ core_packages }}"
+    pkg: "ros-{{ ros2_distro }}-ros-base"
     state: latest
   become: yes
 
-- name: "install/update build packages"
+#- name: "update package 'ros-{{ ros2_distro }}-ros-desktop'"
+#  apt:
+#    pkg: "ros-{{ ros2_distro }}-ros-desktop"
+#    state: latest
+#  become: yes
+
+#############################################################################
+# Update
+#############################################################################
+
+# Check in that it now informs properly when something is upgraded.
+# Previously (trusty, xenial) we used a register hook with a
+# changed_when conditional to check for the resulting phrase on the
+# stdout of the result. The apt module no longer seems pass on stdout
+# to do our own checking in ansible 2.5 though.
+- name: update all {{ ros2_distro }} packages
   apt:
-    pkg: "{{ build_packages }}"
+    pkg: ros-{{ ros2_distro }}-*
+    only_upgrade: yes
     state: latest
   become: yes
-
-- name: "install/update testing packages"
-  apt:
-    pkg: "{{ testing_packages }}"
-    state: latest
-  become: yes
-
-- name: "install/update fastrps packages"
-  apt:
-    pkg: "{{ fastrtps_packages }}"
-    state: latest
-  become: yes
-

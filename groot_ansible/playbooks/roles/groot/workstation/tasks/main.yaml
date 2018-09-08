@@ -8,7 +8,6 @@
 - include: gpg.yaml
 - include: language.yaml
 #- include: konsole.yaml
-- include: snorriheim.yaml
 # - include: xelatex.yaml
 # - include: workspaces.yaml
 # - include: drive.yaml
