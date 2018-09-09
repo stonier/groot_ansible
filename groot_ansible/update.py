@@ -32,7 +32,7 @@ def parse_args(args):
     console.banner("'update'")
     connection = "-c local"
     list_tasks = "--list-tasks" if args.list_tasks else ""
-    cmd = "ansible-playbook update.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
+    cmd = "ansible-playbook utils-update.yaml -K -i localhost, {connection} {list_tasks}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")

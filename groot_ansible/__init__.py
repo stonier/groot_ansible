@@ -57,57 +57,57 @@ def main(args=None):
 
         common.add_generic_subparser(subparsers,
                                      name="bootstrap/pc",
-                                     playbook_name="workstation",
+                                     playbook_name="bootstrap-pc",
                                      short_description="bootstrap a pc/laptop for development",
                                      description="Standard ubuntu development workstation",
                                      become_sudo=True)
         workstation.add_subparser(subparsers)
 
         common.add_generic_subparser(subparsers, name="os/ubuntu",
-                                     playbook_name="ubuntu",
+                                     playbook_name="os-ubuntu",
                                      short_description="useful non-core packages for ubuntu",
                                      description="Extra packages and configuration for the core of a basic development environment",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="os/kubuntu",
-                                     playbook_name="kubuntu",
+                                     playbook_name="os-kubuntu",
                                      short_description="kubuntu desktop packages and configuration",
                                      description="Add the kubuntu (full) desktop environment to an ubuntu installation",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="os/system76",
-                                     playbook_name="system76",
+                                     playbook_name="os-system76",
                                      short_description="drivers from system76 for ubuntu",
                                      description="System76 environment setup/install/update",
                                      become_sudo=True)
 
         common.add_generic_subparser(subparsers, name="devel/git",
-                                     playbook_name="git",
+                                     playbook_name="devel-git",
                                      short_description="git binaries, modules and configuration",
                                      description="Git binaries, modules (lfs) and user configuration",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="devel/powerline",
-                                     playbook_name="powerline",
+                                     playbook_name="devel-powerline",
                                      short_description="powerline in the shell for the user",
                                      description="Setup powerline in the shell for the user",
                                      become_sudo=True)
         ros.add_subparser(subparsers)
         common.add_generic_subparser(subparsers, name="devel/ros2",
-                                     playbook_name="ros2",
+                                     playbook_name="devel-ros2",
                                      short_description="ros2 environment for ubuntu",
                                      description="ROS 2 environment setup/install/update",
                                      become_sudo=True)
         
         common.add_generic_subparser(subparsers, name="extras/chrome",
-                                     playbook_name="chrome",
+                                     playbook_name="extras-chrome",
                                      short_description="google chrome for ubuntu",
                                      description="Google chrome setup/install/update",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="extras/drive",
-                                     playbook_name="drive",
+                                     playbook_name="extras-drive",
                                      short_description="google drive for ubuntu",
                                      description="Google drive setup/install/update",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="extras/snorriheim",
-                                     playbook_name="snorriheim",
+                                     playbook_name="extras-snorriheim",
                                      short_description="snorriheim ppa and packages",
                                      description="Snorriheim's PPA and packages for ubuntu",
                                      become_sudo=True)

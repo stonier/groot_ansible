@@ -37,7 +37,7 @@ def parse_args(args):
     # rosdistro = args.rosdistro if args.rosdistro else ros.guess_rosdistro()
     # variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
     variable_ros_release = ""
-    cmd = "ansible-playbook groot-workstation.yaml --ask-vault-pass -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    cmd = "ansible-playbook bootstrap-daniel.yaml --ask-vault-pass -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")

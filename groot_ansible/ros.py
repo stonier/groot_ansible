@@ -55,7 +55,7 @@ def parse_args(args):
     # TODO check for a valid rosdistro on this platform
     rosdistro = args.rosdistro if args.rosdistro else guess_rosdistro()
     variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
-    cmd = "ansible-playbook ros.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    cmd = "ansible-playbook devel-ros1.yaml -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Parameters", {"Rosdistro": rosdistro}, 10)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
@@ -69,8 +69,8 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("devel/ros",
-                                   description="Install, configure or update an existing ros distro.",  # this shows in the help for this command
+    parser = subparsers.add_parser("devel/ros1",
+                                   description="Install, configure or update an existing ros1 distro.",  # this shows in the help for this command
                                    help="ros1 environment for ubuntu",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )

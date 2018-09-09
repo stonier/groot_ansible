@@ -36,7 +36,7 @@ def parse_args(args):
     # variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
     variable_ros_release = ""
     # use -K before the -i if you need sudo
-    cmd = "ansible-playbook testies.yaml -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    cmd = "ansible-playbook utils-testies.yaml -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
