@@ -1,0 +1,13 @@
+#
+# Playbook to setup/install core packages from the snorriheim ppa.
+#
+---
+- name: Snorriheim PPA and Packages
+  hosts:
+    - localhost
+
+  vars:
+  # Public Variables
+
+  roles:
+  - role: snorriheim

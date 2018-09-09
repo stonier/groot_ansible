@@ -106,6 +106,11 @@ def main(args=None):
                                      short_description="google drive for ubuntu",
                                      description="Google drive setup/install/update",
                                      become_sudo=True)
+        common.add_generic_subparser(subparsers, name="extras/snorriheim",
+                                     playbook_name="snorriheim",
+                                     short_description="snorriheim ppa and packages",
+                                     description="Snorriheim's PPA and packages for ubuntu",
+                                     become_sudo=True)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
         options.func(options)  # relay arg parsing to the subparser configured `set_defaults` function callback
