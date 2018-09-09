@@ -45,7 +45,7 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("update",
+    parser = subparsers.add_parser("utils/update",
                                    description="Update apt and the groot_ansible ecosystem",  # this shows in the help for this command
                                    help="update your ansible/apt environment",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter

@@ -49,52 +49,63 @@ def main(args=None):
             epilog=console.bold + console.white + "And his noodly appendage reached forth to tickle the blessed...\n" + console.reset,
             formatter_class=argparse.RawDescriptionHelpFormatter)
         parser.add_argument('-v', '--version', action='version', version=version_string())
+
         subparsers = parser.add_subparsers(title='commands',
                                            help='valid commands for groot-ansible interactions')
         update.add_subparser(subparsers)
-        ros.add_subparser(subparsers)
+        testies.add_subparser(subparsers)
+
+        common.add_generic_subparser(subparsers,
+                                     name="bootstrap/pc",
+                                     playbook_name="workstation",
+                                     short_description="bootstrap a pc/laptop for development",
+                                     description="Standard ubuntu development workstation",
+                                     become_sudo=True)
         workstation.add_subparser(subparsers)
-        common.add_generic_subparser(subparsers, "ubuntu",
-                                     short_description="extras for a development environment",
+
+        common.add_generic_subparser(subparsers, name="os/ubuntu",
+                                     playbook_name="ubuntu",
+                                     short_description="useful non-core packages for ubuntu",
                                      description="Extra packages and configuration for the core of a basic development environment",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "kubuntu",
-                                     short_description="switch to a kubuntu (full) environment",
+        common.add_generic_subparser(subparsers, name="os/kubuntu",
+                                     playbook_name="kubuntu",
+                                     short_description="kubuntu desktop packages and configuration",
                                      description="Add the kubuntu (full) desktop environment to an ubuntu installation",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "git",
+        common.add_generic_subparser(subparsers, name="os/system76",
+                                     playbook_name="system76",
+                                     short_description="drivers from system76 for ubuntu",
+                                     description="System76 environment setup/install/update",
+                                     become_sudo=True)
+
+        common.add_generic_subparser(subparsers, name="devel/git",
+                                     playbook_name="git",
                                      short_description="git binaries, modules and configuration",
                                      description="Git binaries, modules (lfs) and user configuration",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "chrome",
-                                     short_description="google chrome for ubuntu",
-                                     description="Google chrome setup/install/update",
-                                     become_sudo=True)
-        common.add_generic_subparser(subparsers, "drive",
-                                     short_description="google drive for ubuntu",
-                                     description="Google drive setup/install/update",
-                                     become_sudo=True)
-        common.add_generic_subparser(subparsers, "powerline",
+        common.add_generic_subparser(subparsers, name="devel/powerline",
+                                     playbook_name="powerline",
                                      short_description="powerline in the shell for the user",
                                      description="Setup powerline in the shell for the user",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "gazebo",
-                                     short_description="gazebo and related packages for ubuntu",
-                                     description="Gazebo repository setup/install/update",
-                                     become_sudo=True)
-        common.add_generic_subparser(subparsers, "ros2",
+        ros.add_subparser(subparsers)
+        common.add_generic_subparser(subparsers, name="devel/ros2",
+                                     playbook_name="ros2",
                                      short_description="ros2 environment for ubuntu",
                                      description="ROS 2 environment setup/install/update",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "system76",
-                                     short_description="system76 drivers",
-                                     description="System76 environment setup/install/update",
+        
+        common.add_generic_subparser(subparsers, name="extras/chrome",
+                                     playbook_name="chrome",
+                                     short_description="google chrome for ubuntu",
+                                     description="Google chrome setup/install/update",
                                      become_sudo=True)
-        common.add_generic_subparser(subparsers, "workstation",
-                                     short_description="standard development environment for ubuntu",
-                                     description="Standard setup/install/update for a development workstation",
+        common.add_generic_subparser(subparsers, name="extras/drive",
+                                     playbook_name="drive",
+                                     short_description="google drive for ubuntu",
+                                     description="Google drive setup/install/update",
                                      become_sudo=True)
-        testies.add_subparser(subparsers)
         options = parser.parse_args(args)
         # options, unused_unknown_args = parser.parse_known_args(args)
         options.func(options)  # relay arg parsing to the subparser configured `set_defaults` function callback

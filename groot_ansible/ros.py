@@ -69,9 +69,9 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("ros",
+    parser = subparsers.add_parser("devel/ros",
                                    description="Install, configure or update an existing ros distro.",  # this shows in the help for this command
-                                   help="ros distro on an ubuntu machine",  # this shows in the parent parser
+                                   help="ros1 environment for ubuntu",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)

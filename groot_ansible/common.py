@@ -63,7 +63,7 @@ def execute_generic_subcommand(name, become_sudo, args):
     subprocess.call(cmd, cwd=args.home, shell=True)
 
 
-def add_generic_subparser(subparsers, name, short_description, description, become_sudo):
+def add_generic_subparser(subparsers, name, playbook_name, short_description, description, become_sudo):
     """
     Create a generic subparser which runs a playbook directly.
 
@@ -79,7 +79,7 @@ def add_generic_subparser(subparsers, name, short_description, description, beco
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     add_ansible_arguments(parser)
-    parser.set_defaults(func=functools.partial(execute_generic_subcommand, name, become_sudo))
+    parser.set_defaults(func=functools.partial(execute_generic_subcommand, playbook_name, become_sudo))
 
 
 ##############################################################################

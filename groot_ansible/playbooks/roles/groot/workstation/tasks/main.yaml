@@ -12,6 +12,6 @@
 # - include: workspaces.yaml
 # - include: drive.yaml
 - include: python.yaml
-# - include: eclipse.yaml
+- include: eclipse.yaml
 
 ##############################################################################

@@ -9,5 +9,11 @@
     - localhost
 
   roles:
+  - role: ubuntu
   - role: kubuntu
+  - role: git
+  - role: chrome
+  - role: drive
+  - role: powerline
+  - role: snorriheim
   - role: groot/workstation

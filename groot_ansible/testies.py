@@ -49,7 +49,7 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("testies",
+    parser = subparsers.add_parser("utils/testies",
                                    description="Experimental testies.",  # this shows in the help for this command
                                    help="trigger experiments",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter

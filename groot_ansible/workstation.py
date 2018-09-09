@@ -50,8 +50,8 @@ def add_subparser(subparsers):
 
     :param subparsers: the subparsers factory from the parent argparser.
     """
-    parser = subparsers.add_parser("groot-workstation",
-                                   description="Daniel's playbook for bootstrapping a workstation environment.",  # this shows in the help for this command
+    parser = subparsers.add_parser("bootstrap/daniel",
+                                   description="Daniel's customised kubuntu development workstation",  # this shows in the help for this command
                                    help="bootstrap a pc/laptop for development (Daniel)",  # this shows in the parent parser
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
