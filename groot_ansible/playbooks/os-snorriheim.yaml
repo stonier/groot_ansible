@@ -1,0 +1,13 @@
+#
+# Playbook reflecting the Snorriheim PPA/packages role:
+#
+---
+- name: Snorriheim PPA and packages
+  hosts:
+    - localhost
+
+  vars:
+  # Public Variables
+
+  roles:
+  - role: snorriheim
