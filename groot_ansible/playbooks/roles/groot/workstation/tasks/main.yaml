@@ -9,7 +9,7 @@
 - include: language.yaml
 - include: konsole.yaml
 - include: xelatex.yaml
-# - include: workspaces.yaml
+- include: workspaces.yaml
 - include: drive.yaml
 - include: python.yaml
 - include: eclipse.yaml
