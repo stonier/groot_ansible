@@ -35,6 +35,6 @@
 - name: "Konsole Snorriheim Profile to {{ ansible_env.HOME }}/.local/share/konsole/Snorriheim.profile"
   template:
     dest: "{{ ansible_env.HOME }}/.local/share/konsole/Snorriheim.profile"
-    src: konsole-Powerline.profile.j2
+    src: konsole-Snorriheim.profile.j2
     force: no
 
