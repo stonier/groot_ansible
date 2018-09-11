@@ -2,18 +2,12 @@
 # Playbook with personal customisations to the basic development environment.
 #
 ---
-- include: workstation.yaml
+- import_playbook: bootstrap-pc.yaml
 
 - name: Groot Workstation
   hosts:
     - localhost
 
   roles:
-  - role: ubuntu
-  - role: kubuntu
-  - role: git
-  - role: chrome
-  - role: drive
-  - role: powerline
   - role: snorriheim
   - role: groot/workstation

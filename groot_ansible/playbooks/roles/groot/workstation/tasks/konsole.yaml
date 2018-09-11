@@ -32,9 +32,9 @@
     src: konsole-Linux.colorscheme.j2
     force: no
 
-- name: "Konsole Powerline Profile to {{ ansible_env.HOME }}/.local/share/konsole/Powerline.profile"
+- name: "Konsole Snorriheim Profile to {{ ansible_env.HOME }}/.local/share/konsole/Snorriheim.profile"
   template:
-    dest: "{{ ansible_env.HOME }}/.local/share/konsole/Powerline.profile"
+    dest: "{{ ansible_env.HOME }}/.local/share/konsole/Snorriheim.profile"
     src: konsole-Powerline.profile.j2
     force: no
 
