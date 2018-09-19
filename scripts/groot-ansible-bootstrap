@@ -50,7 +50,11 @@ pretty_error ()
 
 pretty_header ()
 {
-  echo -e "${BOLD}${1}${RESET}"
+  echo ""
+  echo -e "${BOLD}********************************************************************************${RESET}"
+  echo -e "${BOLD}* ${1}${RESET}"
+  echo -e "${BOLD}********************************************************************************${RESET}"
+  echo ""
 }
 
 # smart installer that doesn't call sudo if it doesn't need to
