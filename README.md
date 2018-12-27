@@ -23,7 +23,7 @@ cd groot_ansible
 Regular usage:
 
 ```bash
-# Update the groot ansible environment
+# Update the groot ansible environment (fetches the latest deb if there are debs available)
 $ groot-ansible update
 # Check the list of subcommands (ansible playbooks) you can run
 $ groot-ansible --help
