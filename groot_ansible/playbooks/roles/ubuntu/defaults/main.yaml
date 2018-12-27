@@ -2,7 +2,7 @@
 # Defaults
 #################################################################################################
 
-core_packages        : [eog, gimp, kile, mplayer, openssh-server,
+core_packages        : [eog, gimp, kile, mesa-utils, mplayer, openssh-server,
                         synaptic, texlive-fonts-extra, texlive-fonts-recommended, 
                         texlive-xetex, unison-all-gtk, usbmount, vim, wget
                        ]
@@ -15,4 +15,5 @@ font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fon
 packaging_packages   : [debhelper, gnupg, gnupg2, libssl-dev, libyaml-dev, packaging-dev,
                         python-stdeb, python-virtualenv, virtualenvwrapper
                         ]
-programming_packages : [build-essential, cmake, cmake-curses-gui, cppcheck, exuberant-ctags, libnotify-bin, python-pip, ttyrec]
+programming_packages : [build-essential, cmake, cmake-curses-gui, cppcheck, exuberant-ctags,
+                        libnotify-bin, python-pip, ttyrec]
