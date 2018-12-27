@@ -10,6 +10,15 @@ wget https://raw.githubusercontent.com/stonier/groot_ansible/devel/scripts/groot
 chmod 755 groot-ansible-bootstrap
 ./groot-ansible-bootstrap
 ```
+If I don't have the deb built yet, then it will fail to fetch `python-groot-ansible` and you'll need to clone the repo and source the setup script which will fetch any dependencies it requires and boot you into a virtual environment.
+
+```
+sudo apt install git
+git clone https://github.com/stonier/groot_ansible
+cd groot_ansible
+. ./setup.bash
+```
+
 
 Regular usage:
 
