@@ -10,6 +10,15 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.3.0] - 2018-12-28
+### Added
+- [ros2] role for installation/maintenance of ROS2
+
+### Changed
+- [all] overhauled with support for Ubuntu Bionic (18.04)
+- [frontends] more modular to enable testing of smaller groups
+- [frontends] bootstrap playbooks for one-shot everything style playbooks
+
 ## [0.2.14] - 2017-03-17
 ### Changed
 - [groot/workstation] bash aliases for vci
