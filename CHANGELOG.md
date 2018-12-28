@@ -4,8 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- docker now bootstrapped as a system group (docker.io fails otherwise)
-- ...
+- [ubuntu] net-tools, python3-pip
 
 ### Changed
 - ...
@@ -13,6 +12,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [0.3.0] - 2018-12-28
 ### Added
 - [ros2] role for installation/maintenance of ROS2
+- [infra] docker now bootstrapped as a system group (docker.io fails otherwise)
 
 ### Changed
 - [all] overhauled with support for Ubuntu Bionic (18.04)
