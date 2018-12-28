@@ -1,6 +1,13 @@
 #############################################################################
-# Apt Repositories
+# Setup
 #############################################################################
+
+- name: install/update packages needed for ros2 installation
+  apt:
+    pkg: "{{ installation_packages }}"
+    state: latest
+  register: update_ros2_installation_packages_result
+  become: yes
 
 - name: add ros2 apt-key
   apt_key:
@@ -12,7 +19,7 @@
   apt_repository:
     repo: "deb [arch=amd64,arm64] {{ ros2_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present
-    filename: ros2
+    filename: ros2-latest
     update_cache: yes
   become: yes
 
@@ -20,24 +27,25 @@
 # Apt Packages
 #############################################################################
 
-- name: "install/update 'ros-{{ ros2_distro }}-ros-base'"
-  apt:
-    pkg: "ros-{{ ros2_distro }}-ros-base"
-    state: latest
-  become: yes
-
-#- name: "install/update 'ros-{{ ros2_distro }}-ros-desktop'"
-#  apt:
-#    pkg: "ros-{{ ros2_distro }}-ros-desktop"
-#    state: latest
-#  become: yes
-  
 - name: install/update ros2 development packages
   apt:
     pkg: "{{ development_packages }}"
     state: latest
   register: update_ros2_python_packages_result
   become: yes
+
+- name: "install/update 'ros-{{ ros2_distro }}-ros-base'"
+  apt:
+    pkg: "ros-{{ ros2_distro }}-ros-base"
+    state: latest
+  become: yes
+
+# Not yet available
+#- name: "install/update 'ros-{{ ros2_distro }}-ros-desktop'"
+#  apt:
+#    pkg: "ros-{{ ros2_distro }}-ros-desktop"
+#    state: latest
+#  become: yes
 
 #############################################################################
 # Update
