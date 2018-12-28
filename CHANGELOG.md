@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - [ubuntu] net-tools, python3-pip, python3-stdeb
 
 ### Changed
-- ...
+- [snorriheim] python-vci -> python3-vci
 
 ## [0.3.0] - 2018-12-28
 ### Added
