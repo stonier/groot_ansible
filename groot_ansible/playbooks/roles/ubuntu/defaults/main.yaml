@@ -2,7 +2,7 @@
 # Defaults
 #################################################################################################
 
-core_packages        : [eog, gimp, kile, mesa-utils, mplayer, openssh-server,
+core_packages        : [eog, gimp, kile, mesa-utils, mplayer, net-tools, openssh-server,
                         synaptic, texlive-fonts-extra, texlive-fonts-recommended, 
                         texlive-xetex, unison-all-gtk, usbmount, vim, wget
                        ]
