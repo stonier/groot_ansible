@@ -9,6 +9,7 @@
     - localhost
 
   roles:
-  - role: ros  # make sure to do this before triggering snorriheim (needs python-vcstool)
   - role: snorriheim
   - role: groot/workstation
+  - role: ros
+  - role: ros2

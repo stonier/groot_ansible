@@ -8,6 +8,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 - [snorriheim] python-vci -> python3-vci
+- [bootstrap/daniel] add ros2, remove unneeded comment for ros-snorriheim
 
 ## [0.3.0] - 2018-12-28
 ### Added
