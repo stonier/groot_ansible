@@ -4,7 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-- [ubuntu] net-tools, python3-pip
+- [ubuntu] net-tools, python3-pip, python3-stdeb
 
 ### Changed
 - ...

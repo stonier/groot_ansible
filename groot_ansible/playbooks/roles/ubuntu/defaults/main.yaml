@@ -13,7 +13,9 @@ font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fon
                         ttf-dejavu
                        ]
 packaging_packages   : [debhelper, gnupg, gnupg2, libssl-dev, libyaml-dev, packaging-dev,
-                        python-stdeb, python-virtualenv, python3-pip, virtualenvwrapper
+                        python-stdeb, python-virtualenv,
+                        python3-pip, python3-stdep, python3-virtualenv,
+                        virtualenvwrapper
                         ]
 programming_packages : [build-essential, cmake, cmake-curses-gui, cppcheck, exuberant-ctags,
                         libnotify-bin, python-pip, ttyrec]
