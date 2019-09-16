@@ -4,11 +4,21 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+- ...
+
+### Changed
+- ...
+
+## [0.3.2] - 2019-09-16
+### Added
 - [ubuntu] net-tools, python3-pip, python3-stdeb
 
 ### Changed
 - [snorriheim] python-vci -> python3-vci
 - [bootstrap/daniel] add ros2, remove unneeded comment for ros-snorriheim
+- [bootstrap/daniel] move ros2 prior to workspace installs (needs vcs)
+- [bootstrap/daniel] drop ros1
+- [ubuntu] bugfix typo [stdep->stdeb]
 
 ## [0.3.0] - 2018-12-28
 ### Added
@@ -131,7 +141,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [infra] skeleton structure
 
-[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.2.14...HEAD
+[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.3.2...HEAD
+[0.3.2]: https://github.com/stonier/groot_ansible/compare/0.2.14...0.3.2
 [0.2.14]: https://github.com/stonier/groot_ansible/compare/0.2.13...0.2.14
 [0.2.13]: https://github.com/stonier/groot_ansible/compare/0.2.12...0.2.13
 [0.2.12]: https://github.com/stonier/groot_ansible/compare/0.2.11...0.2.12
