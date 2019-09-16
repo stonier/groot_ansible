@@ -12,6 +12,10 @@ install_requires = [
     'ansible>=2.5,<2.6',
 ]
 
+extras_require = {
+    'packaging': ['twine']
+}
+
 
 def roles():
     """
@@ -41,6 +45,7 @@ setup(
     },
     data_files=[],  # system files?
     install_requires=install_requires,
+    extras_require=extras_require,
     author='Daniel Stonier',
     author_email='d.stonier@gmail.com',
     maintainer='Daniel Stonier',

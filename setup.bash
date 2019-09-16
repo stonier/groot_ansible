@@ -91,6 +91,10 @@ if [ "${VIRTUAL_ENV}" == "" ]; then
   fi
 fi
 
+echo "Installing packaging dependencies"
+
+pip install -e .[packaging]
+
 #############################
 # Setup Groot Ansible
 #############################
