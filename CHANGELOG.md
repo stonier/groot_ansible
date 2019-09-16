@@ -9,6 +9,10 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Changed
 - ...
 
+## [0.3.5] - 2019-09-16
+### Added
+- [ros2] rosdep install, init and update
+
 ## [0.3.4] - 2019-09-16
 ### Added
 - [ubuntu] net-tools, python3-pip, python3-stdeb
@@ -141,8 +145,9 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 - [infra] skeleton structure
 
-[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.3.4...HEAD
-[0.3.2]: https://github.com/stonier/groot_ansible/compare/0.2.14...0.3.4
+[Unreleased]: https://github.com/stonier/groot_ansible/compare/0.3.5...HEAD
+[0.3.5]: https://github.com/stonier/groot_ansible/compare/0.3.4...0.3.5
+[0.3.4]: https://github.com/stonier/groot_ansible/compare/0.2.14...0.3.4
 [0.2.14]: https://github.com/stonier/groot_ansible/compare/0.2.13...0.2.14
 [0.2.13]: https://github.com/stonier/groot_ansible/compare/0.2.12...0.2.13
 [0.2.12]: https://github.com/stonier/groot_ansible/compare/0.2.11...0.2.12
