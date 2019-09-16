@@ -62,3 +62,20 @@
     only_upgrade: yes
     state: latest
   become: yes
+
+#############################################################################
+# Rosdep Update
+#############################################################################
+
+- name: rosdep init
+  shell: "rosdep init"
+  args:
+    creates: /etc/ros/rosdep/sources.list.d/20-default.list
+  become: yes
+
+# No way of having a reliable changed or not here unless we go to extremes
+# in checking file sizes and such. Run with -v to get registered result output
+- name: "rosdep update (warning: changes undetectable)"
+  shell: "rosdep update"
+  register: rosdep_result
+  changed_when: False

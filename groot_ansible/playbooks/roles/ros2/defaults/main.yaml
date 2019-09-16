@@ -22,4 +22,5 @@ development_packages:
   - cmake
   - python3-argcomplete
   - python3-colcon-*
+  - python3-rosdep
   - python3-vcstool
