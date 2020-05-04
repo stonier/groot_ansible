@@ -7,7 +7,7 @@
     dest: "{{ ansible_env.HOME }}/.gnupg/snorri-public.gpg"
     content: "{{ gpg_public_key }}"
     owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    group: "users"
     mode: 0600
   register: create_public_gpg_key
 
@@ -16,7 +16,7 @@
     dest: "{{ ansible_env.HOME }}/.gnupg/snorri-private.gpg"
     content: "{{ gpg_private_key }}"
     owner: "{{ ansible_user_id }}"
-    group: "{{ ansible_user_id }}"
+    group: "users"
     mode: 0600
   register: create_private_gpg_key
 
