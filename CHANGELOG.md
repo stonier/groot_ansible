@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - ...
 
 ### Changed
-- ...
+- [ros2] updated rosdistro crystal->eloquent
+- [gpg] use group users instad of user id (no guarantee the latter exists)
 
 ## [0.3.5] - 2019-09-16
 ### Added
