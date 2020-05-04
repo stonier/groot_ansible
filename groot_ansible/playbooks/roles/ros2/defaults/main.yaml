@@ -2,7 +2,7 @@
 # Apt Repositories
 ##############################################################################
 
-ros2_distro    : "crystal"
+ros2_distro    : "eloquent"
 ros2_key_server: "http://repo.ros2.org/repos.key"
 ros2_apt_uri   : "http://packages.ros.org/ros2/ubuntu"
 
