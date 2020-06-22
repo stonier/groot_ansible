@@ -2,8 +2,7 @@
 # Defaults
 #################################################################################################
 
-kubuntu_packages     : [kubuntu-full, usb-creator-kde, amarok]
+kubuntu_packages     : [elisa, kubuntu-desktop, kubuntu-wallpapers, usb-creator-kde]
 anti_kubuntu_packages: []
 # unity-scope-gdrive, account-plugin-google, account-plugin-facebook]
-
 
