@@ -115,6 +115,7 @@ pip3 install twine
 # groot_ansible dependencies
 pip3 install "ansible==2.9"
 pip3 install "PyYAML==5.3"
+pip3 install "distro==1.4"
 
 #############################
 # Setup Groot Ansible

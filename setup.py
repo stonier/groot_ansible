@@ -10,6 +10,7 @@ from groot_ansible import __version__
 #    'setuptools>=45.2,<45.3',
 #    'PyYAML>=5.3,<5.4',
 #    'ansible>=2.9,<2.10',
+#    'distro>=1.4,<1.5',
 #]
 
 #extras_require = {
