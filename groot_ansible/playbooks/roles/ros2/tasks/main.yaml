@@ -34,7 +34,7 @@
   register: update_ros2_python_packages_result
   become: yes
 
-- name: "install/update 'ros-{{ ros2_distro }}-ros-base'"
+- name: "install/update 'ros-{{ ros2_distro }}-desktop'"
   apt:
     pkg: "ros-{{ ros2_distro }}-ros-base"
     state: latest
