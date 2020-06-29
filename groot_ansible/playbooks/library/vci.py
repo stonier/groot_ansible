@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/env python3
 
 ##############################################################################
 # Library
@@ -95,11 +95,12 @@ def main():
         return
 
     cmd = "vci find --index={index} {key} | vcs import".format(index=index, key=module.params["key"])
-
     changed = False
     try:
         out = subprocess.check_output(cmd, cwd=abs_path, shell=True)
-        if any(keyword in out for keyword in ['Cloning', 'behind']):
+        # subprocess now gives you bytes, not strings, in python3
+        # make sure you operate with bytes objects (or decode the original result)
+        if any(keyword in out for keyword in [b"Cloning", b"behind"]):
             changed = True
     except subprocess.CalledProcessError as e:
         module.fail_json(msg="Failed to import key '{0}'".format(module.params['key']),

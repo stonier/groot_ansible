@@ -13,5 +13,5 @@ google_drive_path    : "{{ local_drive }}/drive"
 #################################################################################################
 
 vci_path             : "{{ local_drive }}/workspaces"
-vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/bionic.yaml"
+vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/focal.yaml"
 vci_workspaces       : [devel/bob, devel/latex, devel/py_trees, devel/reveal]
