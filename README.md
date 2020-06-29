@@ -17,8 +17,11 @@ sudo apt install git
 git clone https://github.com/stonier/groot_ansible
 cd groot_ansible
 . ./setup.bash
+# Some very basic system changes that need a relogin/reboot (e.g. add users, groups)
+cd scripts
+./groot-ansible-bootstrap
+# Relogin/reboot
 ```
-
 
 Regular usage:
 

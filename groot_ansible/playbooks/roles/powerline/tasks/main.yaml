@@ -14,21 +14,21 @@
     state: latest
   become: yes
 
-- name: "clone powerline-fonts"
-  git:
-    repo: https://github.com/powerline/fonts.git
-    dest: /opt/powerline-fonts
-    version: master
-    update: no
-  register: powerline_fonts
-  become: yes
+#- name: "clone powerline-fonts"
+#  git:
+#    repo: https://github.com/powerline/fonts.git
+#    dest: /opt/powerline-fonts
+#    version: master
+#    update: no
+#  register: powerline_fonts
+#  become: yes
 
-- name: "install powerline fonts to ~/.local/share/fonts"
-  shell: ./install.sh
-  args:
-    chdir: /opt/powerline-fonts
-    executable: /bin/bash
-  when: powerline_fonts.changed
+#- name: "install powerline fonts to ~/.local/share/fonts"
+#  shell: ./install.sh
+#  args:
+#    chdir: /opt/powerline-fonts
+#    executable: /bin/bash
+#  when: powerline_fonts.changed
 
 - name: "ensure {{ ansible_env.HOME }}/.config/powerline/colorschemes exists and is accessible by {{ ansible_user_id }}."
   file:

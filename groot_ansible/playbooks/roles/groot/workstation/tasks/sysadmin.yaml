@@ -15,7 +15,7 @@
     mode: 0700
     path: "{{ ansible_env.HOME }}/.gnupg"
 
-- name: "ensure /usr/local/bin is accessible by {{ ansible_user_id }}."
+- name: "ensure /usr/local/bin is accessible by {{ ansible_user_id }}"
   file:
     path: "/usr/local/bin"
     state: directory
@@ -24,7 +24,7 @@
     group: users
   become: yes
 
-- name: "ensure /usr/local/lib is accessible by {{ ansible_user_id }}."
+- name: "ensure /usr/local/lib is accessible by {{ ansible_user_id }}"
   file:
     path: "/usr/local/lib"
     state: directory

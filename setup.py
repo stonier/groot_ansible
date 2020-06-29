@@ -6,15 +6,16 @@ from setuptools import setup
 from groot_ansible import __version__
 
 # Dependencies, versioned against what would be found on the ubuntu distro
-install_requires = [
-    'setuptools>=39.0,<39.1',
-    'PyYAML>=3.12,<3.13',
-    'ansible>=2.5,<2.6',
-]
+#install_requires = [
+#    'setuptools>=45.2,<45.3',
+#    'PyYAML>=5.3,<5.4',
+#    'ansible>=2.9,<2.10',
+#    'distro>=1.4,<1.5',
+#]
 
-extras_require = {
-    'packaging': ['twine']
-}
+#extras_require = {
+#    'packaging': ['twine']
+#}
 
 
 def roles():
@@ -44,8 +45,8 @@ setup(
         ] + roles() + modules(),
     },
     data_files=[],  # system files?
-    install_requires=install_requires,
-    extras_require=extras_require,
+#    install_requires=install_requires,
+#    extras_require=extras_require,
     author='Daniel Stonier',
     author_email='d.stonier@gmail.com',
     maintainer='Daniel Stonier',

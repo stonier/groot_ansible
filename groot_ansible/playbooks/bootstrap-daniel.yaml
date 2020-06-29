@@ -10,6 +10,6 @@
 
   roles:
   - role: snorriheim
+  - role: ros
   - role: ros2
   - role: groot/workstation
-#  - role: ros

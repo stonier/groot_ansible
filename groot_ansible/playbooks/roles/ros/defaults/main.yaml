@@ -1,9 +1,19 @@
 ---
 # Currently supported ROS releases:
-ros_release: "melodic"
-ros_package: "ros-base"
+ros_release: "noetic"
+ros_package: "desktop"
 
 # Optionally use a mirror for the ROS packages
-ros_key_server: "ha.pool.sks-keyservers.net"
-ros_key_id    : "421C365BD9FF1F717815A3895523BAEEB01FA116"
+ros_key_server: "hkp://keyserver.ubuntu.com:80"
+ros_key_id    : "C1CF6E31E6BADE8868B172B4F42ED6FBAB17C654"
 ros_apt_uri   : "http://packages.ros.org/ros/ubuntu"
+
+development_packages:
+  - build-essential
+  - python3-rosdep
+  - python3-bloom
+  - python3-wstool
+  - python3-vcstool
+  - python3-rospkg
+  - python3-catkin-pkg
+  - python3-catkin-tools

@@ -28,7 +28,7 @@ from . import workstation
 # Constants
 ##############################################################################
 
-__version__ = '0.3.5'
+__version__ = '0.4.0'
 
 ##############################################################################
 # Main
@@ -100,11 +100,6 @@ def main(args=None):
                                      playbook_name="extras-chrome",
                                      short_description="google chrome for ubuntu",
                                      description="Google chrome setup/install/update",
-                                     become_sudo=True)
-        common.add_generic_subparser(subparsers, name="extras/drive",
-                                     playbook_name="extras-drive",
-                                     short_description="google drive for ubuntu",
-                                     description="Google drive setup/install/update",
                                      become_sudo=True)
         common.add_generic_subparser(subparsers, name="extras/snorriheim",
                                      playbook_name="extras-snorriheim",

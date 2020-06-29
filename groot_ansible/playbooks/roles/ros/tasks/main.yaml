@@ -34,15 +34,7 @@
 
 - name: update ros python packages
   apt:
-    pkg:
-    - python-rosdep
-    - python-bloom
-    - python-wstool
-    - python-vcstool
-    - python-rospkg
-    - python-catkin-pkg
-    - python-catkin-tools
-    only_upgrade: yes
+    pkg: "{{ development_packages }}"
     state: latest
   register: update_ros_python_packages_result
   become: yes

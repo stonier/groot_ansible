@@ -3,6 +3,7 @@
 # Script for setting up the development environment.
 
 PROJECT=groot_ansible
+VENV_DIR=${HOME}/.venv/${PROJECT}
 
 ###########################
 # Colours
@@ -67,43 +68,65 @@ install_package ()
 }
 
 #############################
+# Checks
+#############################
+
+[[ "${BASH_SOURCE[0]}" != "${0}" ]] && SOURCED=1
+if [ -z "$SOURCED" ]; then
+  pretty_error "This script needs to be sourced, i.e. source './setup.bash', not './setup.bash'"
+  exit 1
+fi
+
+#############################
 # System Dependencies
 #############################
 
-pretty_header "Dependencies"
+pretty_header "Deb Dependencies"
 
-install_package virtualenvwrapper || return
-install_package python-setuptools || return
 install_package libyaml-dev || return
-install_package libpython2.7-dev || return
-
-# in case virtualenvwrapper was just installed, re-source your environment to get the bash function mkvirtualenv
-. ~/.profile
+install_package python3-dev || return
+install_package python3-venv || return
 
 #############################
 # Virtual Env
 #############################
 
-if [ "${VIRTUAL_ENV}" == "" ]; then
-  workon ${PROJECT}
-  if [ $? -ne 0 ]; then
-    mkvirtualenv ${PROJECT}
-  fi
+pretty_header "Virtual Environment"
+if [ -x ${VENV_DIR}/bin/pip3 ]; then
+    pretty_print "  $(padded_message "virtual_environment" "found [${VENV_DIR}]")"
+else
+    python3 -m venv ${VENV_DIR}
+    pretty_warning "  $(padded_message "virtual_environment" "created [${VENV_DIR}]")"
 fi
 
-echo "Installing packaging dependencies"
+source ${VENV_DIR}/bin/activate
 
-pip install -e .[packaging]
+#############################
+# Pypi Dependencies
+#############################
+
+# approximate ubuntu system dependencies
+pretty_header "PyPi Dependencies"
+
+# build environment depedencies
+pip3 install wheel
+pip3 install "setuptools==45.2"
+pip3 install twine
+# groot_ansible dependencies
+pip3 install "ansible==2.9"
+pip3 install "PyYAML==5.3"
+pip3 install "distro==1.4"
 
 #############################
 # Setup Groot Ansible
 #############################
 
-python setup.py develop
+pretty_header "Setup Development Environment"
+python3 setup.py develop
 
-echo ""
-echo "Leave the virtual environment with 'deactivate'"
-echo ""
-echo "I'm grooty, you should be too."
-echo ""
+pretty_print ""
+pretty_print "Leave the virtual environment with 'deactivate'"
+pretty_print ""
+pretty_print "I'm grooty, you should be too."
+pretty_print ""
 

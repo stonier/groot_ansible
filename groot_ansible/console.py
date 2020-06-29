@@ -166,7 +166,7 @@ def _colorise_key_value_pairs(key_value_strings, width=None):
     colorised = {}
     if width is None:
         width = max(len(k) for k in key_value_strings.keys())
-    for key, value in key_value_strings.iteritems():
+    for key, value in key_value_strings.items():
         colorised_key = cyan + "{key:{width}}".format(key=key, width=width) + reset
         colorised_value = yellow + value + reset
         colorised[colorised_key] = colorised_value
@@ -175,7 +175,7 @@ def _colorise_key_value_pairs(key_value_strings, width=None):
 
 def key_value_pairs(title, key_value_strings, width=None):
     print(green + title + reset)
-    for k, v in _colorise_key_value_pairs(key_value_strings, width).iteritems():
+    for k, v in _colorise_key_value_pairs(key_value_strings, width).items():
         print("  " + k + ": " + v)
 
 
