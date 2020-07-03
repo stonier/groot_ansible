@@ -37,3 +37,11 @@
     src: fcitx.config.j2
     force: no
     mode: 0600
+
+# Input method configuration
+- name: "english/korean input configuration to {{ ansible_env.HOME }}/.xprofile"
+  template:
+    dest: "{{ ansible_env.HOME }}/.xprofile"
+    src: xprofile.j2
+    force: no
+    mode: 0600
