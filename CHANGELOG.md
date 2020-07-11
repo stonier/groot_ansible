@@ -4,14 +4,19 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+
+### Changed
+
+## [0.4.1] - 2020-07-11
+### Added
 - [bootstrap/daniel] added .xprofile language configuration
 
 ### Changed
+- [infra] dependencies for building debs directly
 
 ## [0.4.0] - 2020-06-25
 ### Changed
 - [focal] upgraded to support ubuntu focal (20.04)
-- [infra] dependencies for building debs directly
 
 ## [0.3.5] - 2019-09-16
 ### Added
