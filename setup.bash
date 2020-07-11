@@ -86,6 +86,7 @@ pretty_header "Deb Dependencies"
 install_package libyaml-dev || return
 install_package python3-dev || return
 install_package python3-venv || return
+install_package dh-python || return
 
 #############################
 # Virtual Env
@@ -111,6 +112,8 @@ pretty_header "PyPi Dependencies"
 # build environment depedencies
 pip3 install wheel
 pip3 install "setuptools==45.2"
+# packaging dependencies
+pip3 install stdeb
 pip3 install twine
 # groot_ansible dependencies
 pip3 install "ansible==2.9"
