@@ -6,6 +6,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ### Added
 
 ### Changed
+* [infra] fix local deb build and instructions in README
 
 ## [0.4.1] - 2020-07-11
 ### Added

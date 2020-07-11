@@ -67,7 +67,7 @@ Some rough guidelines (in much need of explanation).
 * Roles as minimal, fundamental jobs that can be composed by playbooks
 * ...
 
-## Tags, Playbooks, Roles
+### Tags, Playbooks, Roles
 
 The following three entities can be used in a variety of ways - e.g. roles and playbooks
 both can be used to help share procedures and it is easy to get mixed up about
@@ -77,3 +77,10 @@ what to use and what not. Some conventions that I am currently sticking to.
 * **Roles** : use as much as possible to share jobs
 * **Playbooks** : to script use cases
 
+### Debs
+
+```
+make deb
+cd deb_dist
+sudo dpkg -i python3-groot-ansible-<tab><tab>
+```
