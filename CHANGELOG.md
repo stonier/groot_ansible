@@ -11,6 +11,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 ## [0.4.1] - 2020-07-11
 ### Added
 - [bootstrap/daniel] added .xprofile language configuration
+* [snorriheim] python-groot-tools->python3-groot-tools
 
 ### Changed
 - [infra] dependencies for building debs directly
