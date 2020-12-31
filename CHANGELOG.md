@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ### Changed
 * [infra] fix local deb build and instructions in README
+* [workstation] added gist.github.com to .netrc
 
 ## [0.4.1] - 2020-07-11
 ### Added
