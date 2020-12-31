@@ -4,15 +4,20 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+* ...
 
 ### Changed
-* [infra] fix local deb build and instructions in README
-* [workstation] added gist.github.com to .netrc
+* ...
+
+## [0.4.2] - 2020-12-30
+### Changed
+- [infra] fix local deb build and instructions in README
+- [workstation] added gist.github.com to .netrc
 
 ## [0.4.1] - 2020-07-11
 ### Added
 - [bootstrap/daniel] added .xprofile language configuration
-* [snorriheim] python-groot-tools->python3-groot-tools
+- [snorriheim] python-groot-tools->python3-groot-tools
 
 ### Changed
 - [infra] dependencies for building debs directly
