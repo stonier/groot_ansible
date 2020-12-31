@@ -6,5 +6,5 @@ snorriheim_ppa_uri: "ppa:d-stonier/snorriheim"
 
 # all except groot-eclipse-neon-amd64 - it's super slow
 snorriheim_packages  : [groot-eclipse-preferences, groot-icons,
-                        groot-wallpapers, python-groot-tools,
+                        groot-wallpapers, python3-groot-tools,
                         python3-vci, ttygif]

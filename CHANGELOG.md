@@ -7,6 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 - ...
 
 ### Changed
+- [snorriheim] python-groot-tools->python3-groot-tools
 - [workstation] added gist.github.com to .netrc
 - [ros2] updated rosdistro crystal->eloquent
 - [gpg] use group users instad of user id (no guarantee the latter exists)
