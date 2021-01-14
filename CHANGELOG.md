@@ -4,7 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-* ...
+* [ubuntu] added default-jdk as a core system dependency
 
 ### Changed
 * ...
