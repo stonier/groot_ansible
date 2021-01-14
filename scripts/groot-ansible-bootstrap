@@ -165,10 +165,10 @@ else
 fi
 
 if [ "$INVENV" -eq "0" ]; then
-  pretty_print "  python-groot-ansible...........d-stonier/snorriheim"
+  pretty_print "  python3-groot-ansible..........d-stonier/snorriheim"
   sudo apt-add-repository --yes ppa:d-stonier/snorriheim
 else
-  pretty_print "  python-groot-ansible...........virtualenv"
+  pretty_print "  python3-groot-ansible..........virtualenv"
 fi
 echo ""
 
@@ -184,7 +184,7 @@ echo ""
 pretty_header "Installing"
 install_package ansible
 if [ "$INVENV" -eq "0" ]; then
-  install_package python-groot-ansible;
+  install_package python3-groot-ansible;
 fi
 echo ""
 
