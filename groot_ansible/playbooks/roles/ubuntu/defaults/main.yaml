@@ -2,9 +2,10 @@
 # Defaults
 #################################################################################################
 
-core_packages        : [default-jdk, eog, gimp, kile, mesa-utils, mplayer, net-tools, openssh-server,
+core_packages        : [default-jdk, eog, gimp, kile, libvulkan1, libvulkan-dev, mesa-utils,
+                        mplayer, net-tools, openssh-server,
                         screen, synaptic, texlive-fonts-extra, texlive-fonts-recommended, 
-                        texlive-xetex, unison-all-gtk, usbmount, vim, wget
+                        texlive-xetex, unison-all-gtk, usbmount, vim, vulkan-utils, wget
                        ]
 font_packages        : [fonts-unfonts-core, fonts-unfonts-extra, fonts-alee, fonts-baekmuk,
                         fonts-lexi-gulim, fonts-lexi-saebom,
