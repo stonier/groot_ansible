@@ -192,6 +192,7 @@ pretty_header "Groups"
 sudo groupadd dialout 2>/dev/null
 sudo groupadd --system docker 2>/dev/null
 sudo groupadd users 2>/dev/null
+sudo groupadd --system lpadmin 2>/dev/null
 
 dialout_added=$( added_user "`sudo adduser ${USER} dialout`")
 pretty_print "  dialout........................$dialout_added"
@@ -199,6 +200,8 @@ docker_added=$( added_user "`sudo adduser ${USER} docker`")
 pretty_print "  docker.........................$docker_added"
 users_added=$( added_user "`sudo adduser ${USER} users`")
 pretty_print "  users..........................$users_added"
+lpadmin_added=$( added_user "`sudo adduser ${USER} lpadmin`")
+pretty_print "  lpadmin........................$lpadmin_added"
 echo ""
 
 pretty_header "Summary"
