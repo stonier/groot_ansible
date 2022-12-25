@@ -21,7 +21,7 @@
 - name: vci index url configuration
   vci_config:
     index: "{{ vci_index }}"
-    force: false
+    force: "{{ vci_force_index }}"
 
 - name: vci various workspaces
   vci:

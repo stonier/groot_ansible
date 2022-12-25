@@ -43,10 +43,13 @@ def main():
         cmd = "vci config --no-colour"
         index = subprocess.check_output(cmd, shell=True).rstrip()
         vci_configured = True
+        print(f"VCI Configured: {index}")
     except subprocess.CalledProcessError as e:
         index = None
         vci_configured = False
+        print(f"VCI Not Configured")
 
+    print(f"Configure with {module.params['index']}")
     if not module.params["force"] and vci_configured:
         module.exit_json(msg="VCI already configured, refusing to override as requested",
                          changed=False,

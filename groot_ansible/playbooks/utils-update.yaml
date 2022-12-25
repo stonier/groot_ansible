@@ -35,9 +35,9 @@
       cache_valid_time: 0
     become: yes
 
-  - name: update python-groot-ansible to the latest version
+  - name: update python3-groot-ansible to the latest version
     apt:
-      pkg: python-groot-ansible
+      pkg: python3-groot-ansible
       state: latest
     become: yes
 

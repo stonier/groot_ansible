@@ -90,4 +90,4 @@ ENV/
 
 *.tar.gz
 deb_dist
-
+.venv

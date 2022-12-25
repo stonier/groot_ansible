@@ -37,7 +37,8 @@ def parse_args(args):
     # rosdistro = args.rosdistro if args.rosdistro else ros.guess_rosdistro()
     # variable_ros_release = "-e ros_release={0}".format(rosdistro) if rosdistro else ""
     variable_ros_release = ""
-    cmd = "ansible-playbook bootstrap-daniel.yaml --ask-vault-pass -K -i localhost, {connection} {list_tasks} {variable_ros_release}".format(**locals())
+    force = "-e vci_force_index=true" if args.vci_force_index else "-e vci_force_index=false"
+    cmd = "ansible-playbook bootstrap-daniel.yaml --ask-vault-pass -K -i localhost, {connection} {list_tasks} {variable_ros_release} {force}".format(**locals())
     cmd = common.append_verbosity_argument(cmd, args.verbose)
     console.key_value_pairs("Ansible", {"Command": cmd}, 10)
     print("")
@@ -56,5 +57,7 @@ def add_subparser(subparsers):
                                    formatter_class=argparse.ArgumentDefaultsHelpFormatter
                                    )
     common.add_ansible_arguments(parser)
+    group = parser.add_argument_group(title="workstation arguments")
+    group.add_argument('-f', '--vci-force-index', action='store_true', help='override vci configuration')
     # ros.add_ros_arguments(parser)
     parser.set_defaults(func=parse_args)

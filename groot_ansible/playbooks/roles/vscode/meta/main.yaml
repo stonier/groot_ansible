@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Stonier
-  description: Google chrome for ubuntu
+  description: VSCode for Ubuntu
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1

@@ -3,7 +3,8 @@
 # Script for setting up the development environment.
 
 PROJECT=groot_ansible
-VENV_DIR=${HOME}/.venv/${PROJECT}
+SRC_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+VENV_DIR=${SRC_DIR}/.venv
 
 ###########################
 # Colours
@@ -96,6 +97,7 @@ pretty_header "Virtual Environment"
 if [ -x ${VENV_DIR}/bin/pip3 ]; then
     pretty_print "  $(padded_message "virtual_environment" "found [${VENV_DIR}]")"
 else
+    mkdir -p ${VENV_DIR}
     python3 -m venv ${VENV_DIR}
     pretty_warning "  $(padded_message "virtual_environment" "created [${VENV_DIR}]")"
 fi
@@ -116,7 +118,7 @@ pip3 install "setuptools==45.2"
 pip3 install stdeb
 pip3 install twine
 # groot_ansible dependencies
-pip3 install "ansible==2.9"
+pip3 install "ansible==2.9.*"
 pip3 install "PyYAML==5.3"
 pip3 install "distro==1.4"
 

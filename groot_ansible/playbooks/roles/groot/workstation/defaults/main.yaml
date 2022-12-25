@@ -6,8 +6,6 @@ language_packages    : [fcitx, fcitx-hangul, kde-config-fcitx, language-selector
 
 local_drive          : /mnt/mervin
 
-google_drive_path    : "{{ local_drive }}/drive"
-
 #################################################################################################
 # Workspaces
 #################################################################################################

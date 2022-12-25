@@ -1,0 +1,24 @@
+##############################################################################
+# VSCode
+##############################################################################
+
+- name: add apt-key
+  apt_key:
+    url: "{{ vscode_apt_key }}"
+    state: present
+  become: yes
+
+- name: add apt-repository
+  apt_repository:
+    repo: "deb [arch=amd64] {{ vscode_apt_uri }} stable main"
+    state: present
+    filename: vscode
+    update_cache: yes  # only triggers if there was a change to the repos
+  become: yes
+
+
+- name: "install/update debs"
+  apt:
+    pkg: "{{ vscode_packages }}"
+    state: latest
+  become: yes
