@@ -4,10 +4,22 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
-* [ubuntu] added default-jdk as a core system dependency
+* ...
 
 ### Changed
 * ...
+
+## [0.4.3] - 2022-12-25
+### Added
+* [ubuntu] added default-jdk as a core system dependency
+* [extras/vscode] replacing eclipse as the installed ide
+
+### Changed
+* [groot/workstation] option to force vci
+
+### Removed
+* [groot/workstation] eclipse replaced by vscode
+* [groot/workstation] drive no longer used
 
 ## [0.4.2] - 2020-12-30
 ### Changed
