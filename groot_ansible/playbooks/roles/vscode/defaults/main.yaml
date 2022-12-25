@@ -1,0 +1,7 @@
+#################################################################################################
+# Defaults
+#################################################################################################
+
+vscode_apt_uri  : "https://packages.microsoft.com/repos/vscode/"
+vscode_apt_key  : "https://packages.microsoft.com/keys/microsoft.asc"
+vscode_packages : [code]

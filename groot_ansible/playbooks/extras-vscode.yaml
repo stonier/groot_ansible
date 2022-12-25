@@ -1,0 +1,10 @@
+##############################################################################
+# Playbook for installing VSCode from Ubuntu repositories
+##############################################################################
+
+- name: VSCode
+  hosts:
+    - localhost
+
+  roles:
+  - role: vscode

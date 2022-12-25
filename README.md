@@ -1,37 +1,56 @@
 # Groot Ansible
 
-## Usage
+## Usage - With Debs
 
-First time usage:
 
 ```
-# Download the bootstrap script
-wget https://raw.githubusercontent.com/stonier/groot_ansible/devel/scripts/groot-ansible-bootstrap
-chmod 755 groot-ansible-bootstrap
-./groot-ansible-bootstrap
+# 1) Download the bootstrap script
+$ wget https://raw.githubusercontent.com/stonier/groot_ansible/devel/scripts/groot-ansible-bootstrap
+$ chmod 755 groot-ansible-bootstrap
+$ ./groot-ansible-bootstrap
+
+# 2) Install
+$ groot-ansible --help
+$ groot-ansbile extras/chrome       (not strictly necessary, but good to test)
+$ groot-ansible bootstrap/daniel -f (force vci to configure the index)
+
+# 3) Update
+$ groot-ansible utils/update  # update itself
 ```
+
+## Usage - From Sources
+
 If I don't have the deb built yet, then it will fail to fetch `python-groot-ansible` and you'll need to clone the repo and source the setup script which will fetch any dependencies it requires and boot you into a virtual environment.
 
 ```
-sudo apt install git
-git clone https://github.com/stonier/groot_ansible
-cd groot_ansible
-. ./setup.bash
-# Some very basic system changes that need a relogin/reboot (e.g. add users, groups)
-cd scripts
-./groot-ansible-bootstrap
-# Relogin/reboot
+# 1) Get Groot Ansible
+$ sudo apt install git
+$ git clone https://github.com/stonier/groot_ansible
+
+# 2) Drop into a Venv
+$ cd groot_ansible
+$ . ./venv.bash
+
+# 3) First time Setup (ignore the deb fail if no debs exist)
+$ cd scripts
+$ ./groot-ansible-bootstrap
+
+# 4) Relogin/reboot (if groups changed)
+
+# 5) Manual Preparation (not yet automated)
+#    Generate and add an ssh key to github
+
+# 6) Start Installing!
+$ groot-ansbile extras/chrome       (not strictly necessary, but good to test)
+$ groot-ansible bootstrap/daniel -f (force vci to configure the index)
 ```
 
-Regular usage:
+## Usage - Help
 
 ```bash
-# Update the groot ansible environment (fetches the latest deb if there are debs available)
-$ groot-ansible update
-# Check the list of subcommands (ansible playbooks) you can run
 $ groot-ansible --help
 usage: groot-ansible [-h] [-v]
-                     {update,ros,workstation,ubuntu,kubuntu,git,chrome,drive,powerline,testies}
+                     {utils/update,utils/testies,bootstrap/pc,bootstrap/daniel,os/ubuntu,os/kubuntu,os/system76,devel/git,devel/powerline,devel/ros1,devel/ros2,extras/chrome,extras/snorriheim,extras/vscode}
                      ...
 
 A frontend to groot playbooks
@@ -41,22 +60,27 @@ optional arguments:
   -v, --version         show the version number and exit
 
 commands:
-  {update,ros,workstation,ubuntu,kubuntu,git,chrome,drive,powerline,testies}
+  {utils/update,utils/testies,bootstrap/pc,bootstrap/daniel,os/ubuntu,os/kubuntu,os/system76,devel/git,devel/powerline,devel/ros1,devel/ros2,extras/chrome,extras/snorriheim}
                         valid commands for groot-ansible interactions
-    update              update your ansible/apt environment
-    ros                 ros distro on an ubuntu machine
-    workstation         bootstrap a pc/laptop for development
-    ubuntu              extras for a development environment
-    kubuntu             switch to a kubuntu (full) environment
-    git                 git binaries, modules and configuration
-    chrome              google chrome for ubuntu
-    drive               google drive for ubuntu
-    powerline           powerline in the shell for the user
-    testies             trigger experiments
+    utils/update        update your ansible/apt environment
+    utils/testies       trigger experiments
+    bootstrap/pc        bootstrap a pc/laptop for development
+    bootstrap/daniel    bootstrap a pc/laptop for development (Daniel)
+    os/ubuntu           useful non-core packages for ubuntu
+    os/kubuntu          kubuntu desktop packages and configuration
+    os/system76         drivers from system76 for ubuntu
+    devel/git           git binaries, modules and configuration
+    devel/powerline     powerline in the shell for the user
+    devel/ros1          ros1 environment for ubuntu
+    devel/ros2          ros2 environment for ubuntu
+    extras/chrome       google chrome for ubuntu
+    extras/snorriheim   snorriheim ppa and packages
+    extras/vscode       vscode for ubuntu
 
 And his noodly appendage reached forth to tickle the blessed...
-# Example : setup the google drive utility from ppa
-$ groot-ansible drive
+
+$ groot-ansible extras/chrome
+$ groot-ansible extras/vscode
 ```
 
 ## Dev Notes

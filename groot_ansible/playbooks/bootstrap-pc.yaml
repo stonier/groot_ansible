@@ -13,4 +13,5 @@
   - role: kubuntu
   - role: git
   - role: chrome
+  - role: vscode
   - role: powerline
