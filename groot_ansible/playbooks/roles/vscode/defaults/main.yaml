@@ -2,6 +2,18 @@
 # Defaults
 #################################################################################################
 
-vscode_apt_uri  : "https://packages.microsoft.com/repos/vscode/"
-vscode_apt_key  : "https://packages.microsoft.com/keys/microsoft.asc"
-vscode_packages : [code]
+vscode_apt_uri    : "https://packages.microsoft.com/repos/vscode/"
+vscode_apt_key    : "https://packages.microsoft.com/keys/microsoft.asc"
+vscode_packages   : [code]
+vscode_extensions : 
+  - BazelBuild.vscode-bazel
+  - bierner.github-markdown-preview
+  - bungcip.better-toml
+  - ms-azuretools.vscode-docker
+  - ms-python.python
+  - ms-vscode.cpptools
+  - ms-vscode.cpptools-extension-pack
+  - ms-vscode.cpptools-themes
+  - ms-vscode-remote.vscode-remote-extensionpack
+  - omnilib.ufmt
+  - shoizz.dimmed

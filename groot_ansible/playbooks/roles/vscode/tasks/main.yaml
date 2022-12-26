@@ -22,3 +22,9 @@
     pkg: "{{ vscode_packages }}"
     state: latest
   become: yes
+
+- name: "install extensions"
+  shell: "code --install-extension {{ item }}"
+  register: result
+  changed_when: "'successfully installed' in result.stdout"
+  loop: "{{ vscode_extensions }}"
