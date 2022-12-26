@@ -7,7 +7,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 * ...
 
 ### Changed
-* ...
+* [extras/vscode] a first list of extensions
 
 ## [0.4.3] - 2022-12-25
 ### Added
