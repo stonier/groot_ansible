@@ -19,7 +19,7 @@
   apt_repository:
     repo: "deb [arch=amd64,arm64] {{ ros2_apt_uri }} {{ ansible_lsb.codename }} main"
     state: present
-    filename: ros2-latest
+    filename: ros2
     update_cache: yes
   become: yes
 
