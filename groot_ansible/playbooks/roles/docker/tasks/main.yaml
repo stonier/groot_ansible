@@ -2,13 +2,13 @@
 # Docker
 ##############################################################################
 
-- name: Add Docker GPG apt Key
+- name: docker hub apt key
   apt_key:
     url: "{{ docker_apt_key }}"
     state: present
   become: yes
 
-- name: apt repository
+- name: docker hub apt repository
   apt_repository:
     repo: "deb {{ docker_apt_uri }} {{ ansible_lsb.codename }} stable"
     state: present
@@ -16,7 +16,7 @@
     update_cache: yes
   become: yes
 
-- name: "install/update debs"
+- name: "docker engine debs"
   apt:
     pkg: "{{ docker_packages }}"
     state: latest

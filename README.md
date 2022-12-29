@@ -101,6 +101,13 @@ what to use and what not. Some conventions that I am currently sticking to.
 * **Roles** : use as much as possible to share jobs
 * **Playbooks** : to script use cases
 
+### Secrets
+
+```
+$ ansible-vault edit secrets.yaml
+<password>
+```
+
 ### Debs
 
 ```

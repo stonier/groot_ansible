@@ -1,0 +1,8 @@
+##############################################################################
+# Login Credentials
+##############################################################################
+
+- name: docker hub login credentials
+  shell: "docker login --username djstonier --password {{ docker_hub_password }}"
+  args:
+    executable: /bin/bash

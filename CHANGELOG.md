@@ -7,7 +7,8 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 * [extras/docker] docker engine (not docker desktop)
 
 ### Changed
-* [extras/vscode] a first list of extensions
+* [groot/workstation] docker hub credentials
+* [extras/vscode] various vscode extensions
 
 ## [0.4.3] - 2022-12-25
 ### Added
