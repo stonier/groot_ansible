@@ -1,0 +1,23 @@
+##############################################################################
+# Docker
+##############################################################################
+
+- name: Add Docker GPG apt Key
+  apt_key:
+    url: "{{ docker_apt_key }}"
+    state: present
+  become: yes
+
+- name: apt repository
+  apt_repository:
+    repo: "deb {{ docker_apt_uri }} {{ ansible_lsb.codename }} stable"
+    state: present
+    filename: docker
+    update_cache: yes
+  become: yes
+
+- name: "install/update debs"
+  apt:
+    pkg: "{{ docker_packages }}"
+    state: latest
+  become: yes

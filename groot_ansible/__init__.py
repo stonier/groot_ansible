@@ -96,6 +96,11 @@ def main(args=None):
                                      description="ROS 2 environment setup/install/update",
                                      become_sudo=True)
         
+        common.add_generic_subparser(subparsers, name="extras/docker",
+                                     playbook_name="extras-docker",
+                                     short_description="docker engine for ubuntu",
+                                     description="Docker engine setup and install",
+                                     become_sudo=True)
         common.add_generic_subparser(subparsers, name="extras/chrome",
                                      playbook_name="extras-chrome",
                                      short_description="google chrome for ubuntu",

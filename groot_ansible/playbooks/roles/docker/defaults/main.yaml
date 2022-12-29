@@ -1,0 +1,13 @@
+#################################################################################################
+# Defaults
+#################################################################################################
+
+docker_gpg_key    : "https://download.docker.com/linux/ubuntu/gpg"
+docker_gpg_file   : "/etc/apt/keyrings/docker.gpg"
+docker_apt_key    : "https://download.docker.com/linux/ubuntu/gpg"
+docker_apt_uri    : "https://download.docker.com/linux/ubuntu"
+docker_packages   : 
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-compose-plugin

@@ -1,0 +1,10 @@
+##############################################################################
+# Playbook for installing VSCode from Ubuntu repositories
+##############################################################################
+
+- name: Docker
+  hosts:
+    - localhost
+
+  roles:
+  - role: docker
