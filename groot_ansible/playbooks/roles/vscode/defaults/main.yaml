@@ -6,7 +6,7 @@ vscode_apt_uri    : "https://packages.microsoft.com/repos/vscode/"
 vscode_apt_key    : "https://packages.microsoft.com/keys/microsoft.asc"
 vscode_packages   : [code]
 vscode_extensions : 
-  - BazelBuild.vscode-bazel
+  - bazelbuild.vscode-bazel
   - bierner.github-markdown-preview
   - bungcip.better-toml
   - ms-azuretools.vscode-docker
@@ -16,4 +16,5 @@ vscode_extensions :
   - ms-vscode.cpptools-themes
   - ms-vscode-remote.vscode-remote-extensionpack
   - omnilib.ufmt
+  - pbkit.vscode-pbkit
   - shoizz.dimmed

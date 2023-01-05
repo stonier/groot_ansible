@@ -4,6 +4,7 @@ The format is based on [Keep a Changelog](http://keepachangelog.com/).
 
 ## [Unreleased]
 ### Added
+* [ubuntu] added ttygif
 * [extras/docker] docker engine (not docker desktop)
 
 ### Changed
