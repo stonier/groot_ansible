@@ -3,9 +3,35 @@
 alias cfind="groot-cfind"
 alias cdw="cd /mnt/mervin/workspaces"
 alias cdbob="cd /mnt/mervin/workspaces/devel/bob"
+
+# command line
+#  -h, --human-readable
+#  -N, --literal no (quoting, i.e. no ''s around spaces)
+alias ls='ls --color=auto -N'
+alias ll="ls --color=auto -alFNh"
+
+# docker
+docker-container-rm-by-image() {
+  echo "docker container ls -a | grep $1 | awk '{ print \$1}' | xargs docker container rm"
+  docker container ls -a | grep $1 | awk '{ print $1}' | xargs docker container rm
+}
+alias docker-container-ls="docker container ls -a"
+alias docker-container-rm-all='docker container rm `docker container ls -a -q`'
+alias docker-container-rm-created="docker container rm $(docker ps -a -f status=created -q)"
+alias docker-container-rm-exited="docker container rm $(docker ps -a -f status=exited -q)"
+alias docker-image-ls="docker image ls"
+alias docker-image-prune="docker image prune"
+alias docker-image-rm-all='docker image rm `docker image ls -q`'
+alias docker-image-ls-dangling='docker images --filter "dangling=true"'
+
+# git
+git-branch-rm-pattern() {
+  git branch | grep $1 | xargs git branch -D
+}
+
+# qt
+alias designer="/usr/lib/x86_64-linux-gnu/qt5/bin/designer"
+
+# vci
 alias vci-github="vci config https://raw.githubusercontent.com/stonier/repos_index/devel/bionic.yaml"
 alias vci-local="vci config file:///mnt/mervin/workspaces/bob/repos_index/bionic.yaml"
-alias vimmumbo="vim /mnt/mervin/private/mumbojumbo"
-
-# Newer ls put ''s around filenames if there is a space
-alias ls='ls --color=auto -N'
