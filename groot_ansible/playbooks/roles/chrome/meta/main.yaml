@@ -10,6 +10,7 @@ galaxy_info:
     versions:
     - bionic
     - focal
+    - jammy
 
 #dependencies:
 #  - role: stonier.ansible

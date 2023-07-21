@@ -9,6 +9,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - focal
+    - jammy
 
 dependencies:
   - role: git  # needed to clone powerline-fonts

@@ -4,13 +4,13 @@
 
 - include_vars: secrets.yaml
 
-- include: sysadmin.yaml
-- include: docker.yaml
-- include: gpg.yaml
-- include: language.yaml
-- include: konsole.yaml
-- include: xelatex.yaml
-- include: workspaces.yaml
-- include: python.yaml
+- include_tasks: sysadmin.yaml
+- include_tasks: docker.yaml
+- include_tasks: gpg.yaml
+- include_tasks: language.yaml
+- include_tasks: konsole.yaml
+- include_tasks: xelatex.yaml
+- include_tasks: workspaces.yaml
+- include_tasks: python.yaml
 
 ##############################################################################

@@ -29,8 +29,9 @@
 - name: install/update system76 packages
   apt:
     pkg:
-    - system76-driver
-    - system76-driver-nvidia
+    # don't need on serval/ubuntu laptops
+    # - system76-driver
+    # - system76-driver-nvidia
     state: latest
   register: system76_result
   become: yes

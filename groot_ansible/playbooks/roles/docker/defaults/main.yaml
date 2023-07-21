@@ -6,8 +6,16 @@ docker_gpg_key    : "https://download.docker.com/linux/ubuntu/gpg"
 docker_gpg_file   : "/etc/apt/keyrings/docker.gpg"
 docker_apt_key    : "https://download.docker.com/linux/ubuntu/gpg"
 docker_apt_uri    : "https://download.docker.com/linux/ubuntu"
+nvidia_gpg_key    : "https://nvidia.github.io/libnvidia-container/gpgkey"
+
+prereq_packages   :
+  - ca-certificates
+  - curl
+  - gnupg
 docker_packages   : 
   - docker-ce
   - docker-ce-cli
   - containerd.io
   - docker-compose-plugin
+nvidia_packages   :
+  - nvidia-container-toolkit

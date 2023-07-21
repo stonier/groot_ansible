@@ -11,5 +11,5 @@ local_drive          : /mnt/mervin
 #################################################################################################
 
 vci_path             : "{{ local_drive }}/workspaces"
-vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/focal.yaml"
+vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/jammy.yaml"
 vci_workspaces       : [devel/bob, devel/latex, devel/py_trees, devel/reveal]

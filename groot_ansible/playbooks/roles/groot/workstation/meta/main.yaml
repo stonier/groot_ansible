@@ -8,7 +8,7 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - focal
+    - jammy
 
 #dependencies:
 #  - role: stonier.ansible
