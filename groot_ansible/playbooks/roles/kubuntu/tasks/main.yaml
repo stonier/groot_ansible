@@ -14,3 +14,10 @@
     pkg: "{{ kubuntu_packages }}"
     state: latest
   become: yes
+
+# TODO: this always returns 'changed'. Can't use 'creates' on the shell arg though
+# because the file (~/.config/kwinrc) might already have exised
+- name: "Disable Meta Key - Application Launcher Shortcut"
+  shell: "kwriteconfig5 --file kwinrc --group ModifierOnlyShortcuts --key Meta \"\""
+  args:
+    executable: /bin/bash
