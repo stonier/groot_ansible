@@ -45,3 +45,11 @@
     src: xprofile.j2
     force: no
     mode: 0600
+
+# Input method autostart
+- name: "fcitx autostart to {{ ansible_env.HOME }}/.config/autostart/fcitx.desktop"
+  template:
+    dest: "{{ ansible_env.HOME }}/.config/autostart/fcitx.desktop"
+    src: fcitx.desktop.j2
+    force: no
+    mode: 0600
