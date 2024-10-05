@@ -113,15 +113,15 @@ pretty_header "PyPi Dependencies"
 
 # build environment depedencies
 pip3 install wheel
-pip3 install "setuptools==45.2"
+pip3 install "setuptools==68.1"
 # packaging dependencies
 pip3 install stdeb
 pip3 install twine
 # groot_ansible dependencies
 # pip3 install "ansible==2.9.*"
-pip3 install "ansible-core==2.14.*"
-pip3 install "PyYAML==5.3"
-pip3 install "distro==1.4"
+pip3 install "ansible-core==2.16.3"
+pip3 install "PyYAML==6.0.1"
+pip3 install "distro==1.9"
 
 #############################
 # Setup Groot Ansible

@@ -152,17 +152,7 @@ pretty_print "  Codename: ${DISTRIB_CODENAME}"
 echo ""
 
 pretty_header "Repositories"
-if `list_include_item "trusty xenial" "${DISTRIB_CODENAME}"`; then
-  # stuck with having to use a future ansible, drop this need asap if we can
-  # as it is likely to cause us integration headaches with modules needing non
-  # system supported dependencies
-  pretty_print "  ansible........................ppa:ansible/ansible"
-  if [ ! -f /etc/apt/sources.list.d/ansible-ansible-trusty.list ]; then
-    sudo apt-add-repository --yes ppa:ansible/ansible
-  fi
-else
-  pretty_print "  ansible........................system"
-fi
+pretty_print "  ansible........................system"
 
 if [ "$INVENV" -eq "0" ]; then
   pretty_print "  python3-groot-ansible..........d-stonier/snorriheim"
