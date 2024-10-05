@@ -8,5 +8,5 @@ snorriheim_packages  : [
                         groot-icons,
                         groot-wallpapers,
                         python3-groot-tools,
-                        python3-vci,
+                        # python3-vci,
                        ]

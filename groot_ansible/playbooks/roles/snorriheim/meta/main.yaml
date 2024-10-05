@@ -1,6 +1,6 @@
 galaxy_info:
   author: Daniel Stonier
-  description: Bootstrap a workstation for development
+  description: Bootstrap the Snorriheim PPA
   company: Snorriheim
   license: BSD
   min_ansible_version: 2.1
@@ -8,7 +8,7 @@ galaxy_info:
   platforms:
   - name: Ubuntu
     versions:
-    - jammy
+    - noble
 
 #dependencies:
 #  - role: stonier.ansible
