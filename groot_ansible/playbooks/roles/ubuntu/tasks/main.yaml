@@ -2,20 +2,20 @@
 # Tasks
 ##############################################################################
 
-- name: enable canonical partner repositories
-  replace:
-    dest: /etc/apt/sources.list
-    regexp: '^# (deb .*partner)'
-    replace: '\1'
-  register: partner_repositories
-  become: yes
-
-- name: apt update
-  apt:
-    update_cache: yes
-    cache_valid_time: 0
-  become: yes
-  when: partner_repositories.changed
+#- name: enable canonical partner repositories
+#  replace:
+#    dest: /etc/apt/sources.list
+#    regexp: '^# (deb .*partner)'
+#    replace: '\1'
+#  register: partner_repositories
+#  become: yes
+#
+#- name: apt update
+#  apt:
+#    update_cache: yes
+#    cache_valid_time: 0
+#  become: yes
+#  when: partner_repositories.changed
 
 - name: "install/update core packages"
   apt:
