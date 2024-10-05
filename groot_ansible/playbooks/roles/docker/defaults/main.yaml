@@ -16,6 +16,7 @@ docker_packages   :
   - docker-ce
   - docker-ce-cli
   - containerd.io
+  - docker-buildx-plugin
   - docker-compose-plugin
 nvidia_packages   :
   - nvidia-container-toolkit
