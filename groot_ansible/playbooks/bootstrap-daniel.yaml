@@ -9,7 +9,7 @@
     - localhost
 
   roles:
-  - role: snorriheim
+#  - role: snorriheim
 #  - role: ros
-  - role: ros2
+#  - role: ros2
   - role: groot/workstation

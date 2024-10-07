@@ -2,7 +2,7 @@
 # Packages
 #################################################################################################
 
-language_packages    : [fcitx, fcitx-hangul, kde-config-fcitx, language-selector-gnome]
+language_packages    : [fcitx5, fcitx5-hangul, kde-config-fcitx5, language-selector-gnome]
 
 local_drive          : /mnt/mervin
 
@@ -11,5 +11,5 @@ local_drive          : /mnt/mervin
 #################################################################################################
 
 vci_path             : "{{ local_drive }}/workspaces"
-vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/jammy.yaml"
-vci_workspaces       : [devel/bob, devel/latex, devel/py_trees, devel/reveal]
+# vci_index            : "https://raw.githubusercontent.com/stonier/repos_index/devel/jammy.yaml"
+# vci_workspaces       : [devel/bob, devel/latex, devel/py_trees, devel/reveal]

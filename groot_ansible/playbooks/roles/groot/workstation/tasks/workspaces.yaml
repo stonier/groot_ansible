@@ -18,15 +18,15 @@
     group: users
   become: yes
 
-- name: vci index url configuration
-  vci_config:
-    index: "{{ vci_index }}"
-    force: "{{ vci_force_index }}"
+# - name: vci index url configuration
+#   vci_config:
+#     index: "{{ vci_index }}"
+#     force: "{{ vci_force_index }}"
 
-- name: vci various workspaces
-  vci:
-    key: "{{ item }}"
-    index: "{{ vci_index }}"
-    path: "{{ vci_path }}/{{ item }}"
-    force: true
-  with_items: "{{ vci_workspaces }}"
+# - name: vci various workspaces
+#   vci:
+#     key: "{{ item }}"
+#     index: "{{ vci_index }}"
+#     path: "{{ vci_path }}/{{ item }}"
+#     force: true
+#   with_items: "{{ vci_workspaces }}"
